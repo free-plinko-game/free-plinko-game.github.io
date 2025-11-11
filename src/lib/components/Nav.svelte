@@ -25,6 +25,12 @@
         Best Casinos
       </a>
       <a 
+        href="/reviews" 
+        class="text-sm font-medium transition {currentPath.startsWith('/reviews') ? 'text-green-400' : 'text-gray-400 hover:text-green-400'}"
+      >
+        Reviews
+      </a>
+      <a 
         href="/best-casinos" 
         class="hidden sm:block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-2 px-4 rounded-lg text-sm transition-all shadow-lg shadow-green-500/50"
       >
