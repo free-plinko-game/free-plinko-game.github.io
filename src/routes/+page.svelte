@@ -14,7 +14,9 @@
     setBalanceFromLocalStorage();
   });
 </script>
+
 <svelte:window on:beforeunload={writeBalanceToLocalStorage} />
+
 <div class="relative flex min-h-dvh w-full flex-col">
   <nav class="sticky top-0 z-10 w-full bg-gray-700 px-5 drop-shadow-lg">
     <div class="mx-auto flex h-14 max-w-7xl items-center justify-between">
@@ -24,6 +26,7 @@
       </div>
     </div>
   </nav>
+  
   <div class="flex-1 px-5">
     <div class="mx-auto mt-5 min-w-[300px] max-w-xl drop-shadow-xl md:mt-10 lg:max-w-7xl">
       <div class="flex flex-col-reverse overflow-hidden rounded-lg lg:w-full lg:flex-row">
@@ -34,7 +37,6 @@
       </div>
     </div>
 
-    <!-- Content Section -->
     <div class="mx-auto mt-16 max-w-4xl">
       <div class="bg-gray-700 rounded-lg p-8 shadow-lg mb-12">
         <h2 class="text-3xl font-bold text-white mb-4">About Plinko Game</h2>
@@ -55,7 +57,6 @@
         </div>
       </div>
 
-      <!-- Casino Offers Section -->
       <div class="mb-16">
         <h2 class="text-3xl font-bold text-white mb-2 text-center">Play Plinko for Real Money</h2>
         <p class="text-gray-400 text-center mb-8">Top-rated casinos where you can play Plinko with real money</p>
@@ -67,7 +68,6 @@
         </div>
       </div>
 
-      <!-- Additional Content -->
       <div class="bg-gray-700 rounded-lg p-8 shadow-lg mb-12">
         <h2 class="text-2xl font-bold text-white mb-4">How to Play Plinko</h2>
         <div class="text-gray-300 space-y-3">
@@ -88,27 +88,15 @@
 
   <SettingsWindow />
   <LiveStatsWindow />
+  
   <footer class="px-5 pb-4 pt-16">
     <div class="mx-auto max-w-[40rem]">
       <div aria-hidden="true" class="h-[1px] bg-slate-700" />
       <div class="flex items-center justify-between p-2">
         <p class="text-sm text-slate-500">
-          
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-            class=" text-cyan-600 transition hover:text-cyan-500"
-          >
-            Plinko Game Online
-          </a>
-          © 2024
+          <a href="/" target="_blank" rel="noreferrer" class="text-cyan-600 transition hover:text-cyan-500">Plinko Game Online</a> © 2024
         </p>
-        
-          href="https://github.com/plinko-game-online/plinko-game-online.github.io"
-          target="_blank"
-          rel="noreferrer"
-          class="flex items-center gap-1 p-1 text-sm text-slate-500 transition hover:text-cyan-500"
-        >
+        <a href="https://github.com/plinko-game-online/plinko-game-online.github.io" target="_blank" rel="noreferrer" class="flex items-center gap-1 p-1 text-sm text-slate-500 transition hover:text-cyan-500">
           <GitHubLogo class="size-4" weight="bold" />
           <span>Source Code</span>
         </a>
@@ -116,6 +104,7 @@
     </div>
   </footer>
 </div>
+
 <style>
   :global(body) {
     @apply bg-gray-800;
