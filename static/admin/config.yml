@@ -2,6 +2,8 @@ backend:
   name: github
   repo: free-plinko-game/free-plinko-game.github.io
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 media_folder: "static/logos"
 public_folder: "/logos"
@@ -19,7 +21,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Name", name: "name", widget: "string"}
-              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Logo", name: "logo", widget: "string"}
               - {label: "Bonus", name: "bonus", widget: "string"}
               - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1}
               - label: "Features"
@@ -42,7 +44,7 @@ collections:
             fields:
               - {label: "Rank", name: "rank", widget: "number", value_type: "int"}
               - {label: "Name", name: "name", widget: "string"}
-              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Logo", name: "logo", widget: "string"}
               - {label: "Bonus", name: "bonus", widget: "string"}
               - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1}
               - {label: "Payout", name: "payout", widget: "string"}
@@ -58,19 +60,3 @@ collections:
               - {label: "Min Deposit", name: "minDeposit", widget: "string", required: false}
               - {label: "Payout Time", name: "payoutTime", widget: "string", required: false}
               - {label: "Affiliate Link", name: "affiliateLink", widget: "string"}
-
-  - name: "reviews"
-    label: "Casino Reviews"
-    folder: "src/routes/reviews"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Casino Name", name: "title", widget: "string"}
-      - {label: "Logo", name: "logo", widget: "image"}
-      - {label: "Rating", name: "rating", widget: "number", value_type: "float"}
-      - {label: "Established", name: "established", widget: "string"}
-      - {label: "License", name: "license", widget: "string"}
-      - {label: "Min Deposit", name: "minDeposit", widget: "string"}
-      - {label: "Welcome Bonus", name: "welcomeBonus", widget: "string"}
-      - {label: "Affiliate Link", name: "affiliateLink", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
