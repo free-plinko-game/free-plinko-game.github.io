@@ -19,7 +19,7 @@
 <div class="relative flex min-h-dvh w-full flex-col">
   <Nav />
   
-  <div class="sticky top-14 z-10 w-full bg-gray-700 px-5 py-2 shadow-md">
+  <div class="sticky top-14 z-10 w-full bg-black border-b border-green-500/20 px-5 py-2 shadow-md">
     <div class="mx-auto max-w-7xl flex justify-center">
       <Balance />
     </div>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="mx-auto mt-16 max-w-4xl">
-      <div class="bg-gray-700 rounded-lg p-8 shadow-lg mb-12">
+      <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-8 shadow-lg shadow-green-500/10 mb-12">
         <h2 class="text-3xl font-bold text-white mb-4">About Plinko Game</h2>
         <div class="text-gray-300 space-y-4">
           <p>
@@ -68,14 +68,14 @@
         <div class="text-center mt-8">
           <a 
             href="/best-casinos" 
-            class="inline-block bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105"
+            class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-green-500/50"
           >
             View All Casinos →
           </a>
         </div>
       </div>
 
-      <div class="bg-gray-700 rounded-lg p-8 shadow-lg mb-12">
+      <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-8 shadow-lg shadow-green-500/10 mb-12">
         <h2 class="text-2xl font-bold text-white mb-4">How to Play Plinko</h2>
         <div class="text-gray-300 space-y-3">
           <ol class="list-decimal list-inside space-y-2">
@@ -96,11 +96,10 @@
   <SettingsWindow />
   <LiveStatsWindow />
   
-  <footer class="px-5 pb-4 pt-16">
+  <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-[40rem]">
-      <div aria-hidden="true" class="h-[1px] bg-slate-700" />
       <div class="flex items-center justify-center p-2">
-        <p class="text-sm text-slate-500">
+        <p class="text-sm text-gray-500">
           Plinko Game Online © 2024
         </p>
       </div>
@@ -110,6 +109,6 @@
 
 <style>
   :global(body) {
-    @apply bg-gray-800;
+    @apply bg-black;
   }
 </style>
