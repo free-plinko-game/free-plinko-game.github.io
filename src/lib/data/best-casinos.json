@@ -1,21 +1,21 @@
 [
   {
     "rank": 1,
-    "name": "Mafia Casino",
-    "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Mafia",
-    "bonus": "250% up to $4,000 + 150 Free Spins",
+    "name": "Stake Casino",
+    "logo": "/logos/stake.svg",
+    "bonus": "100% up to $500 + 200 Free Spins",
     "rating": 5.0,
     "payout": "N/A",
     "features": ["Large, regular bonuses", "Crypto support"],
-    "badges": ["Top Rated Casino Site", "New Casino"],
-    "minDeposit": null,
-    "payoutTime": null,
+    "badges": ["Top Rated Casino Site"],
+    "minDeposit": "$10",
+    "payoutTime": "Instant",
     "affiliateLink": "https://your-affiliate-link.com"
   },
   {
     "rank": 2,
     "name": "Joe Fortune Casino",
-    "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=JoeFortune",
+    "logo": "/logos/joefortune.svg",
     "bonus": "$5,000 + 450 Free Spins",
     "rating": 4.95,
     "payout": "> 98%",
@@ -27,6 +27,19 @@
   },
   {
     "rank": 3,
+    "name": "BC.Game",
+    "logo": "/logos/bcgame.png",
+    "bonus": "200% up to $1,000",
+    "rating": 4.7,
+    "payout": "> 95%",
+    "features": ["150+ cryptocurrencies", "Provably fair games", "1-2 hour withdrawals"],
+    "badges": ["New Casino"],
+    "minDeposit": "$5",
+    "payoutTime": "1-2 hours",
+    "affiliateLink": "https://your-affiliate-link.com"
+  },
+  {
+    "rank": 4,
     "name": "FairGo Casino",
     "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=FairGo",
     "bonus": "$1,000",
@@ -39,7 +52,7 @@
     "affiliateLink": "https://your-affiliate-link.com"
   },
   {
-    "rank": 4,
+    "rank": 5,
     "name": "CasinoChan",
     "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=CasinoChan",
     "bonus": "$1,500 + 120 Free Spins",
@@ -52,33 +65,7 @@
     "affiliateLink": "https://your-affiliate-link.com"
   },
   {
-    "rank": 5,
-    "name": "Stake Casino",
-    "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Stake",
-    "bonus": "100% up to $500",
-    "rating": 4.8,
-    "payout": "> 96%",
-    "features": ["Plinko Available", "Crypto Friendly", "Instant Withdrawals"],
-    "badges": [],
-    "minDeposit": "$10",
-    "payoutTime": "Instant",
-    "affiliateLink": "https://your-affiliate-link.com"
-  },
-  {
     "rank": 6,
-    "name": "BC.Game",
-    "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=BC.Game",
-    "bonus": "200% up to $1000",
-    "rating": 4.7,
-    "payout": "> 95%",
-    "features": ["Live Plinko", "Fast Payouts", "24/7 Support"],
-    "badges": [],
-    "minDeposit": "$5",
-    "payoutTime": "1-2 hours",
-    "affiliateLink": "https://your-affiliate-link.com"
-  },
-  {
-    "rank": 7,
     "name": "Rollbit",
     "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Rollbit",
     "bonus": "150% up to $750",
@@ -91,7 +78,7 @@
     "affiliateLink": "https://your-affiliate-link.com"
   },
   {
-    "rank": 8,
+    "rank": 7,
     "name": "Duelbits",
     "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Duelbits",
     "bonus": "$100 + 100 Free Spins",
@@ -104,7 +91,7 @@
     "affiliateLink": "https://your-affiliate-link.com"
   },
   {
-    "rank": 9,
+    "rank": 8,
     "name": "Roobet",
     "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Roobet",
     "bonus": "Welcome package available",
@@ -117,7 +104,7 @@
     "affiliateLink": "https://your-affiliate-link.com"
   },
   {
-    "rank": 10,
+    "rank": 9,
     "name": "Betplay",
     "logo": "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Betplay",
     "bonus": "100% up to $300",

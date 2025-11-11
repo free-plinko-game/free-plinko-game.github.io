@@ -1,7 +1,7 @@
 [
   {
     "name": "Stake Casino",
-    "logo": "https://via.placeholder.com/150x50/1a1a1a/00ff00?text=Stake",
+    "logo": "/logos/stake.svg",
     "bonus": "100% up to $500 + 200 Free Spins",
     "rating": 4.8,
     "features": ["Plinko Available", "Crypto Friendly", "Instant Withdrawals"],
@@ -10,7 +10,7 @@
   },
   {
     "name": "BC.Game",
-    "logo": "https://via.placeholder.com/150x50/1a1a1a/00ff00?text=BC.Game",
+    "logo": "/logos/bcgame.png",
     "bonus": "200% up to $1000",
     "rating": 4.7,
     "features": ["Live Plinko", "Fast Payouts", "24/7 Support"],
@@ -18,11 +18,11 @@
     "cta": "Claim Bonus"
   },
   {
-    "name": "Rollbit",
-    "logo": "https://via.placeholder.com/150x50/1a1a1a/00ff00?text=Rollbit",
-    "bonus": "150% up to $750",
-    "rating": 4.6,
-    "features": ["Provably Fair Plinko", "NFT Integration", "Quick Deposits"],
+    "name": "Joe Fortune Casino",
+    "logo": "/logos/joefortune.svg",
+    "bonus": "$5,000 + 450 Free Spins",
+    "rating": 4.95,
+    "features": ["Exceptional Daily Bonuses", "Wheel of Fortune"],
     "affiliateLink": "https://your-affiliate-link.com",
     "cta": "Join Now"
   }

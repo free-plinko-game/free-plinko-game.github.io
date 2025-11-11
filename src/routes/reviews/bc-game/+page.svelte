@@ -3,7 +3,7 @@
   
   const casino = {
     name: "BC.Game",
-    logo: "https://via.placeholder.com/200x80/1a1a1a/00ff00?text=BC.Game",
+    logo: "/logos/bcgame.png",
     rating: 4.7,
     established: "2017",
     license: "Curacao",
