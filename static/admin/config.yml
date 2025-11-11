@@ -1,0 +1,76 @@
+backend:
+  name: github
+  repo: free-plinko-game/free-plinko-game.github.io
+  branch: main
+
+media_folder: "static/logos"
+public_folder: "/logos"
+
+collections:
+  - name: "casinos"
+    label: "Homepage Casinos"
+    files:
+      - label: "Casino Cards"
+        name: "casinos"
+        file: "src/lib/data/casinos.json"
+        fields:
+          - label: "Casinos"
+            name: "casinos"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Bonus", name: "bonus", widget: "string"}
+              - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1}
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                field: {label: "Feature", name: "feature", widget: "string"}
+              - {label: "Affiliate Link", name: "affiliateLink", widget: "string"}
+              - {label: "CTA Button Text", name: "cta", widget: "string"}
+
+  - name: "best-casinos"
+    label: "Best Casinos Page"
+    files:
+      - label: "Casino Comparison"
+        name: "best-casinos"
+        file: "src/lib/data/best-casinos.json"
+        fields:
+          - label: "Casinos"
+            name: "casinos"
+            widget: "list"
+            fields:
+              - {label: "Rank", name: "rank", widget: "number", value_type: "int"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "Bonus", name: "bonus", widget: "string"}
+              - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1}
+              - {label: "Payout", name: "payout", widget: "string"}
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                field: {label: "Feature", name: "feature", widget: "string"}
+              - label: "Badges"
+                name: "badges"
+                widget: "list"
+                field: {label: "Badge", name: "badge", widget: "string"}
+                required: false
+              - {label: "Min Deposit", name: "minDeposit", widget: "string", required: false}
+              - {label: "Payout Time", name: "payoutTime", widget: "string", required: false}
+              - {label: "Affiliate Link", name: "affiliateLink", widget: "string"}
+
+  - name: "reviews"
+    label: "Casino Reviews"
+    folder: "src/routes/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Casino Name", name: "title", widget: "string"}
+      - {label: "Logo", name: "logo", widget: "image"}
+      - {label: "Rating", name: "rating", widget: "number", value_type: "float"}
+      - {label: "Established", name: "established", widget: "string"}
+      - {label: "License", name: "license", widget: "string"}
+      - {label: "Min Deposit", name: "minDeposit", widget: "string"}
+      - {label: "Welcome Bonus", name: "welcomeBonus", widget: "string"}
+      - {label: "Affiliate Link", name: "affiliateLink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
