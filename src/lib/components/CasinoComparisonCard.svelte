@@ -11,7 +11,6 @@
     minDeposit: string | null;
     payoutTime: string | null;
     affiliateLink: string;
-    reviewLink: string;
   };
   
   const stars = Array(5).fill('★');
@@ -32,7 +31,7 @@
     <div class="flex-1 grid grid-cols-1 md:grid-cols-12 gap-6">
       <div class="md:col-span-3 flex flex-col items-center md:items-start justify-center">
         <img src={casino.logo} alt={casino.name} class="h-12 object-contain mb-2" />
-        <a href={casino.reviewLink} class="text-green-600 hover:text-green-700 text-sm font-semibold">{casino.name}</a>
+        <p class="text-gray-900 text-sm font-semibold">{casino.name}</p>
       </div>
       
       <div class="md:col-span-3">
@@ -87,12 +86,6 @@
           class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-lg text-center transition-all transform hover:scale-105 text-lg shadow-lg"
         >
           PLAY NOW
-        </a>
-        <a 
-          href={casino.reviewLink}
-          class="text-orange-600 hover:text-orange-700 font-semibold text-sm underline"
-        >
-          {casino.name} Review
         </a>
       </div>
     </div>
