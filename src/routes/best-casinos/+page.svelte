@@ -1,19 +1,11 @@
 <script lang="ts">
-  import logo from '$lib/assets/logo.svg';
+  import Nav from '$lib/components/Nav.svelte';
   import CasinoComparisonCard from '$lib/components/CasinoComparisonCard.svelte';
   import casinosData from '$lib/data/best-casinos.json';
 </script>
 
 <div class="relative flex min-h-dvh w-full flex-col bg-gray-50">
-  <nav class="sticky top-0 z-10 w-full bg-gray-700 px-5 drop-shadow-lg">
-    <div class="mx-auto flex h-14 max-w-7xl items-center justify-between">
-      <a href="/"><img src={logo} alt="logo" class="h-6 sm:h-7" /></a>
-      <div class="flex gap-6">
-        <a href="/" class="text-gray-300 hover:text-white transition text-sm font-medium">Play Free</a>
-        <a href="/best-casinos" class="text-cyan-400 hover:text-cyan-300 transition text-sm font-medium">Best Casinos</a>
-      </div>
-    </div>
-  </nav>
+  <Nav />
   
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-7xl">

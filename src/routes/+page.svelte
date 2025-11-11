@@ -1,5 +1,5 @@
 <script lang="ts">
-  import logo from '$lib/assets/logo.svg';
+  import Nav from '$lib/components/Nav.svelte';
   import Balance from '$lib/components/Balance.svelte';
   import CasinoCard from '$lib/components/CasinoCard.svelte';
   import LiveStatsWindow from '$lib/components/LiveStatsWindow/LiveStatsWindow.svelte';
@@ -8,7 +8,6 @@
   import Sidebar from '$lib/components/Sidebar';
   import { setBalanceFromLocalStorage, writeBalanceToLocalStorage } from '$lib/utils/game';
   import casinosData from '$lib/data/casinos.json';
-  import GitHubLogo from 'phosphor-svelte/lib/GithubLogo';
   import { onMount } from 'svelte';
   onMount(() => {
     setBalanceFromLocalStorage();
@@ -18,14 +17,13 @@
 <svelte:window on:beforeunload={writeBalanceToLocalStorage} />
 
 <div class="relative flex min-h-dvh w-full flex-col">
-  <nav class="sticky top-0 z-10 w-full bg-gray-700 px-5 drop-shadow-lg">
-    <div class="mx-auto flex h-14 max-w-7xl items-center justify-between">
-      <img src={logo} alt="logo" class="h-6 sm:h-7" />
-      <div class="mx-auto">
-        <Balance />
-      </div>
+  <Nav />
+  
+  <div class="sticky top-14 z-10 w-full bg-gray-700 px-5 py-2 shadow-md">
+    <div class="mx-auto max-w-7xl flex justify-center">
+      <Balance />
     </div>
-  </nav>
+  </div>
   
   <div class="flex-1 px-5">
     <div class="mx-auto mt-5 min-w-[300px] max-w-xl drop-shadow-xl md:mt-10 lg:max-w-7xl">
@@ -65,6 +63,15 @@
           {#each casinosData as casino}
             <CasinoCard {casino} />
           {/each}
+        </div>
+        
+        <div class="text-center mt-8">
+          <a 
+            href="/best-casinos" 
+            class="inline-block bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105"
+          >
+            View All Casinos →
+          </a>
         </div>
       </div>
 
