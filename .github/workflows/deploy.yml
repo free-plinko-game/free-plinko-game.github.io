@@ -1,12 +1,10 @@
 
-mkdir -p .github/workflows
-
-cat > .github/workflows/deploy.yml << 'EOF'
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'main'
+    branches:
+      - main
 
 jobs:
   build_site:
