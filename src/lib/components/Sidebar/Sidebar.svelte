@@ -161,6 +161,7 @@
         on:click={() => {
           $betAmount = parseFloat(($betAmount / 2).toFixed(2));
         }}
+        aria-label="Halve bet amount"
         class="touch-manipulation bg-slate-600 px-4 font-bold diagonal-fractions text-white transition-colors disabled:cursor-not-allowed disabled:opacity-50 hover:[&:not(:disabled)]:bg-slate-500 active:[&:not(:disabled)]:bg-slate-400"
       >
         1/2
@@ -170,6 +171,7 @@
         on:click={() => {
           $betAmount = parseFloat(($betAmount * 2).toFixed(2));
         }}
+        aria-label="Double bet amount"
         class="relative touch-manipulation rounded-r-md bg-slate-600 px-4 text-sm font-bold text-white transition-colors after:absolute after:left-0 after:inline-block after:h-1/2 after:w-[2px] after:bg-slate-800 after:content-[''] disabled:cursor-not-allowed disabled:opacity-50 hover:[&:not(:disabled)]:bg-slate-500 active:[&:not(:disabled)]:bg-slate-400"
       >
         2×
@@ -209,7 +211,7 @@
       <div class="flex items-center gap-1">
         <label for="autoBetInput" class="text-sm font-medium text-slate-300">Number of Bets</label>
         <Popover.Root>
-          <Popover.Trigger class="p-1">
+          <Popover.Trigger class="p-1" aria-label="Number of bets help">
             <Question class="text-slate-300" weight="bold" />
           </Popover.Trigger>
           <Popover.Content
@@ -270,6 +272,7 @@
           <button
             use:builder.action
             {...builder}
+            aria-label="Open game settings"
             on:click={() => ($isGameSettingsOpen = !$isGameSettingsOpen)}
             class={twMerge(
               'rounded-full p-2 text-slate-300 transition hover:bg-slate-600 active:bg-slate-500',
@@ -295,6 +298,7 @@
           <button
             use:builder.action
             {...builder}
+            aria-label="Open live stats"
             on:click={() => ($isLiveStatsOpen = !$isLiveStatsOpen)}
             class={twMerge(
               'rounded-full p-2 text-slate-300 transition hover:bg-slate-600 active:bg-slate-500',

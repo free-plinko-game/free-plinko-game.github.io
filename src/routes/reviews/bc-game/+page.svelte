@@ -212,7 +212,7 @@
   <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-7xl">
       <div class="flex items-center justify-center p-4">
-        <p class="text-sm text-gray-500">
+        <p class="text-sm text-gray-400">
           Plinko Game Online © 2025
         </p>
       </div>
