@@ -26,10 +26,7 @@
           <div class="flex items-center gap-3 mb-1">
             <img src={casino.logo} alt={casino.name} class="h-12 object-contain" />
             {#if casino.slug}
-              <a 
-                href="/reviews/{casino.slug}"
-                class="text-2xl font-bold text-white hover:text-green-400 transition-colors"
-              >
+              <a href="/reviews/{casino.slug}" class="text-2xl font-bold text-white hover:text-green-400 transition-colors">
                 {casino.name}
               </a>
             {:else}
@@ -39,9 +36,7 @@
           {#if casino.badges && casino.badges.length > 0}
             <div class="flex gap-2">
               {#each casino.badges as badge}
-                <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full border border-green-500/30">
-                  {badge}
-                </span>
+                <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full border border-green-500/30">{badge}</span>
               {/each}
             </div>
           {/if}
@@ -88,29 +83,15 @@
       <h4 class="text-white font-semibold mb-2 text-sm">Key Features:</h4>
       <div class="flex flex-wrap gap-2">
         {#each casino.features as feature}
-          <span class="bg-zinc-800 text-gray-300 text-xs px-3 py-1 rounded-full border border-green-500/20">
-            {feature}
-          </span>
+          <span class="bg-zinc-800 text-gray-300 text-xs px-3 py-1 rounded-full border border-green-500/20">{feature}</span>
         {/each}
       </div>
     </div>
 
     <div class="flex gap-3">
-      
-        href={casino.affiliateLink}
-        target="_blank"
-        rel="noopener noreferrer sponsored"
-        class="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105 shadow-lg shadow-green-500/50"
-      >
-        PLAY NOW
-      </a>
+      <a href={casino.affiliateLink} target="_blank" rel="noopener noreferrer sponsored" class="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105 shadow-lg shadow-green-500/50">PLAY NOW</a>
       {#if casino.slug}
-        
-          href="/reviews/{casino.slug}"
-          class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-6 rounded-lg text-center transition-all border border-green-500/20 hover:border-green-500/50"
-        >
-          Read Review
-        </a>
+        <a href="/reviews/{casino.slug}" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-6 rounded-lg text-center transition-all border border-green-500/20 hover:border-green-500/50">Read Review</a>
       {/if}
     </div>
   </div>
