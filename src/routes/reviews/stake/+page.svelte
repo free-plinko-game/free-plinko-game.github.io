@@ -1,6 +1,8 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+  import ReviewSchema from '$lib/components/ReviewSchema.svelte';
   import Author from '$lib/components/Author.svelte';
   
   const casino = {
@@ -34,6 +36,22 @@
     { label: 'Reviews', href: '/reviews' },
     { label: 'Stake Casino' }
   ];
+  
+  const breadcrumbSchema = [
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+    { name: 'Stake Casino', url: '/reviews/stake' }
+  ];
+  
+  const reviewSchema = {
+    name: "Stake Casino",
+    rating: 4.8,
+    reviewBody: "Stake Casino is a leading crypto casino offering instant withdrawals, extensive Plinko variants, and a generous VIP program. With provably fair technology and 24/7 support, it's one of the best options for crypto players.",
+    datePublished: "2025-11-13",
+    dateModified: "2025-11-13",
+    author: "Xavier Rudd",
+    authorUrl: "https://xavierruddauthor.com/"
+  };
 </script>
 
 <svelte:head>
@@ -41,6 +59,9 @@
   <meta name="description" content="Comprehensive Stake Casino review. Top-rated crypto casino with instant payouts, provably fair Plinko games, and massive welcome bonus." />
   <link rel="canonical" href="https://free-plinko-game.github.io/reviews/stake" />
 </svelte:head>
+
+<BreadcrumbSchema items={breadcrumbSchema} />
+<ReviewSchema casino={reviewSchema} />
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
@@ -142,6 +163,7 @@
           <div class="text-gray-300 space-y-3">
             <p>Stake Casino features multiple Plinko variants, making it a top destination for Plinko enthusiasts. Their original Plinko game is one of the most popular on the platform, with customizable settings including risk levels (low, medium, high) and row configurations (8-16 rows).</p>
             <p>All Plinko games at Stake use provably fair technology, allowing players to verify the fairness of each round. The platform's implementation is considered one of the best in the industry, with smooth animations and quick gameplay.</p>
+            <p>For more information on playing Plinko, check out our <a href="/how-to-play" class="text-green-400 hover:underline">complete guide on how to play Plinko</a>.</p>
           </div>
         </section>
 
@@ -155,6 +177,17 @@
             </div>
           </div>
         </section>
+        
+        <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
+          <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/reviews/bc-game" class="text-green-400 hover:text-green-300 text-sm font-semibold">BC.Game Review →</a>
+            <a href="/reviews/joe-fortune" class="text-green-400 hover:text-green-300 text-sm font-semibold">Joe Fortune Review →</a>
+            <a href="/reviews/rollbit" class="text-green-400 hover:text-green-300 text-sm font-semibold">Rollbit Review →</a>
+          </div>
+          <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
+        </div>
 
       </div>
 

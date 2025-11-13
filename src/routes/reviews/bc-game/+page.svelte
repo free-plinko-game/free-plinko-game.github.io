@@ -1,6 +1,8 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+  import ReviewSchema from '$lib/components/ReviewSchema.svelte';
   import Author from '$lib/components/Author.svelte';
   
   const casino = {
@@ -34,6 +36,22 @@
     { label: 'Reviews', href: '/reviews' },
     { label: 'BC.Game' }
   ];
+  
+  const breadcrumbSchema = [
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+    { name: 'BC.Game', url: '/reviews/bc-game' }
+  ];
+  
+  const reviewSchema = {
+    name: "BC.Game",
+    rating: 4.7,
+    reviewBody: "BC.Game is a leading crypto casino with support for 150+ cryptocurrencies and provably fair Plinko games. Fast withdrawals, extensive game selection, and generous bonuses make it a top choice for crypto players.",
+    datePublished: "2025-11-13",
+    dateModified: "2025-11-13",
+    author: "Xavier Rudd",
+    authorUrl: "https://xavierruddauthor.com/"
+  };
 </script>
 
 <svelte:head>
@@ -41,6 +59,9 @@
   <meta name="description" content="BC.Game review: Leading crypto casino with 150+ cryptocurrencies, provably fair Plinko, fast withdrawals, and massive 200% welcome bonus." />
   <link rel="canonical" href="https://free-plinko-game.github.io/reviews/bc-game" />
 </svelte:head>
+
+<BreadcrumbSchema items={breadcrumbSchema} />
+<ReviewSchema casino={reviewSchema} />
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
@@ -149,8 +170,20 @@
           <div class="text-gray-300 space-y-3">
             <p>BC.Game's Plinko implementation uses provably fair technology, allowing players to verify the randomness and fairness of every single drop. This transparency is crucial for building trust with players who want assurance that games aren't rigged.</p>
             <p>The platform offers multiple Plinko game modes with different risk levels and configurations. Whether you prefer conservative low-risk play or high-volatility action, BC.Game's Plinko games cater to all playing styles.</p>
+            <p>New to Plinko? Check out our <a href="/how-to-play" class="text-green-400 hover:underline">comprehensive guide on how to play Plinko</a>.</p>
           </div>
         </section>
+        
+        <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
+          <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/reviews/stake" class="text-green-400 hover:text-green-300 text-sm font-semibold">Stake Review →</a>
+            <a href="/reviews/joe-fortune" class="text-green-400 hover:text-green-300 text-sm font-semibold">Joe Fortune Review →</a>
+            <a href="/reviews/rollbit" class="text-green-400 hover:text-green-300 text-sm font-semibold">Rollbit Review →</a>
+          </div>
+          <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
+        </div>
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
