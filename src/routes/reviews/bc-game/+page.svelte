@@ -9,7 +9,7 @@
     license: "Curacao",
     minDeposit: "$5",
     welcomeBonus: "200% up to $1,000",
-    affiliateLink: "https://your-affiliate-link.com"
+    affiliateLink: "https://bc.game"
   };
   
   const pros = [
