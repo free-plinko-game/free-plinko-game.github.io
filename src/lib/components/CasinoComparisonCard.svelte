@@ -20,7 +20,7 @@
     <div class="flex items-start justify-between mb-4">
       <div class="flex items-center gap-4">
         <div class="flex items-center gap-3">
-          <img src={casino.logo} alt={casino.name} class="h-16 object-contain" />
+          <img src={casino.logo} alt="{casino.name} logo" width="200" height="80" class="h-16 object-contain" />
           <div>
             {#if casino.slug}
               <a href="/reviews/{casino.slug}" class="text-2xl font-bold text-white hover:text-green-400 transition-colors block mb-1">{casino.name}</a>
@@ -39,7 +39,7 @@
       </div>
       <div class="text-right">
         <div class="flex items-center gap-1 justify-end mb-1">
-          <span class="text-green-400 text-2xl">★</span>
+          <span class="text-green-400 text-2xl" aria-hidden="true">★</span>
           <span class="text-white font-bold text-xl">{casino.rating}</span>
         </div>
         <p class="text-gray-400 text-sm">Rating</p>
@@ -84,7 +84,7 @@
     </div>
 
     <div class="flex gap-3">
-      <a href={casino.affiliateLink} target="_blank" rel="noopener noreferrer sponsored" class="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105 shadow-lg shadow-green-500/50">PLAY NOW</a>
+      <a href={casino.affiliateLink} rel="nofollow noopener noreferrer" class="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105 shadow-lg shadow-green-500/50">PLAY NOW</a>
       {#if casino.slug}
         <a href="/reviews/{casino.slug}" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-6 rounded-lg text-center transition-all border border-green-500/20 hover:border-green-500/50">Read Review</a>
       {/if}

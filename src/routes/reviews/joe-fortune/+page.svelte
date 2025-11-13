@@ -1,5 +1,9 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+  import ReviewSchema from '$lib/components/ReviewSchema.svelte';
+  import Author from '$lib/components/Author.svelte';
   
   const casino = {
     name: "Joe Fortune Casino",
@@ -14,30 +18,58 @@
   
   const pros = [
     "Massive $5,000 welcome package",
-    "450 free spins included",
-    "Wheel of Fortune daily bonus",
-    "Australian-friendly casino",
+    "Wheel of Fortune daily bonuses",
     "Excellent pokies selection",
-    "Fast 1-hour withdrawals"
+    "Australian-friendly casino",
+    "Multiple payment options",
+    "Responsive customer support"
   ];
   
   const cons = [
-    "Limited live dealer games",
+    "Slower withdrawals (from 1 hour)",
     "Higher wagering requirements",
-    "Fewer crypto options than competitors"
+    "Limited crypto options"
   ];
+  
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Reviews', href: '/reviews' },
+    { label: 'Joe Fortune Casino' }
+  ];
+  
+  const breadcrumbSchema = [
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+    { name: 'Joe Fortune Casino', url: '/reviews/joe-fortune' }
+  ];
+  
+  const reviewSchema = {
+    name: "Joe Fortune Casino",
+    rating: 4.95,
+    reviewBody: "Joe Fortune Casino offers a massive $5,000 welcome package with 450 free spins. Known for exceptional daily bonuses through the Wheel of Fortune feature and excellent pokies selection, it's a top choice for Australian players.",
+    datePublished: "2025-11-13",
+    dateModified: "2025-11-13",
+    author: "Xavier Rudd",
+    authorUrl: "https://xavierruddauthor.com/"
+  };
 </script>
 
 <svelte:head>
-  <title>Joe Fortune Casino Review 2025 - $5,000 Bonus + 450 Free Spins</title>
-  <meta name="description" content="Joe Fortune Casino review: Massive $5,000 welcome bonus, 450 free spins, Wheel of Fortune daily rewards. Australian-friendly with fast payouts." />
+  <title>Joe Fortune Casino Review 2025 - $5,000 + 450 Free Spins</title>
+  <meta name="description" content="Joe Fortune Casino review: Massive $5,000 welcome bonus, Wheel of Fortune daily bonuses, and excellent game selection. Perfect for Australian players." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/joe-fortune" />
 </svelte:head>
+
+<BreadcrumbSchema items={breadcrumbSchema} />
+<ReviewSchema casino={reviewSchema} />
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
   
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-5xl">
+      
+      <Breadcrumbs items={breadcrumbs} />
       
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
@@ -75,7 +107,7 @@
         </div>
         <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-4 text-center">
           <p class="text-gray-400 text-sm mb-1">Payout Speed</p>
-          <p class="text-white font-bold text-xl">1 hour</p>
+          <p class="text-white font-bold text-xl">From 1 hour</p>
         </div>
         <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-4 text-center">
           <p class="text-gray-400 text-sm mb-1">License</p>
@@ -114,46 +146,65 @@
 
       <div class="space-y-8">
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Welcome Bonus & Promotions</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Massive Welcome Package</h2>
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
             <p class="text-green-400 font-bold text-2xl mb-2">{casino.welcomeBonus}</p>
-            <p class="text-gray-300">One of the largest welcome packages in the industry, spread across your first 10 deposits.</p>
+            <p class="text-gray-300">One of the largest welcome packages in the online casino industry.</p>
           </div>
           <div class="text-gray-300 space-y-3">
-            <p>Joe Fortune offers an exceptional welcome bonus that stands out in the crowded online casino market. The $5,000 package is distributed across your first 10 deposits, with 450 free spins included on popular pokies.</p>
-            <p>The Wheel of Fortune feature is a unique daily bonus system where players can spin for prizes including free spins, deposit bonuses, and cashback. This innovative feature keeps players engaged and rewarded for regular play.</p>
+            <p>Joe Fortune's welcome package is truly exceptional, offering up to $5,000 in bonuses plus 450 free spins across your first nine deposits. This extended bonus structure means you get value over multiple deposits, not just the first one.</p>
+            <p>The package includes a 200% match on your first deposit, followed by generous matches on subsequent deposits. This approach rewards loyal players and gives you more opportunities to explore the casino's extensive game library.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Plinko & Game Selection</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Wheel of Fortune Daily Bonuses</h2>
           <div class="text-gray-300 space-y-3">
-            <p>Joe Fortune features Plinko alongside an extensive library of over 200 pokies and casino games. While the focus is on pokies (slot machines), the Plinko offering provides a nice change of pace with its simple yet engaging mechanics.</p>
-            <p>The casino partners with top software providers to ensure high-quality games with excellent graphics and smooth gameplay. The mobile-optimized platform allows you to enjoy Plinko and other games on any device.</p>
+            <p>One of Joe Fortune's standout features is the Wheel of Fortune, which gives players daily bonus opportunities. Spin the wheel each day to win free spins, bonus cash, or other rewards. This feature adds an extra layer of excitement and value for regular players.</p>
+            <p>The Wheel of Fortune rewards are substantial and can significantly boost your bankroll. It's one of the reasons why Joe Fortune has such high player retention and loyalty.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Banking & Withdrawals</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Game Selection & Plinko</h2>
           <div class="text-gray-300 space-y-3">
-            <p>Joe Fortune offers multiple payment methods including credit cards, cryptocurrency, and bank transfers. Crypto deposits are instant, while card deposits are processed within minutes.</p>
-            <p>Withdrawals are processed quickly, with most crypto withdrawals completed within 1 hour. The minimum withdrawal is $100, and there's a monthly withdrawal limit of $10,000 for regular players (higher for VIPs).</p>
+            <p>Joe Fortune features an extensive collection of pokies (slots) from top providers, along with table games and specialty games including Plinko. The platform is particularly popular with Australian players due to its game selection and payment options.</p>
+            <p>The Plinko implementation offers multiple betting levels and risk configurations, allowing you to customize your gameplay experience. Whether you're a casual player or high roller, there's a Plinko variant for you.</p>
+            <p>Learn more about playing Plinko in our <a href="/how-to-play" class="text-green-400 hover:underline">complete Plinko guide</a>.</p>
           </div>
         </section>
+        
+        <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
+          <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/reviews/stake" class="text-green-400 hover:text-green-300 text-sm font-semibold">Stake Review →</a>
+            <a href="/reviews/bc-game" class="text-green-400 hover:text-green-300 text-sm font-semibold">BC.Game Review →</a>
+            <a href="/reviews/fairgo" class="text-green-400 hover:text-green-300 text-sm font-semibold">FairGo Review →</a>
+          </div>
+          <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
+        </div>
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
         <h3 class="text-3xl font-bold text-white mb-4">Ready to Claim Your $5,000 Bonus?</h3>
-        <p class="text-gray-300 mb-6">Start playing Plinko and pokies with one of the industry's biggest welcome packages.</p>
+        <p class="text-gray-300 mb-6">Join Joe Fortune and get started with the biggest welcome package online.</p>
         <a 
           href={casino.affiliateLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
           class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 text-lg"
         >
-          CLAIM YOUR BONUS NOW →
+          CLAIM BONUS NOW →
         </a>
       </div>
+      
+      <Author 
+        name="Xavier Rudd" 
+        bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
+        website="https://xavierruddauthor.com/"
+        lastUpdated="November 13, 2025"
+      />
 
     </div>
   </div>

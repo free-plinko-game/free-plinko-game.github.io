@@ -2,17 +2,32 @@
   import Nav from '$lib/components/Nav.svelte';
   import Balance from '$lib/components/Balance.svelte';
   import CasinoCard from '$lib/components/CasinoCard.svelte';
-  import LiveStatsWindow from '$lib/components/LiveStatsWindow/LiveStatsWindow.svelte';
-  import Plinko from '$lib/components/Plinko';
-  import SettingsWindow from '$lib/components/SettingsWindow';
-  import Sidebar from '$lib/components/Sidebar';
   import FAQ from '$lib/components/FAQ.svelte';
   import { setBalanceFromLocalStorage, writeBalanceToLocalStorage } from '$lib/utils/game';
   import casinosData from '$lib/data/casinos.json';
   import { onMount } from 'svelte';
   
-  onMount(() => {
+  // Lazy load heavy components
+  let Plinko: any;
+  let SettingsWindow: any;
+  let LiveStatsWindow: any;
+  let Sidebar: any;
+  
+  onMount(async () => {
     setBalanceFromLocalStorage();
+    
+    // Lazy load Plinko and other heavy components
+    const [plinkoModule, settingsModule, liveStatsModule, sidebarModule] = await Promise.all([
+      import('$lib/components/Plinko'),
+      import('$lib/components/SettingsWindow'),
+      import('$lib/components/LiveStatsWindow/LiveStatsWindow.svelte'),
+      import('$lib/components/Sidebar')
+    ]);
+    
+    Plinko = plinkoModule.default;
+    SettingsWindow = settingsModule.default;
+    LiveStatsWindow = liveStatsModule.default;
+    Sidebar = sidebarModule.default;
   });
   
   const faqs = [
@@ -68,9 +83,21 @@
   <div class="flex-1 px-5">
     <div class="mx-auto mt-5 min-w-[300px] max-w-xl drop-shadow-xl md:mt-10 lg:max-w-7xl">
       <div class="flex flex-col-reverse overflow-hidden rounded-lg lg:w-full lg:flex-row">
-        <Sidebar />
+        {#if Sidebar}
+          <svelte:component this={Sidebar} />
+        {:else}
+          <div class="w-full lg:w-80 bg-zinc-900 p-4">
+            <div class="animate-pulse h-96 bg-zinc-800 rounded"></div>
+          </div>
+        {/if}
         <div class="flex-1">
-          <Plinko />
+          {#if Plinko}
+            <svelte:component this={Plinko} />
+          {:else}
+            <div class="bg-zinc-900 h-[600px] flex items-center justify-center">
+              <div class="text-white">Loading Plinko...</div>
+            </div>
+          {/if}
         </div>
       </div>
     </div>
@@ -137,8 +164,12 @@
     </div>
   </div>
 
-  <SettingsWindow />
-  <LiveStatsWindow />
+  {#if SettingsWindow}
+    <svelte:component this={SettingsWindow} />
+  {/if}
+  {#if LiveStatsWindow}
+    <svelte:component this={LiveStatsWindow} />
+  {/if}
   
   <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-[40rem]">

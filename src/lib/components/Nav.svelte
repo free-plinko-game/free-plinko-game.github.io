@@ -9,7 +9,7 @@
 <nav class="sticky top-0 z-50 w-full border-b border-green-500/20 bg-black/95 backdrop-blur-sm">
   <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-5">
     <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
-      <img src="/logo.svg" alt="The Free Plinko Game" class="h-12" />
+      <img src="/logo.svg" alt="The Free Plinko Game" width="280" height="60" class="h-12" />
     </a>
     
     <div class="flex items-center gap-6">

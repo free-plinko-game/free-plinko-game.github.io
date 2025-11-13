@@ -3,16 +3,20 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // Consult https://kit.svelte.dev/docs/integrations#preprocessors
-  // for more information about preprocessors
-  preprocess: vitePreprocess(),
-
-  kit: {
-    // Static site generation (SSG) is used: https://kit.svelte.dev/docs/adapter-static
-    adapter: adapter({
-      strict: false,
-    }),
-  },
+	preprocess: vitePreprocess(),
+	
+	kit: {
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			precompress: true, // Gzip/Brotli compression
+			strict: true
+		}),
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/free-plinko-game.github.io' : ''
+		}
+	}
 };
 
 export default config;
