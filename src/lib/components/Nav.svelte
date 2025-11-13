@@ -14,12 +14,7 @@
     
     <div class="flex items-center gap-6">
       {#each navItems as item}
-        
-          href={item.href}
-          class="text-sm font-medium text-gray-300 transition-colors hover:text-green-400"
-        >
-          {item.label}
-        </a>
+        <a href={item.href} class="text-sm font-medium text-gray-300 transition-colors hover:text-green-400">{item.label}</a>
       {/each}
     </div>
   </div>
