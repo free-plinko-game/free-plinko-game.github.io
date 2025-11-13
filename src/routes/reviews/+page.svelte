@@ -3,6 +3,15 @@
   
   const reviews = [
     {
+      name: "Stake Casino",
+      slug: "stake",
+      logo: "/logos/stake.svg",
+      rating: 4.8,
+      bonus: "100% up to $500 + 200 Free Spins",
+      excerpt: "Leading crypto casino with extensive Plinko options, instant withdrawals, and VIP rewards.",
+      pros: ["Instant withdrawals", "VIP program", "Crypto-friendly"]
+    },
+    {
       name: "BC.Game",
       slug: "bc-game",
       logo: "/logos/bcgame.png",
@@ -10,9 +19,77 @@
       bonus: "200% up to $1,000",
       excerpt: "Leading crypto casino with extensive Plinko options and fast withdrawals.",
       pros: ["150+ cryptocurrencies", "Provably fair games", "1-2 hour withdrawals"]
+    },
+    {
+      name: "Joe Fortune Casino",
+      slug: "joe-fortune",
+      logo: "/logos/joefortune.svg",
+      rating: 4.95,
+      bonus: "$5,000 + 450 Free Spins",
+      excerpt: "Massive welcome package with Wheel of Fortune daily bonuses and excellent pokies selection.",
+      pros: ["Huge welcome bonus", "Wheel of Fortune", "Australian-friendly"]
+    },
+    {
+      name: "FairGo Casino",
+      slug: "fairgo",
+      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=FairGo",
+      rating: 4.95,
+      bonus: "$1,000 Welcome Package",
+      excerpt: "Fair wagering requirements and excellent game variety with multiple payment options.",
+      pros: ["Fair terms", "Multiple payment methods", "24/7 support"]
+    },
+    {
+      name: "CasinoChan",
+      slug: "casinochan",
+      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=CasinoChan",
+      rating: 4.95,
+      bonus: "$1,500 + 120 Free Spins",
+      excerpt: "Massive game library with 2000+ games and generous weekly promotions.",
+      pros: ["2000+ games", "Weekly bonuses", "VIP program"]
+    },
+    {
+      name: "Rollbit",
+      slug: "rollbit",
+      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Rollbit",
+      rating: 4.6,
+      bonus: "150% up to $750",
+      excerpt: "Innovative Web3 casino with NFT integration and provably fair Plinko games.",
+      pros: ["NFT integration", "Provably fair", "Instant payouts"]
+    },
+    {
+      name: "Duelbits",
+      slug: "duelbits",
+      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Duelbits",
+      rating: 4.5,
+      bonus: "$100 + 100 Free Spins",
+      excerpt: "Multiple game modes with crypto cashback and competitive features.",
+      pros: ["Crypto cashback", "Battle modes", "Sports betting"]
+    },
+    {
+      name: "Roobet",
+      slug: "roobet",
+      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Roobet",
+      rating: 4.4,
+      bonus: "Welcome package available",
+      excerpt: "Original exclusive games with strong social features and streaming community.",
+      pros: ["Original games", "Social features", "Instant withdrawals"]
+    },
+    {
+      name: "Betplay",
+      slug: "betplay",
+      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Betplay",
+      rating: 4.3,
+      bonus: "100% up to $300",
+      excerpt: "Combined casino and sportsbook perfect for players who enjoy both.",
+      pros: ["Sports betting", "Live chat", "Flexible bonus"]
     }
   ];
 </script>
+
+<svelte:head>
+  <title>Casino Reviews 2025 - In-Depth Plinko Casino Analysis</title>
+  <meta name="description" content="Comprehensive reviews of the best Plinko casinos. Expert analysis of bonuses, payouts, games, and player experience." />
+</svelte:head>
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
@@ -67,13 +144,13 @@
       </div>
       
       <div class="mt-12 bg-zinc-900 border border-green-500/20 rounded-lg p-8 text-center">
-        <h3 class="text-2xl font-bold text-white mb-3">More Reviews Coming Soon</h3>
-        <p class="text-gray-400 mb-6">We're constantly reviewing new casinos. Check back regularly for the latest additions.</p>
+        <h3 class="text-2xl font-bold text-white mb-3">Try Plinko for Free First</h3>
+        <p class="text-gray-400 mb-6">Practice with our free Plinko game before playing for real money.</p>
         <a 
-          href="/best-casinos" 
+          href="/" 
           class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-8 rounded-lg transition-all"
         >
-          View All Casinos
+          Play Free Plinko
         </a>
       </div>
     </div>
