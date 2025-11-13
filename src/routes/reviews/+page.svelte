@@ -83,7 +83,7 @@
     <div class="mx-auto max-w-7xl">
       <div class="flex items-center justify-center p-4">
         <p class="text-sm text-gray-500">
-          Plinko Game Online © 2024
+          Plinko Game Online © 2025
         </p>
       </div>
     </div>
