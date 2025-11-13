@@ -15,7 +15,7 @@
     {
       name: "BC.Game",
       slug: "bc-game",
-      logo: "/logos/bcgame.png",
+      logo: "/logos/bcgame.svg",
       rating: 4.7,
       bonus: "200% up to $1,000",
       excerpt: "Leading crypto casino with extensive Plinko options and fast withdrawals.",

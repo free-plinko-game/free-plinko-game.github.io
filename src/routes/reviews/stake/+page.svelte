@@ -1,5 +1,7 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import Author from '$lib/components/Author.svelte';
   
   const casino = {
     name: "Stake Casino",
@@ -26,11 +28,18 @@
     "Not available in all jurisdictions",
     "High wagering requirements on bonuses"
   ];
+  
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Reviews', href: '/reviews' },
+    { label: 'Stake Casino' }
+  ];
 </script>
 
 <svelte:head>
   <title>Stake Casino Review 2025 - Crypto Plinko Expert Analysis</title>
   <meta name="description" content="Comprehensive Stake Casino review. Top-rated crypto casino with instant payouts, provably fair Plinko games, and massive welcome bonus." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/stake" />
 </svelte:head>
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
@@ -38,6 +47,8 @@
   
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-5xl">
+      
+      <Breadcrumbs items={breadcrumbs} />
       
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
@@ -160,6 +171,13 @@
         </a>
         <p class="text-green-400 text-sm mt-4 font-semibold">{casino.welcomeBonus}</p>
       </div>
+      
+      <Author 
+        name="Xavier Rudd" 
+        bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
+        website="https://xavierruddauthor.com/"
+        lastUpdated="November 13, 2025"
+      />
 
     </div>
   </div>
