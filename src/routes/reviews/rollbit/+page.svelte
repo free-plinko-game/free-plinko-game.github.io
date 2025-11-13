@@ -3,7 +3,7 @@
   
   const casino = {
     name: "Rollbit",
-    logo: "https://via.placeholder.com/200x80/1a1a1a/00ff00?text=Rollbit",
+    logo: "/logos/rollbit.svg",
     rating: 4.6,
     established: "2020",
     license: "Curacao",

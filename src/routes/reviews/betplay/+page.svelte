@@ -3,7 +3,7 @@
   
   const casino = {
     name: "Betplay",
-    logo: "https://via.placeholder.com/200x80/1a1a1a/00ff00?text=Betplay",
+    logo: "/logos/betplay.svg",
     rating: 4.3,
     established: "2018",
     license: "Curacao",

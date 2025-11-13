@@ -3,7 +3,7 @@
   
   const casino = {
     name: "FairGo Casino",
-    logo: "https://via.placeholder.com/200x80/1a1a1a/00ff00?text=FairGo",
+    logo: "/logos/fairgo.svg",
     rating: 4.95,
     established: "2017",
     license: "Curacao",

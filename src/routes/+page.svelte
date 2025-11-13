@@ -6,12 +6,41 @@
   import Plinko from '$lib/components/Plinko';
   import SettingsWindow from '$lib/components/SettingsWindow';
   import Sidebar from '$lib/components/Sidebar';
+  import FAQ from '$lib/components/FAQ.svelte';
   import { setBalanceFromLocalStorage, writeBalanceToLocalStorage } from '$lib/utils/game';
   import casinosData from '$lib/data/casinos.json';
   import { onMount } from 'svelte';
+  
   onMount(() => {
     setBalanceFromLocalStorage();
   });
+  
+  const faqs = [
+    {
+      question: "Is Plinko a game of skill or luck?",
+      answer: "Plinko is primarily a game of luck. While you can choose where to drop the ball and select risk levels, the path the ball takes is determined by physics and randomness as it bounces off the pegs. No strategy can guarantee wins."
+    },
+    {
+      question: "Can I play Plinko for real money?",
+      answer: "Yes! Many online casinos offer Plinko for real money. You can practice with our free version first, then play at licensed casinos like Stake, BC.Game, or Joe Fortune when you're ready."
+    },
+    {
+      question: "What are the best Plinko strategies?",
+      answer: "The most important strategy is bankroll management. Set a budget and stick to it. Choose risk levels based on your comfort - low risk for steady smaller wins, high risk for bigger potential payouts. Remember that higher risk means higher volatility."
+    },
+    {
+      question: "Is online Plinko fair?",
+      answer: "Reputable online casinos use provably fair technology for Plinko, allowing you to verify each result's randomness. Always play at licensed casinos that use certified random number generators (RNG)."
+    },
+    {
+      question: "What's the best casino for playing Plinko?",
+      answer: "Stake Casino is highly rated for Plinko with instant crypto withdrawals and provably fair games. BC.Game and Joe Fortune are also excellent choices. Check our <a href='/best-casinos' class='text-green-400 hover:underline'>casino comparison page</a> for detailed reviews."
+    },
+    {
+      question: "How do I withdraw my Plinko winnings?",
+      answer: "Withdrawal methods vary by casino but typically include cryptocurrency (fastest), e-wallets, credit cards, or bank transfers. Crypto casinos like Stake offer instant withdrawals, while traditional methods may take 1-5 days."
+    }
+  ];
 </script>
 
 <svelte:head>
@@ -100,6 +129,10 @@
             the board. Whether you're playing for fun or real money, Plinko offers entertainment for everyone.
           </p>
         </div>
+      </div>
+      
+      <div class="mb-12">
+        <FAQ {faqs} />
       </div>
     </div>
   </div>

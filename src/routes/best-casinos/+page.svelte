@@ -1,7 +1,31 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import CasinoComparisonCard from '$lib/components/CasinoComparisonCard.svelte';
+  import FAQ from '$lib/components/FAQ.svelte';
   import casinosData from '$lib/data/best-casinos.json';
+  
+  const faqs = [
+    {
+      question: "How do we rank these casinos?",
+      answer: "We evaluate casinos based on multiple factors: game selection (especially Plinko availability), bonus generosity, payout speed, security measures, licensing, customer support quality, and user reviews. Each casino is tested thoroughly before being recommended."
+    },
+    {
+      question: "Are these casinos safe and licensed?",
+      answer: "Yes, all casinos on our list hold valid gambling licenses from reputable jurisdictions like Curacao, Malta, or the UK. They use SSL encryption and provably fair technology to ensure player safety and game fairness."
+    },
+    {
+      question: "Which casino has the fastest withdrawals?",
+      answer: "Crypto casinos like Stake and Rollbit offer instant withdrawals, typically processed within minutes. BC.Game processes withdrawals in 1-2 hours. Traditional payment methods at other casinos may take 1-5 business days."
+    },
+    {
+      question: "Can I play at these casinos from my country?",
+      answer: "Availability varies by jurisdiction. Most crypto casinos accept players globally except from restricted countries. Always check the casino's terms and conditions to ensure they accept players from your location before signing up."
+    },
+    {
+      question: "Do I need cryptocurrency to play?",
+      answer: "Not necessarily. While casinos like Stake, BC.Game, and Rollbit specialize in cryptocurrency, others like Joe Fortune and FairGo accept traditional payment methods including credit cards and bank transfers."
+    }
+  ];
 </script>
 
 <svelte:head>
@@ -53,6 +77,10 @@
             <p class="text-sm">All recommended casinos are licensed and use industry-standard security measures.</p>
           </div>
         </div>
+      </div>
+      
+      <div class="mt-12">
+        <FAQ {faqs} />
       </div>
     </div>
   </div>

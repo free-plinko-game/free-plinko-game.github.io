@@ -3,7 +3,7 @@
   
   const casino = {
     name: "CasinoChan",
-    logo: "https://via.placeholder.com/200x80/1a1a1a/00ff00?text=CasinoChan",
+    logo: "/logos/casinochan.svg",
     rating: 4.95,
     established: "2020",
     license: "Curacao",

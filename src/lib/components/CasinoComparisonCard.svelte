@@ -19,27 +19,22 @@
   <div class="p-6">
     <div class="flex items-start justify-between mb-4">
       <div class="flex items-center gap-4">
-        <div class="bg-green-500 text-black font-bold rounded-full w-12 h-12 flex items-center justify-center text-xl">
-          {casino.rank}
-        </div>
-        <div>
-          <div class="flex items-center gap-3 mb-1">
-            <img src={casino.logo} alt={casino.name} class="h-12 object-contain" />
+        <div class="flex items-center gap-3">
+          <img src={casino.logo} alt={casino.name} class="h-16 object-contain" />
+          <div>
             {#if casino.slug}
-              <a href="/reviews/{casino.slug}" class="text-2xl font-bold text-white hover:text-green-400 transition-colors">
-                {casino.name}
-              </a>
+              <a href="/reviews/{casino.slug}" class="text-2xl font-bold text-white hover:text-green-400 transition-colors block mb-1">{casino.name}</a>
             {:else}
-              <h3 class="text-2xl font-bold text-white">{casino.name}</h3>
+              <h3 class="text-2xl font-bold text-white mb-1">{casino.name}</h3>
+            {/if}
+            {#if casino.badges && casino.badges.length > 0}
+              <div class="flex gap-2">
+                {#each casino.badges as badge}
+                  <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full border border-green-500/30">{badge}</span>
+                {/each}
+              </div>
             {/if}
           </div>
-          {#if casino.badges && casino.badges.length > 0}
-            <div class="flex gap-2">
-              {#each casino.badges as badge}
-                <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full border border-green-500/30">{badge}</span>
-              {/each}
-            </div>
-          {/if}
         </div>
       </div>
       <div class="text-right">

@@ -3,7 +3,7 @@
   
   const casino = {
     name: "Duelbits",
-    logo: "https://via.placeholder.com/200x80/1a1a1a/00ff00?text=Duelbits",
+    logo: "/logos/duelbits.svg",
     rating: 4.5,
     established: "2020",
     license: "Curacao",

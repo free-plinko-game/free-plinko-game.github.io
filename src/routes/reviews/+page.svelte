@@ -1,5 +1,6 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
+  import FAQ from '$lib/components/FAQ.svelte';
   
   const reviews = [
     {
@@ -32,7 +33,7 @@
     {
       name: "FairGo Casino",
       slug: "fairgo",
-      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=FairGo",
+      logo: "/logos/fairgo.svg",
       rating: 4.95,
       bonus: "$1,000 Welcome Package",
       excerpt: "Fair wagering requirements and excellent game variety with multiple payment options.",
@@ -41,7 +42,7 @@
     {
       name: "CasinoChan",
       slug: "casinochan",
-      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=CasinoChan",
+      logo: "/logos/casinochan.svg",
       rating: 4.95,
       bonus: "$1,500 + 120 Free Spins",
       excerpt: "Massive game library with 2000+ games and generous weekly promotions.",
@@ -50,7 +51,7 @@
     {
       name: "Rollbit",
       slug: "rollbit",
-      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Rollbit",
+      logo: "/logos/rollbit.svg",
       rating: 4.6,
       bonus: "150% up to $750",
       excerpt: "Innovative Web3 casino with NFT integration and provably fair Plinko games.",
@@ -59,7 +60,7 @@
     {
       name: "Duelbits",
       slug: "duelbits",
-      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Duelbits",
+      logo: "/logos/duelbits.svg",
       rating: 4.5,
       bonus: "$100 + 100 Free Spins",
       excerpt: "Multiple game modes with crypto cashback and competitive features.",
@@ -68,7 +69,7 @@
     {
       name: "Roobet",
       slug: "roobet",
-      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Roobet",
+      logo: "/logos/roobet.svg",
       rating: 4.4,
       bonus: "Welcome package available",
       excerpt: "Original exclusive games with strong social features and streaming community.",
@@ -77,11 +78,34 @@
     {
       name: "Betplay",
       slug: "betplay",
-      logo: "https://via.placeholder.com/120x60/1a1a1a/00ff00?text=Betplay",
+      logo: "/logos/betplay.svg",
       rating: 4.3,
       bonus: "100% up to $300",
       excerpt: "Combined casino and sportsbook perfect for players who enjoy both.",
       pros: ["Sports betting", "Live chat", "Flexible bonus"]
+    }
+  ];
+  
+  const faqs = [
+    {
+      question: "How do you review casinos?",
+      answer: "Our review process is comprehensive and hands-on. We sign up at each casino, test the games (including Plinko), make deposits and withdrawals, contact customer support, and evaluate the overall user experience. We consider factors like game variety, bonus fairness, payout speed, security, and licensing before recommending any casino."
+    },
+    {
+      question: "Are these casino reviews unbiased?",
+      answer: "Yes. While we may earn affiliate commissions from casinos we recommend, this doesn't influence our reviews. We only promote casinos that meet our strict quality standards. If a casino has issues, we clearly highlight them in the 'Cons' section of each review."
+    },
+    {
+      question: "How often do you update these reviews?",
+      answer: "We update our reviews regularly to reflect changes in bonuses, terms, game selection, and user feedback. Casino offerings change frequently, so we monitor each site continuously and update reviews as needed to keep information current and accurate."
+    },
+    {
+      question: "What makes a good Plinko casino?",
+      answer: "A good Plinko casino offers provably fair games (so you can verify fairness), multiple Plinko variants with different risk levels, fast withdrawals, generous bonuses, and reliable customer support. Crypto casinos often provide the best Plinko experience with instant payouts and lower fees."
+    },
+    {
+      question: "Can I trust the casinos you review?",
+      answer: "All casinos we review are licensed by reputable gambling authorities and have established track records of paying out winnings. However, we always recommend reading the full review, checking terms and conditions, and starting with smaller deposits until you're comfortable with a casino."
     }
   ];
 </script>
@@ -152,6 +176,10 @@
         >
           Play Free Plinko
         </a>
+      </div>
+      
+      <div class="mt-12">
+        <FAQ {faqs} />
       </div>
     </div>
   </div>

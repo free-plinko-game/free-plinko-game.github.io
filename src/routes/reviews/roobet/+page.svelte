@@ -3,7 +3,7 @@
   
   const casino = {
     name: "Roobet",
-    logo: "https://via.placeholder.com/200x80/1a1a1a/00ff00?text=Roobet",
+    logo: "/logos/roobet.svg",
     rating: 4.4,
     established: "2019",
     license: "Curacao",
