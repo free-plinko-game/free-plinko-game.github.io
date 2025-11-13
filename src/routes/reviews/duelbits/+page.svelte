@@ -162,7 +162,7 @@
           <div class="text-gray-300 space-y-3">
             <p>Duelbits integrates casino gaming with sports betting, allowing you to switch seamlessly between Plinko, slots, and placing bets on live sports events. This all-in-one approach means you don't need multiple accounts across different platforms.</p>
             <p>The Plinko implementation is provably fair with multiple risk levels and betting options. Whether you're conservative or aggressive in your play style, Duelbits accommodates your preferences.</p>
-            <p>New to Plinko? Start with our <a href="/how-to-play" class="text-green-400 hover:underline">complete guide</a>.</p>
+            <p>New to Plinko? Start with our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">complete guide</a>.</p>
           </div>
         </section>
 

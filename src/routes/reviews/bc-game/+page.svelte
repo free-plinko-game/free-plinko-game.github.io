@@ -170,7 +170,7 @@
           <div class="text-gray-300 space-y-3">
             <p>BC.Game's Plinko implementation uses provably fair technology, allowing players to verify the randomness and fairness of every single drop. This transparency is crucial for building trust with players who want assurance that games aren't rigged.</p>
             <p>The platform offers multiple Plinko game modes with different risk levels and configurations. Whether you prefer conservative low-risk play or high-volatility action, BC.Game's Plinko games cater to all playing styles.</p>
-            <p>New to Plinko? Check out our <a href="/how-to-play" class="text-green-400 hover:underline">comprehensive guide on how to play Plinko</a>.</p>
+            <p>New to Plinko? Check out our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">comprehensive guide on how to play Plinko</a>.</p>
           </div>
         </section>
         

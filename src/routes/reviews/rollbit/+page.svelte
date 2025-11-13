@@ -162,7 +162,7 @@
           <div class="text-gray-300 space-y-3">
             <p>Rollbit's Plinko implementation uses provably fair technology, allowing you to verify the randomness of every single drop. This transparency is crucial for building trust, especially in the crypto gaming space where fairness concerns are paramount.</p>
             <p>The platform offers multiple Plinko variants with different risk levels and betting options, catering to both conservative players and high rollers. The instant payout system means winnings hit your wallet immediately.</p>
-            <p>Learn how to play with our <a href="/how-to-play" class="text-green-400 hover:underline">Plinko strategy guide</a>.</p>
+            <p>Learn how to play with our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">Plinko strategy guide</a>.</p>
           </div>
         </section>
 

@@ -162,7 +162,7 @@
           <div class="text-gray-300 space-y-3">
             <p>Roobet has cultivated one of the most active streaming communities in crypto gambling. Popular streamers regularly broadcast their gameplay, creating an engaging social atmosphere. You can watch, learn strategies, and feel part of a community rather than gambling in isolation.</p>
             <p>The platform's social features allow you to interact with other players, share big wins, and participate in community events and tournaments. This social element adds entertainment value beyond just the games themselves.</p>
-            <p>Learn the basics with our <a href="/how-to-play" class="text-green-400 hover:underline">Plinko guide</a>.</p>
+            <p>Learn the basics with our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">Plinko guide</a>.</p>
           </div>
         </section>
 

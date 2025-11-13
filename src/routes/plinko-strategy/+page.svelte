@@ -67,7 +67,7 @@
         <div class="flex items-start gap-4">
           <span class="text-4xl">⚠️</span>
           <div>
-            <h3 class="text-xl font-bold text-white mb-2">Important Disclaimer</h3>
+            <h2 class="text-xl font-bold text-white mb-2">Important Disclaimer</h2>
             <p class="text-gray-300">Plinko is a game of chance. No strategy can guarantee wins. The strategies below focus on bankroll management and smart decision-making to help you play responsibly and maximize entertainment value. Never gamble more than you can afford to lose.</p>
           </div>
         </div>
@@ -82,7 +82,7 @@
             
             <div class="grid md:grid-cols-3 gap-4 my-6">
               <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-                <h3 class="text-green-400 font-bold text-lg mb-2">Low Risk</h3>
+                <h4 class="text-green-400 font-bold text-lg mb-2">Low Risk</h4>
                 <ul class="text-sm space-y-2">
                   <li>• Smaller multipliers (0.5x-5x)</li>
                   <li>• More consistent wins</li>
@@ -93,7 +93,7 @@
               </div>
               
               <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                <h3 class="text-yellow-400 font-bold text-lg mb-2">Medium Risk</h3>
+                <h4 class="text-yellow-400 font-bold text-lg mb-2">Medium Risk</h4>
                 <ul class="text-sm space-y-2">
                   <li>• Moderate multipliers (0.2x-33x)</li>
                   <li>• Balanced variance</li>
@@ -104,7 +104,7 @@
               </div>
               
               <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-                <h3 class="text-red-400 font-bold text-lg mb-2">High Risk</h3>
+                <h4 class="text-red-400 font-bold text-lg mb-2">High Risk</h4>
                 <ul class="text-sm space-y-2">
                   <li>• Huge multipliers (0.2x-555x)</li>
                   <li>• Extreme volatility</li>
@@ -237,7 +237,7 @@
                 <span class="text-green-400 text-xl">✓</span>
                 <div>
                   <strong class="text-white">Provably Fair Systems</strong>
-                  <p class="text-sm">Verify randomness on every drop. <a href="/reviews/stake" class="text-green-400 hover:underline">Stake</a> and <a href="/reviews/bc-game" class="text-green-400 hover:underline">BC.Game</a> offer this.</p>
+                  <p class="text-sm">Verify randomness on every drop. <a href="/reviews/stake" class="text-green-400 underline hover:no-underline">Stake</a> and <a href="/reviews/bc-game" class="text-green-400 underline hover:no-underline">BC.Game</a> offer this.</p>
                 </div>
               </div>
 
@@ -330,12 +330,12 @@
               <p class="text-sm"><strong>Strategy implication:</strong> Larger bankrolls survive variance better. Hence the 1-2% rule.</p>
             </div>
 
-            <p class="text-sm italic mt-4">Want to dive deeper into Plinko mathematics? Check our <a href="/how-to-play" class="text-green-400 hover:underline">complete Plinko guide</a>.</p>
+            <p class="text-sm italic mt-4">Want to dive deeper into Plinko mathematics? Check our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">complete Plinko guide</a>.</p>
           </div>
         </section>
 
         <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 text-center">
-          <h3 class="text-3xl font-bold text-white mb-4">Practice Your Strategy Risk-Free</h3>
+          <h2 class="text-3xl font-bold text-white mb-4">Practice Your Strategy Risk-Free</h2>
           <p class="text-gray-300 mb-6">Try different betting patterns and risk levels with our free Plinko game before playing with real money.</p>
           <a 
             href="/"

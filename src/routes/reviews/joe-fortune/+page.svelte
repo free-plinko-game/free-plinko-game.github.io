@@ -170,7 +170,7 @@
           <div class="text-gray-300 space-y-3">
             <p>Joe Fortune features an extensive collection of pokies (slots) from top providers, along with table games and specialty games including Plinko. The platform is particularly popular with Australian players due to its game selection and payment options.</p>
             <p>The Plinko implementation offers multiple betting levels and risk configurations, allowing you to customize your gameplay experience. Whether you're a casual player or high roller, there's a Plinko variant for you.</p>
-            <p>Learn more about playing Plinko in our <a href="/how-to-play" class="text-green-400 hover:underline">complete Plinko guide</a>.</p>
+            <p>Learn more about playing Plinko in our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">complete Plinko guide</a>.</p>
           </div>
         </section>
         

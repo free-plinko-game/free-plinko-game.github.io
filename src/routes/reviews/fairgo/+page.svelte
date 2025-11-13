@@ -162,7 +162,7 @@
           <div class="text-gray-300 space-y-3">
             <p>FairGo offers a healthy mix of pokies, table games, and specialty games including Plinko. The platform partners with reputable game providers to ensure quality and fairness across all offerings.</p>
             <p>The Plinko implementation features adjustable settings and reasonable betting limits, making it accessible to both casual players and those looking for bigger action.</p>
-            <p>Learn the basics with our <a href="/how-to-play" class="text-green-400 hover:underline">complete Plinko guide</a>.</p>
+            <p>Learn the basics with our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">complete Plinko guide</a>.</p>
           </div>
         </section>
 

@@ -163,7 +163,7 @@
           <div class="text-gray-300 space-y-3">
             <p>Stake Casino features multiple Plinko variants, making it a top destination for Plinko enthusiasts. Their original Plinko game is one of the most popular on the platform, with customizable settings including risk levels (low, medium, high) and row configurations (8-16 rows).</p>
             <p>All Plinko games at Stake use provably fair technology, allowing players to verify the fairness of each round. The platform's implementation is considered one of the best in the industry, with smooth animations and quick gameplay.</p>
-            <p>For more information on playing Plinko, check out our <a href="/how-to-play" class="text-green-400 hover:underline">complete guide on how to play Plinko</a>.</p>
+            <p>For more information on playing Plinko, check out our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">complete guide on how to play Plinko</a>.</p>
           </div>
         </section>
 

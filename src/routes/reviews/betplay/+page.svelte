@@ -163,7 +163,7 @@
             <p>Betplay's dual focus on casino gaming and sports betting makes it an excellent choice for players who enjoy both. The platform seamlessly integrates both offerings, allowing you to switch between casino games like Plinko and live sports betting without leaving the site.</p>
             <p>The sportsbook covers major leagues and events worldwide, including football, basketball, tennis, MMA, and esports. Live betting is available with competitive odds and real-time updates.</p>
             <p>The casino section features popular games including slots, table games, and specialty games like Plinko. While the library isn't as extensive as some pure casino sites, it covers all the essentials with quality over quantity.</p>
-            <p>New to Plinko? Read our <a href="/how-to-play" class="text-green-400 hover:underline">complete guide</a>.</p>
+            <p>New to Plinko? Read our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">complete guide</a>.</p>
           </div>
         </section>
 

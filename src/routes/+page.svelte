@@ -49,7 +49,7 @@
     },
     {
       question: "What's the best casino for playing Plinko?",
-      answer: "Stake Casino is highly rated for Plinko with instant crypto withdrawals and provably fair games. BC.Game and Joe Fortune are also excellent choices. Check our <a href='/best-casinos' class='text-green-400 hover:underline'>casino comparison page</a> for detailed reviews."
+      answer: "Stake Casino is highly rated for Plinko with instant crypto withdrawals and provably fair games. BC.Game and Joe Fortune are also excellent choices. Check our <a href='/best-casinos' class='text-green-400 underline hover:no-underline'>casino comparison page</a> for detailed reviews."
     },
     {
       question: "How do I withdraw my Plinko winnings?",

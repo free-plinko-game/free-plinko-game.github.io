@@ -162,7 +162,7 @@
           <div class="text-gray-300 space-y-3">
             <p>With over 2,000 games from top software providers, CasinoChan offers one of the largest game selections in the online casino industry. From classic slots to modern video slots, table games, live dealer games, and specialty games like Plinko, there's something for every type of player.</p>
             <p>The platform partners with leading providers including NetEnt, Microgaming, Play'n GO, Evolution Gaming, and many more, ensuring high-quality graphics, smooth gameplay, and fair outcomes.</p>
-            <p>New to Plinko? Check out our <a href="/how-to-play" class="text-green-400 hover:underline">beginner's guide</a>.</p>
+            <p>New to Plinko? Check out our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">beginner's guide</a>.</p>
           </div>
         </section>
 

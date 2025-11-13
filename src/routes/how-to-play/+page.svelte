@@ -147,7 +147,7 @@
             </div>
             <div>
               <h3 class="text-lg font-bold text-white mb-2">5. Practice for Free First</h3>
-              <p>Use our <a href="/" class="text-green-400 hover:underline">free Plinko game</a> to practice before playing with real money.</p>
+              <p>Use our <a href="/" class="text-green-400 underline hover:no-underline">free Plinko game</a> to practice before playing with real money.</p>
             </div>
           </div>
         </div>
