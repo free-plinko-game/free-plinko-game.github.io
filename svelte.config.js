@@ -10,12 +10,10 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: undefined,
-			precompress: true, // Gzip/Brotli compression
+			precompress: true,
 			strict: true
-		}),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/free-plinko-game.github.io' : ''
-		}
+		})
+		// Remove paths.base - not needed for username.github.io repos
 	}
 };
 
