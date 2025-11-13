@@ -1,0 +1,36 @@
+<svg width="280" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="outerGlow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="0" result="offsetblur"/>
+      <feFlood flood-color="#00ff00" flood-opacity="0.8"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer glow background -->
+  <text x="140" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#00ff00" text-anchor="middle" filter="url(#outerGlow)" opacity="0.4">THE FREE PLINKO GAME</text>
+  
+  <!-- Main neon text with glow -->
+  <text x="140" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#00ff00" text-anchor="middle" filter="url(#glow)">THE FREE</text>
+  <text x="140" y="48" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#00ff00" text-anchor="middle" filter="url(#glow)" letter-spacing="2">PLINKO GAME</text>
+  
+  <!-- Bright inner highlights for neon effect -->
+  <text x="140" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#88ff88" text-anchor="middle" opacity="0.7">THE FREE</text>
+  <text x="140" y="48" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ccffcc" text-anchor="middle" opacity="0.6" letter-spacing="2">PLINKO GAME</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="15" cy="30" r="6" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)" opacity="0.6"/>
+  <circle cx="265" cy="30" r="6" fill="none" stroke="#00ff00" stroke-width="2" filter="url(#glow)" opacity="0.6"/>
+</svg>
