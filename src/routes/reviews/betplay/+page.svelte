@@ -1,5 +1,9 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+  import ReviewSchema from '$lib/components/ReviewSchema.svelte';
+  import Author from '$lib/components/Author.svelte';
   
   const casino = {
     name: "Betplay",
@@ -15,7 +19,7 @@
   const pros = [
     "Sports betting and casino combined",
     "Live chat support available",
-    "Competitive odds on sports",
+    "Competitive sports odds",
     "Mobile-friendly platform",
     "Regular promotions and bonuses",
     "Cryptocurrency accepted"
@@ -26,12 +30,38 @@
     "Smaller game library than competitors",
     "Higher minimum deposit than average"
   ];
+  
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Reviews', href: '/reviews' },
+    { label: 'Betplay' }
+  ];
+  
+  const breadcrumbSchema = [
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+    { name: 'Betplay', url: '/reviews/betplay' }
+  ];
+  
+  const reviewSchema = {
+    name: "Betplay",
+    rating: 4.3,
+    reviewBody: "Betplay combines casino gaming with sports betting in one platform. With competitive odds, live chat support, and crypto acceptance, it's perfect for players who enjoy both casino games and sports wagering.",
+    datePublished: "2025-11-13",
+    dateModified: "2025-11-13",
+    author: "Xavier Rudd",
+    authorUrl: "https://xavierruddauthor.com/"
+  };
 </script>
 
 <svelte:head>
   <title>Betplay Review 2025 - 100% Bonus + Sports Betting</title>
   <meta name="description" content="Betplay review: Combined casino and sportsbook with 100% welcome bonus up to $300. Perfect for players who enjoy both casino games and sports betting." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/betplay" />
 </svelte:head>
+
+<BreadcrumbSchema items={breadcrumbSchema} />
+<ReviewSchema casino={reviewSchema} />
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
@@ -39,9 +69,11 @@
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-5xl">
       
+      <Breadcrumbs items={breadcrumbs} />
+      
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
-          <img src={casino.logo} alt={casino.name} class="h-20 object-contain" />
+          <img src={casino.logo} alt={casino.name} width="200" height="80" class="h-20 object-contain" />
           <div class="flex-1 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">{casino.name} Review</h1>
             <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
@@ -131,14 +163,7 @@
             <p>Betplay's dual focus on casino gaming and sports betting makes it an excellent choice for players who enjoy both. The platform seamlessly integrates both offerings, allowing you to switch between casino games like Plinko and live sports betting without leaving the site.</p>
             <p>The sportsbook covers major leagues and events worldwide, including football, basketball, tennis, MMA, and esports. Live betting is available with competitive odds and real-time updates.</p>
             <p>The casino section features popular games including slots, table games, and specialty games like Plinko. While the library isn't as extensive as some pure casino sites, it covers all the essentials with quality over quantity.</p>
-          </div>
-        </section>
-
-        <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Plinko & Casino Games</h2>
-          <div class="text-gray-300 space-y-3">
-            <p>Betplay's Plinko offering provides solid entertainment with adjustable risk levels and bet sizes. The game features clean graphics and smooth gameplay, making it accessible to both beginners and experienced players.</p>
-            <p>Beyond Plinko, the casino section includes popular slots from reputable providers, classic table games like blackjack and roulette, and a selection of live dealer games for those seeking a more immersive experience.</p>
+            <p>New to Plinko? Read our <a href="/how-to-play" class="text-green-400 hover:underline">complete guide</a>.</p>
           </div>
         </section>
 
@@ -154,6 +179,17 @@
             </div>
           </div>
         </section>
+        
+        <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
+          <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/reviews/stake" class="text-green-400 hover:text-green-300 text-sm font-semibold">Stake Review →</a>
+            <a href="/reviews/bc-game" class="text-green-400 hover:text-green-300 text-sm font-semibold">BC.Game Review →</a>
+            <a href="/reviews/duelbits" class="text-green-400 hover:text-green-300 text-sm font-semibold">Duelbits Review →</a>
+          </div>
+          <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
+        </div>
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
@@ -168,6 +204,13 @@
           CLAIM YOUR BONUS NOW →
         </a>
       </div>
+      
+      <Author 
+        name="Xavier Rudd" 
+        bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
+        website="https://xavierruddauthor.com/"
+        lastUpdated="November 13, 2025"
+      />
 
     </div>
   </div>

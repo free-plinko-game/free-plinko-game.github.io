@@ -1,5 +1,9 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+  import ReviewSchema from '$lib/components/ReviewSchema.svelte';
+  import Author from '$lib/components/Author.svelte';
   
   const casino = {
     name: "Roobet",
@@ -14,24 +18,50 @@
   
   const pros = [
     "Original exclusive games",
-    "Strong social and community features",
+    "Strong social features",
+    "Active streaming community",
     "Instant crypto withdrawals",
-    "Sleek, modern interface",
-    "Popular with streamers",
-    "Regular giveaways and promotions"
+    "Clean modern interface",
+    "Regular tournaments"
   ];
   
   const cons = [
-    "Restricted in many jurisdictions",
-    "Bonus terms not always transparent",
-    "Limited customer support availability"
+    "Limited bonus information",
+    "Crypto-only platform",
+    "Not available in all regions"
   ];
+  
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Reviews', href: '/reviews' },
+    { label: 'Roobet' }
+  ];
+  
+  const breadcrumbSchema = [
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+    { name: 'Roobet', url: '/reviews/roobet' }
+  ];
+  
+  const reviewSchema = {
+    name: "Roobet",
+    rating: 4.4,
+    reviewBody: "Roobet offers original exclusive games and strong social features with an active streaming community. Instant crypto withdrawals and a clean interface make it popular among crypto casino players.",
+    datePublished: "2025-11-13",
+    dateModified: "2025-11-13",
+    author: "Xavier Rudd",
+    authorUrl: "https://xavierruddauthor.com/"
+  };
 </script>
 
 <svelte:head>
   <title>Roobet Review 2025 - Original Games & Social Features</title>
-  <meta name="description" content="Roobet review: Popular crypto casino with exclusive original games, social features, and instant withdrawals. Favorite among streaming communities." />
+  <meta name="description" content="Roobet review: Original exclusive games, strong social features, and instant crypto withdrawals. Popular streaming community and clean interface." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/roobet" />
 </svelte:head>
+
+<BreadcrumbSchema items={breadcrumbSchema} />
+<ReviewSchema casino={reviewSchema} />
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
@@ -39,9 +69,11 @@
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-5xl">
       
+      <Breadcrumbs items={breadcrumbs} />
+      
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
-          <img src={casino.logo} alt={casino.name} class="h-20 object-contain" />
+          <img src={casino.logo} alt={casino.name} width="200" height="80" class="h-20 object-contain" />
           <div class="flex-1 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">{casino.name} Review</h1>
             <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
@@ -114,60 +146,65 @@
 
       <div class="space-y-8">
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Welcome Package & Promotions</h2>
-          <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
-            <p class="text-green-400 font-bold text-2xl mb-2">Welcome Bonuses Available</p>
-            <p class="text-gray-300">Roobet offers various welcome promotions that change regularly - check their site for current offers.</p>
-          </div>
-          <div class="text-gray-300 space-y-3">
-            <p>Roobet takes a dynamic approach to bonuses, regularly updating their promotional offers based on seasons, events, and partnerships. While they don't advertise a fixed welcome bonus, new players often receive special offers through promotional codes or during special events.</p>
-            <p>The platform is known for generous giveaways and promotions, especially during major sporting events or holidays. Following Roobet's social media channels and signing up for notifications ensures you don't miss out on limited-time offers.</p>
-          </div>
-        </section>
-
-        <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
           <h2 class="text-3xl font-bold text-white mb-4">Original Exclusive Games</h2>
+          <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
+            <p class="text-green-400 font-bold text-2xl mb-2">Unique Gaming Experience</p>
+            <p class="text-gray-300">Play games you won't find anywhere else.</p>
+          </div>
           <div class="text-gray-300 space-y-3">
-            <p>Roobet's standout feature is its collection of original, exclusive games that you won't find anywhere else. These custom-built games feature unique mechanics and themes, offering something fresh for players tired of standard casino fare.</p>
-            <p>The Plinko game at Roobet is beautifully designed with smooth animations and engaging sound effects. The platform's focus on user experience shows in the polish of their game implementations.</p>
-            <p>Beyond their originals, Roobet also features popular slots and table games from major providers, ensuring a well-rounded gaming library that appeals to all types of players.</p>
+            <p>Roobet's standout feature is its collection of original, exclusive games developed specifically for the platform. These unique titles offer fresh gaming experiences you won't find at other casinos, setting Roobet apart from competitors who rely solely on third-party providers.</p>
+            <p>The platform combines these exclusives with popular titles from established providers, giving you the best of both worlds - innovative new games and trusted classics like Plinko.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Social Features & Community</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Social Features & Streaming</h2>
           <div class="text-gray-300 space-y-3">
-            <p>Roobet has built a strong reputation in the streaming community, with many popular content creators featuring the platform. This has created a vibrant, engaged community around the brand.</p>
-            <p>The platform includes robust chat features where players can interact, share big wins, and participate in chat games for additional rewards. This social aspect transforms gambling from a solitary activity into a community experience.</p>
-            <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-              <p class="text-green-400 font-semibold mb-2">🎥 Streamer Favorite</p>
-              <p class="text-sm">Roobet is one of the most-streamed crypto casinos, with partnerships and sponsorships across major streaming platforms.</p>
-            </div>
+            <p>Roobet has cultivated one of the most active streaming communities in crypto gambling. Popular streamers regularly broadcast their gameplay, creating an engaging social atmosphere. You can watch, learn strategies, and feel part of a community rather than gambling in isolation.</p>
+            <p>The platform's social features allow you to interact with other players, share big wins, and participate in community events and tournaments. This social element adds entertainment value beyond just the games themselves.</p>
+            <p>Learn the basics with our <a href="/how-to-play" class="text-green-400 hover:underline">Plinko guide</a>.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Crypto Payments & Instant Cashouts</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Crypto Payments & Interface</h2>
           <div class="text-gray-300 space-y-3">
-            <p>Roobet operates as a crypto-only casino, accepting Bitcoin, Ethereum, Litecoin, and other popular cryptocurrencies. The platform's crypto-native approach enables instant deposits and withdrawals with minimal fees.</p>
-            <p>Withdrawal processing is among the fastest in the industry, with most cashouts completed within minutes. The sleek, modern interface makes managing your crypto wallet easy, even for those new to cryptocurrency.</p>
-            <p>Note that Roobet has geographic restrictions and is not available in all countries. Always check if the service is available in your jurisdiction before attempting to sign up.</p>
+            <p>Roobet operates as a crypto-only casino, accepting Bitcoin, Ethereum, and Litecoin. The instant withdrawal system means you can cash out your winnings immediately without waiting for banking delays.</p>
+            <p>The platform features a clean, modern interface that's intuitive to navigate. Whether you're a crypto casino veteran or newcomer, you'll find the layout straightforward and user-friendly.</p>
           </div>
         </section>
+        
+        <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
+          <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/reviews/stake" class="text-green-400 hover:text-green-300 text-sm font-semibold">Stake Review →</a>
+            <a href="/reviews/duelbits" class="text-green-400 hover:text-green-300 text-sm font-semibold">Duelbits Review →</a>
+            <a href="/reviews/betplay" class="text-green-400 hover:text-green-300 text-sm font-semibold">Betplay Review →</a>
+          </div>
+          <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
+        </div>
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
-        <h3 class="text-3xl font-bold text-white mb-4">Experience Roobet's Original Games</h3>
-        <p class="text-gray-300 mb-6">Join a vibrant community and play exclusive games you won't find anywhere else.</p>
+        <h3 class="text-3xl font-bold text-white mb-4">Ready for Original Games?</h3>
+        <p class="text-gray-300 mb-6">Join Roobet for exclusive games and an active streaming community.</p>
         <a 
           href={casino.affiliateLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
           class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 text-lg"
         >
-          PLAY NOW →
+          START PLAYING →
         </a>
       </div>
+      
+      <Author 
+        name="Xavier Rudd" 
+        bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
+        website="https://xavierruddauthor.com/"
+        lastUpdated="November 13, 2025"
+      />
 
     </div>
   </div>

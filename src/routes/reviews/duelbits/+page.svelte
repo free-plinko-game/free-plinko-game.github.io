@@ -1,5 +1,9 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+  import ReviewSchema from '$lib/components/ReviewSchema.svelte';
+  import Author from '$lib/components/Author.svelte';
   
   const casino = {
     name: "Duelbits",
@@ -13,25 +17,51 @@
   };
   
   const pros = [
-    "Multiple unique game modes",
+    "Multiple game modes including battles",
     "Crypto cashback program",
-    "Fast 1-3 hour withdrawals",
-    "Sports betting integration",
-    "Active community and chat",
-    "Regular tournaments and events"
+    "Sports betting integrated",
+    "Active streaming community",
+    "Provably fair games",
+    "Competitive features"
   ];
   
   const cons = [
     "Higher minimum deposit ($20)",
-    "Smaller welcome bonus than competitors",
-    "Crypto-only platform"
+    "Complex interface initially",
+    "Limited traditional payment options"
   ];
+  
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Reviews', href: '/reviews' },
+    { label: 'Duelbits' }
+  ];
+  
+  const breadcrumbSchema = [
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+    { name: 'Duelbits', url: '/reviews/duelbits' }
+  ];
+  
+  const reviewSchema = {
+    name: "Duelbits",
+    rating: 4.5,
+    reviewBody: "Duelbits offers unique battle modes alongside traditional casino games. With crypto cashback, integrated sports betting, and an active streaming community, it's perfect for competitive players.",
+    datePublished: "2025-11-13",
+    dateModified: "2025-11-13",
+    author: "Xavier Rudd",
+    authorUrl: "https://xavierruddauthor.com/"
+  };
 </script>
 
 <svelte:head>
-  <title>Duelbits Review 2025 - $100 Bonus + Crypto Cashback</title>
-  <meta name="description" content="Duelbits review: Innovative crypto casino with multiple game modes, cashback rewards, and fast withdrawals. Perfect for competitive players." />
+  <title>Duelbits Review 2025 - Battle Modes & Crypto Cashback</title>
+  <meta name="description" content="Duelbits review: Unique battle modes, crypto cashback, and integrated sports betting. Perfect for competitive crypto casino players." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/duelbits" />
 </svelte:head>
+
+<BreadcrumbSchema items={breadcrumbSchema} />
+<ReviewSchema casino={reviewSchema} />
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
@@ -39,9 +69,11 @@
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-5xl">
       
+      <Breadcrumbs items={breadcrumbs} />
+      
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
-          <img src={casino.logo} alt={casino.name} class="h-20 object-contain" />
+          <img src={casino.logo} alt={casino.name} width="200" height="80" class="h-20 object-contain" />
           <div class="flex-1 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">{casino.name} Review</h1>
             <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
@@ -114,59 +146,65 @@
 
       <div class="space-y-8">
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Welcome Bonus & Cashback System</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Unique Battle Modes</h2>
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
             <p class="text-green-400 font-bold text-2xl mb-2">{casino.welcomeBonus}</p>
-            <p class="text-gray-300">Solid starter bonus with ongoing crypto cashback rewards for regular players.</p>
+            <p class="text-gray-300">Plus ongoing crypto cashback rewards.</p>
           </div>
           <div class="text-gray-300 space-y-3">
-            <p>Duelbits offers a $100 welcome bonus plus 100 free spins to new players. While not the largest bonus on the market, it comes with fair terms and reasonable wagering requirements that make it actually achievable.</p>
-            <p>The real value at Duelbits comes from their ongoing cashback program. Players earn crypto cashback on all bets, whether they win or lose. This rakeback system ensures that even during losing streaks, you're getting value back. VIP players enjoy higher cashback percentages and exclusive perks.</p>
+            <p>Duelbits stands out with its unique battle modes that let players compete head-to-head in various casino games. This competitive element adds excitement beyond traditional solo play, appealing to players who enjoy the thrill of direct competition.</p>
+            <p>The welcome bonus of $100 plus 100 free spins provides a solid start, while the ongoing crypto cashback program rewards regular play. The more you wager, the more you earn back, creating a sustainable playing experience.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Multiple Game Modes & Plinko</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Casino & Sports Betting Combined</h2>
           <div class="text-gray-300 space-y-3">
-            <p>Duelbits stands out with its variety of game modes and competitive features. The platform offers traditional casino games like Plinko alongside unique modes like Battles, Duels, and Upgrader, which add a competitive and social element to gambling.</p>
-            <p>The Plinko game at Duelbits is well-implemented with smooth gameplay and provably fair mechanics. Players can adjust risk levels and bet amounts to suit their playing style, whether conservative or aggressive.</p>
-            <p>Battle mode is particularly popular, allowing players to compete against each other in case opening battles. This social gaming aspect creates a more engaging experience than traditional solo play.</p>
+            <p>Duelbits integrates casino gaming with sports betting, allowing you to switch seamlessly between Plinko, slots, and placing bets on live sports events. This all-in-one approach means you don't need multiple accounts across different platforms.</p>
+            <p>The Plinko implementation is provably fair with multiple risk levels and betting options. Whether you're conservative or aggressive in your play style, Duelbits accommodates your preferences.</p>
+            <p>New to Plinko? Start with our <a href="/how-to-play" class="text-green-400 hover:underline">complete guide</a>.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Sports Betting Integration</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Crypto Payments & Community</h2>
           <div class="text-gray-300 space-y-3">
-            <p>In addition to casino games, Duelbits offers comprehensive sports betting coverage including football, basketball, esports, and more. This makes it a one-stop shop for players who enjoy both casino games and sports wagering.</p>
-            <p>The sports betting section features competitive odds and live betting options. The cashback program applies to sports bets as well, providing added value across all types of gambling activities.</p>
+            <p>As a crypto-focused platform, Duelbits accepts major cryptocurrencies including Bitcoin, Ethereum, and Litecoin. Withdrawals process within 1-3 hours, significantly faster than traditional casinos.</p>
+            <p>The platform has an active streaming community with popular streamers regularly broadcasting their gameplay. This creates a social atmosphere and allows you to learn strategies by watching experienced players.</p>
           </div>
         </section>
-
-        <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Crypto Payments & Withdrawals</h2>
-          <div class="text-gray-300 space-y-3">
-            <p>Duelbits accepts multiple cryptocurrencies including Bitcoin, Ethereum, Litecoin, and various altcoins. Deposits are instant and withdrawals are typically processed within 1-3 hours, which is faster than many competitors.</p>
-            <p>The minimum deposit is $20, which is slightly higher than some competitors but still accessible for most players. The crypto-first approach means no lengthy KYC verification for most users, allowing you to start playing quickly.</p>
-            <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-              <p class="text-green-400 font-semibold mb-2">💰 Automatic Cashback</p>
-              <p class="text-sm">Cashback is calculated and credited automatically - no need to claim or request it manually.</p>
-            </div>
+        
+        <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
+          <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/reviews/stake" class="text-green-400 hover:text-green-300 text-sm font-semibold">Stake Review →</a>
+            <a href="/reviews/rollbit" class="text-green-400 hover:text-green-300 text-sm font-semibold">Rollbit Review →</a>
+            <a href="/reviews/roobet" class="text-green-400 hover:text-green-300 text-sm font-semibold">Roobet Review →</a>
           </div>
-        </section>
+          <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
+        </div>
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
-        <h3 class="text-3xl font-bold text-white mb-4">Join the Duelbits Community</h3>
-        <p class="text-gray-300 mb-6">Experience competitive gaming with cashback rewards and multiple game modes.</p>
+        <h3 class="text-3xl font-bold text-white mb-4">Ready for Competitive Gaming?</h3>
+        <p class="text-gray-300 mb-6">Join Duelbits for unique battle modes and crypto cashback rewards.</p>
         <a 
           href={casino.affiliateLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
           class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 text-lg"
         >
-          CLAIM YOUR BONUS NOW →
+          START PLAYING →
         </a>
       </div>
+      
+      <Author 
+        name="Xavier Rudd" 
+        bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
+        website="https://xavierruddauthor.com/"
+        lastUpdated="November 13, 2025"
+      />
 
     </div>
   </div>

@@ -1,5 +1,9 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
+  import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+  import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+  import ReviewSchema from '$lib/components/ReviewSchema.svelte';
+  import Author from '$lib/components/Author.svelte';
   
   const casino = {
     name: "Rollbit",
@@ -13,25 +17,51 @@
   };
   
   const pros = [
-    "Provably fair Plinko games",
-    "NFT integration and marketplace",
-    "Instant crypto deposits and withdrawals",
-    "Innovative lottery and raffle system",
+    "Innovative NFT integration",
+    "Provably fair games",
+    "Instant crypto payouts",
+    "Web3 casino features",
     "Sports betting available",
-    "Active community and social features"
+    "Active trading community"
   ];
   
   const cons = [
-    "Crypto-only (no fiat options)",
+    "Crypto-only platform",
     "Complex interface for beginners",
-    "Limited customer support hours"
+    "NFT features may be confusing"
   ];
+  
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Reviews', href: '/reviews' },
+    { label: 'Rollbit' }
+  ];
+  
+  const breadcrumbSchema = [
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+    { name: 'Rollbit', url: '/reviews/rollbit' }
+  ];
+  
+  const reviewSchema = {
+    name: "Rollbit",
+    rating: 4.6,
+    reviewBody: "Rollbit pioneers Web3 gaming with innovative NFT integration and provably fair Plinko games. Instant crypto payouts and sports betting make it a cutting-edge choice for crypto-savvy players.",
+    datePublished: "2025-11-13",
+    dateModified: "2025-11-13",
+    author: "Xavier Rudd",
+    authorUrl: "https://xavierruddauthor.com/"
+  };
 </script>
 
 <svelte:head>
-  <title>Rollbit Review 2025 - 150% Bonus + NFT Integration</title>
-  <meta name="description" content="Rollbit review: Unique crypto casino with provably fair Plinko, NFT marketplace, 150% welcome bonus, and instant withdrawals. Web3 gaming at its best." />
+  <title>Rollbit Review 2025 - Web3 Casino with NFT Integration</title>
+  <meta name="description" content="Rollbit review: Innovative Web3 casino with NFT integration, provably fair Plinko, and instant crypto payouts. Perfect for crypto enthusiasts." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/rollbit" />
 </svelte:head>
+
+<BreadcrumbSchema items={breadcrumbSchema} />
+<ReviewSchema casino={reviewSchema} />
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
@@ -39,9 +69,11 @@
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-5xl">
       
+      <Breadcrumbs items={breadcrumbs} />
+      
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
-          <img src={casino.logo} alt={casino.name} class="h-20 object-contain" />
+          <img src={casino.logo} alt={casino.name} width="200" height="80" class="h-20 object-contain" />
           <div class="flex-1 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">{casino.name} Review</h1>
             <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
@@ -114,58 +146,65 @@
 
       <div class="space-y-8">
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Welcome Bonus & Rewards</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Web3 Gaming Innovation</h2>
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
             <p class="text-green-400 font-bold text-2xl mb-2">{casino.welcomeBonus}</p>
-            <p class="text-gray-300">Generous crypto welcome bonus with additional rewards through the lottery system.</p>
+            <p class="text-gray-300">Plus unique NFT rewards and Web3 features.</p>
           </div>
           <div class="text-gray-300 space-y-3">
-            <p>Rollbit offers a competitive 150% welcome bonus up to $750 on your first deposit. The bonus is designed for crypto users and comes with fair wagering requirements compared to many competitors.</p>
-            <p>Beyond the welcome offer, Rollbit's unique lottery and raffle system provides ongoing opportunities to win additional bonuses, free spins, and even NFTs. Every bet you place earns you lottery tickets, creating a secondary reward mechanism that keeps gameplay exciting.</p>
+            <p>Rollbit represents the cutting edge of online casino gaming, integrating blockchain technology and NFTs into the traditional casino experience. The 150% welcome bonus up to $750 provides a strong start, but it's the innovative Web3 features that truly set Rollbit apart.</p>
+            <p>Players can earn, trade, and use NFTs within the platform, adding an extra dimension to the gaming experience. This integration appeals particularly to crypto-native users looking for something beyond traditional online casinos.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Provably Fair Plinko & Games</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Provably Fair Plinko</h2>
           <div class="text-gray-300 space-y-3">
-            <p>Rollbit's Plinko implementation is among the best in the crypto casino space, featuring full provably fair technology that allows players to verify the fairness of every single drop. The game features smooth animations, customizable risk levels, and multiple row configurations.</p>
-            <p>The platform also offers a wide range of other provably fair games including dice, crash, slots, and more. The provably fair system ensures complete transparency, with players able to independently verify that game outcomes are truly random and not manipulated.</p>
-            <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-              <p class="text-green-400 font-semibold mb-2">🎮 Web3 Gaming Integration</p>
-              <p class="text-sm">Rollbit pioneered the integration of NFTs into online casino gaming, allowing players to use their NFTs as collateral or trade them on the built-in marketplace.</p>
-            </div>
+            <p>Rollbit's Plinko implementation uses provably fair technology, allowing you to verify the randomness of every single drop. This transparency is crucial for building trust, especially in the crypto gaming space where fairness concerns are paramount.</p>
+            <p>The platform offers multiple Plinko variants with different risk levels and betting options, catering to both conservative players and high rollers. The instant payout system means winnings hit your wallet immediately.</p>
+            <p>Learn how to play with our <a href="/how-to-play" class="text-green-400 hover:underline">Plinko strategy guide</a>.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Cryptocurrency & Instant Withdrawals</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Crypto Payments & Sports Betting</h2>
           <div class="text-gray-300 space-y-3">
-            <p>As a crypto-native casino, Rollbit supports multiple cryptocurrencies including Bitcoin, Ethereum, Litecoin, and various stablecoins. Deposits are instant and withdrawals are processed immediately without any waiting period.</p>
-            <p>The platform's focus on cryptocurrency allows for true anonymity and lightning-fast transactions. There are no KYC requirements for most users, and you can start playing within minutes of signing up. The only downside is the lack of fiat currency options, which may be a barrier for some players.</p>
+            <p>As a crypto-only platform, Rollbit accepts Bitcoin, Ethereum, and various other cryptocurrencies. Deposits are instant, and withdrawals process immediately with funds appearing in your wallet within minutes - no waiting days for traditional banking.</p>
+            <p>Beyond casino games, Rollbit offers sports betting on major events worldwide. This combination of casino and sportsbook makes it a one-stop destination for crypto gaming enthusiasts.</p>
           </div>
         </section>
-
-        <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">NFT Marketplace & Innovation</h2>
-          <div class="text-gray-300 space-y-3">
-            <p>Rollbit stands out with its integrated NFT marketplace where players can buy, sell, and trade NFTs. The platform's own NFT collections offer utility beyond just collectibles – some NFTs provide rakeback bonuses, VIP perks, and other benefits.</p>
-            <p>This Web3 integration represents the future of online gaming, blending traditional casino gameplay with blockchain technology and digital asset ownership. It's an innovative approach that appeals to both crypto enthusiasts and traditional casino players looking for something new.</p>
+        
+        <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
+          <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/reviews/stake" class="text-green-400 hover:text-green-300 text-sm font-semibold">Stake Review →</a>
+            <a href="/reviews/bc-game" class="text-green-400 hover:text-green-300 text-sm font-semibold">BC.Game Review →</a>
+            <a href="/reviews/duelbits" class="text-green-400 hover:text-green-300 text-sm font-semibold">Duelbits Review →</a>
           </div>
-        </section>
+          <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
+        </div>
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
-        <h3 class="text-3xl font-bold text-white mb-4">Experience Next-Gen Crypto Gaming</h3>
-        <p class="text-gray-300 mb-6">Join Rollbit for provably fair Plinko, NFT integration, and instant crypto withdrawals.</p>
+        <h3 class="text-3xl font-bold text-white mb-4">Ready for Web3 Gaming?</h3>
+        <p class="text-gray-300 mb-6">Join Rollbit for the future of crypto casino gaming with NFT integration.</p>
         <a 
           href={casino.affiliateLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
           class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 text-lg"
         >
-          CLAIM YOUR BONUS NOW →
+          START PLAYING →
         </a>
       </div>
+      
+      <Author 
+        name="Xavier Rudd" 
+        bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
+        website="https://xavierruddauthor.com/"
+        lastUpdated="November 13, 2025"
+      />
 
     </div>
   </div>
