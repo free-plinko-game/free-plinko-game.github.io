@@ -15,12 +15,17 @@
   
   async function handleAuth() {
     loading = true;
-    
+
+    const redirectUrl = typeof window !== 'undefined'
+      ? `${window.location.origin}/auth/callback`
+      : '/auth/callback';
+
     if (isSignUp) {
       const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
+          emailRedirectTo: redirectUrl,
           data: {
             display_name: email.split('@')[0]
           }
@@ -34,9 +39,9 @@
         password
       });
       if (error) alert(error.message);
-      else window.location.reload();
+      else window.location.href = '/';
     }
-    
+
     loading = false;
   }
   
