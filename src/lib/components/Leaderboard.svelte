@@ -2,17 +2,58 @@
   import { supabase } from '$lib/supabase';
   import { onMount } from 'svelte';
   import type { LeaderboardEntry } from '$lib/supabase';
-  
+
   let weeklyLeaders: LeaderboardEntry[] = [];
   let loading = true;
-  
+
   onMount(async () => {
-    const { data, error } = await supabase
-      .from('weekly_leaderboard')
+    // Fetch all sessions
+    const { data: sessions, error } = await supabase
+      .from('sessions')
       .select('*')
-      .limit(10);
-    
-    if (data) weeklyLeaders = data;
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Sessions error:', error);
+    } else if (sessions && sessions.length > 0) {
+      // Calculate week start (Monday of current week)
+      const now = new Date();
+      const weekStart = new Date(now);
+      const dayOfWeek = weekStart.getDay();
+      const diff = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Adjust for Monday start
+      weekStart.setDate(weekStart.getDate() - diff);
+      weekStart.setHours(0, 0, 0, 0);
+
+      // Filter sessions from this week
+      const weeklySessions = sessions.filter(s =>
+        new Date(s.created_at) >= weekStart
+      );
+
+      // Group by user and calculate stats
+      const weeklyStats = weeklySessions.reduce((acc: any, s: any) => {
+        const userId = s.user_id;
+        if (!acc[userId]) {
+          acc[userId] = {
+            user_id: userId,
+            display_name: s.display_name || 'Anonymous',
+            total_profit: 0,
+            sessions_count: 0,
+            biggest_win: 0
+          };
+        }
+        acc[userId].total_profit += Number(s.profit);
+        acc[userId].sessions_count++;
+        if (Number(s.profit) > acc[userId].biggest_win) {
+          acc[userId].biggest_win = Number(s.profit);
+        }
+        return acc;
+      }, {});
+
+      weeklyLeaders = Object.values(weeklyStats)
+        .sort((a: any, b: any) => b.total_profit - a.total_profit)
+        .slice(0, 10);
+    }
+
     loading = false;
   });
 </script>

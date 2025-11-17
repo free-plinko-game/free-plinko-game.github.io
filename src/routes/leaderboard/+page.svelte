@@ -17,19 +17,7 @@
   async function loadLeaderboards() {
     loading = true;
 
-    // Weekly leaderboard
-    const { data: weekly, error: weeklyError } = await supabase
-      .from('weekly_leaderboard')
-      .select('*')
-      .limit(50);
-
-    if (weeklyError) {
-      console.error('Weekly leaderboard error:', weeklyError);
-    } else if (weekly) {
-      weeklyLeaders = weekly;
-    }
-
-    // Fetch all sessions for monthly and all-time leaderboards
+    // Fetch all sessions
     const { data: sessions, error: sessionsError } = await supabase
       .from('sessions')
       .select('*')
@@ -38,6 +26,42 @@
     if (sessionsError) {
       console.error('Sessions error:', sessionsError);
     } else if (sessions && sessions.length > 0) {
+      // Calculate week start (Monday of current week)
+      const now = new Date();
+      const weekStart = new Date(now);
+      const dayOfWeek = weekStart.getDay();
+      const diff = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Adjust for Monday start
+      weekStart.setDate(weekStart.getDate() - diff);
+      weekStart.setHours(0, 0, 0, 0);
+
+      // Process weekly leaderboard
+      const weeklySessions = sessions.filter(s =>
+        new Date(s.created_at) >= weekStart
+      );
+
+      const weeklyStats = weeklySessions.reduce((acc: any, s: any) => {
+        const userId = s.user_id;
+        if (!acc[userId]) {
+          acc[userId] = {
+            user_id: userId,
+            display_name: s.display_name || 'Anonymous',
+            total_profit: 0,
+            sessions_count: 0,
+            biggest_win: 0
+          };
+        }
+        acc[userId].total_profit += Number(s.profit);
+        acc[userId].sessions_count++;
+        if (Number(s.profit) > acc[userId].biggest_win) {
+          acc[userId].biggest_win = Number(s.profit);
+        }
+        return acc;
+      }, {});
+
+      weeklyLeaders = Object.values(weeklyStats)
+        .sort((a: any, b: any) => b.total_profit - a.total_profit)
+        .slice(0, 50);
+
       // Process monthly leaderboard
       const monthStart = new Date();
       monthStart.setDate(1);
