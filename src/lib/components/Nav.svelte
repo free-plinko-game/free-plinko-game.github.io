@@ -1,6 +1,7 @@
 <script lang="ts">
   import { supabase } from '$lib/supabase';
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   
   let isGuidesOpen = false;
   let isUserMenuOpen = false;
@@ -8,6 +9,8 @@
   let user: any = null;
   
   onMount(async () => {
+    if (!browser) return;
+    
     // Check if user is logged in
     const { data: { user: currentUser } } = await supabase.auth.getUser();
     user = currentUser;
