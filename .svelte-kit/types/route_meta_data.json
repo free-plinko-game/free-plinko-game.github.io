@@ -1,0 +1,64 @@
+{
+	"/": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
+	],
+	"/best-casinos": [
+		"src/routes/+layout.ts"
+	],
+	"/dashboard": [
+		"src/routes/dashboard/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/dashboard/history": [
+		"src/routes/dashboard/history/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/dashboard/stats": [
+		"src/routes/dashboard/stats/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/how-to-play": [
+		"src/routes/+layout.ts"
+	],
+	"/leaderboard": [
+		"src/routes/leaderboard/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/plinko-strategy": [
+		"src/routes/+layout.ts"
+	],
+	"/plinko-vs-slots": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/bc-game": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/betplay": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/casinochan": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/duelbits": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/fairgo": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/joe-fortune": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/rollbit": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/roobet": [
+		"src/routes/+layout.ts"
+	],
+	"/reviews/stake": [
+		"src/routes/+layout.ts"
+	]
+}
