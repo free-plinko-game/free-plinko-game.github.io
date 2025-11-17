@@ -17,6 +17,7 @@
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
       alert('Please sign in first!');
+      loading = false;
       return;
     }
     
@@ -33,7 +34,6 @@
       alert('Error logging session: ' + error.message);
     } else {
       alert('Session logged! ✅');
-      // Reset form
       resultAmount = 0;
     }
     
@@ -46,8 +46,8 @@
   
   <form on:submit|preventDefault={logSession} class="space-y-4">
     <div>
-      <label class="block text-sm font-medium text-gray-300 mb-1">Casino</label>
-      <select bind:value={casino} class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white">
+      <label for="casino" class="block text-sm font-medium text-gray-300 mb-1">Casino</label>
+      <select id="casino" bind:value={casino} class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white">
         {#each casinos as c}
           <option value={c}>{c}</option>
         {/each}
@@ -55,8 +55,8 @@
     </div>
     
     <div>
-      <label class="block text-sm font-medium text-gray-300 mb-1">Risk Level</label>
-      <select bind:value={riskLevel} class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white">
+      <label for="riskLevel" class="block text-sm font-medium text-gray-300 mb-1">Risk Level</label>
+      <select id="riskLevel" bind:value={riskLevel} class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white">
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
@@ -64,8 +64,9 @@
     </div>
     
     <div>
-      <label class="block text-sm font-medium text-gray-300 mb-1">Bet Amount ($)</label>
+      <label for="betAmount" class="block text-sm font-medium text-gray-300 mb-1">Bet Amount ($)</label>
       <input
+        id="betAmount"
         type="number"
         bind:value={betAmount}
         min="0"
@@ -76,8 +77,9 @@
     </div>
     
     <div>
-      <label class="block text-sm font-medium text-gray-300 mb-1">Result Amount ($)</label>
+      <label for="resultAmount" class="block text-sm font-medium text-gray-300 mb-1">Result Amount ($)</label>
       <input
+        id="resultAmount"
         type="number"
         bind:value={resultAmount}
         min="0"
