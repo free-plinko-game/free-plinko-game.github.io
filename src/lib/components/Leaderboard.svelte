@@ -14,24 +14,7 @@
     
     if (data) weeklyLeaders = data;
     loading = false;
-    
-    // Real-time updates
-    supabase
-      .channel('leaderboard')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'sessions' }, () => {
-        // Refresh leaderboard on any session change
-        fetchLeaderboard();
-      })
-      .subscribe();
   });
-  
-  async function fetchLeaderboard() {
-    const { data } = await supabase
-      .from('weekly_leaderboard')
-      .select('*')
-      .limit(10);
-    if (data) weeklyLeaders = data;
-  }
 </script>
 
 <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-6">
