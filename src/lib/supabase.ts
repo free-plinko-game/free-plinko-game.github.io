@@ -8,6 +8,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 export interface Session {
   id: string
   user_id: string
+  display_name: string
   casino: string
   risk_level: 'low' | 'medium' | 'high'
   bet_amount: number

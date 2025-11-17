@@ -13,30 +13,34 @@
   
   async function logSession() {
     loading = true;
-    
+
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
       alert('Please sign in first!');
       loading = false;
       return;
     }
-    
+
+    // Get display name from user metadata
+    const displayName = user.user_metadata?.display_name || user.email?.split('@')[0] || 'Anonymous';
+
     const { error } = await supabase.from('sessions').insert({
       user_id: user.id,
+      display_name: displayName,
       casino,
       risk_level: riskLevel,
       bet_amount: betAmount,
       result_amount: resultAmount,
       profit: profit
     });
-    
+
     if (error) {
       alert('Error logging session: ' + error.message);
     } else {
       alert('Session logged! ✅');
       resultAmount = 0;
     }
-    
+
     loading = false;
   }
 </script>

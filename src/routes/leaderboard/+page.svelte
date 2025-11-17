@@ -16,34 +16,43 @@
   
   async function loadLeaderboards() {
     loading = true;
-    
+
     // Weekly leaderboard
-    const { data: weekly } = await supabase
+    const { data: weekly, error: weeklyError } = await supabase
       .from('weekly_leaderboard')
       .select('*')
       .limit(50);
-    if (weekly) weeklyLeaders = weekly;
-    
-    // Monthly leaderboard
-    const { data: sessions } = await supabase
+
+    if (weeklyError) {
+      console.error('Weekly leaderboard error:', weeklyError);
+    } else if (weekly) {
+      weeklyLeaders = weekly;
+    }
+
+    // Fetch all sessions for monthly and all-time leaderboards
+    const { data: sessions, error: sessionsError } = await supabase
       .from('sessions')
-      .select('*, user:user_id (*)');
-    
-    if (sessions) {
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (sessionsError) {
+      console.error('Sessions error:', sessionsError);
+    } else if (sessions && sessions.length > 0) {
+      // Process monthly leaderboard
       const monthStart = new Date();
       monthStart.setDate(1);
       monthStart.setHours(0, 0, 0, 0);
-      
-      const monthlySessions = sessions.filter(s => 
+
+      const monthlySessions = sessions.filter(s =>
         new Date(s.created_at) >= monthStart
       );
-      
+
       const monthlyStats = monthlySessions.reduce((acc: any, s: any) => {
         const userId = s.user_id;
         if (!acc[userId]) {
           acc[userId] = {
             user_id: userId,
-            display_name: s.user?.raw_user_meta_data?.display_name || 'Anonymous',
+            display_name: s.display_name || 'Anonymous',
             total_profit: 0,
             sessions_count: 0,
             biggest_win: 0
@@ -56,20 +65,18 @@
         }
         return acc;
       }, {});
-      
+
       monthlyLeaders = Object.values(monthlyStats)
         .sort((a: any, b: any) => b.total_profit - a.total_profit)
         .slice(0, 50);
-    }
-    
-    // All-time leaderboard
-    if (sessions) {
+
+      // Process all-time leaderboard
       const alltimeStats = sessions.reduce((acc: any, s: any) => {
         const userId = s.user_id;
         if (!acc[userId]) {
           acc[userId] = {
             user_id: userId,
-            display_name: s.user?.raw_user_meta_data?.display_name || 'Anonymous',
+            display_name: s.display_name || 'Anonymous',
             total_profit: 0,
             sessions_count: 0,
             biggest_win: 0
@@ -82,12 +89,12 @@
         }
         return acc;
       }, {});
-      
+
       alltimeLeaders = Object.values(alltimeStats)
         .sort((a: any, b: any) => b.total_profit - a.total_profit)
         .slice(0, 100);
     }
-    
+
     loading = false;
   }
   
