@@ -10,6 +10,7 @@ import {
 } from '$lib/stores/game';
 import type { RiskLevel, RowCount } from '$lib/types';
 import { getRandomBetween } from '$lib/utils/numbers';
+import { logGameSession } from '$lib/utils/leaderboard';
 import Matter, { type IBodyDefinition } from 'matter-js';
 import { get } from 'svelte/store';
 import { v4 as uuidv4 } from 'uuid';
@@ -279,6 +280,15 @@ class PlinkoEngine {
         return [...history, lastTotalProfit + profit];
       });
       balance.update((balance) => balance + payoutValue);
+
+      // Automatically log to leaderboard if user is logged in
+      logGameSession({
+        betAmount,
+        resultAmount: payoutValue,
+        profit,
+        riskLevel: this.riskLevel,
+        rowCount: this.rowCount,
+      });
     }
 
     Matter.Composite.remove(this.engine.world, ball);
