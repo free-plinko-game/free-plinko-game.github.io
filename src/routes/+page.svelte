@@ -15,7 +15,20 @@
   
   onMount(async () => {
     setBalanceFromLocalStorage();
-    
+
+    // Handle auth callback code exchange
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('code');
+
+      if (code) {
+        const { supabase } = await import('$lib/supabase');
+        await supabase.auth.exchangeCodeForSession(code);
+        // Remove code from URL
+        window.history.replaceState({}, document.title, '/');
+      }
+    }
+
     // Lazy load Plinko and other heavy components
     const [plinkoModule, settingsModule, liveStatsModule, sidebarModule] = await Promise.all([
       import('$lib/components/Plinko'),
@@ -23,7 +36,7 @@
       import('$lib/components/LiveStatsWindow/LiveStatsWindow.svelte'),
       import('$lib/components/Sidebar')
     ]);
-    
+
     Plinko = plinkoModule.default;
     SettingsWindow = settingsModule.default;
     LiveStatsWindow = liveStatsModule.default;
