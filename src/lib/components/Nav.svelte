@@ -106,6 +106,9 @@
               <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-300 hover:bg-green-500/10 hover:text-green-400 transition-colors">
                 Dashboard
               </a>
+              <a href="/customise" class="block px-4 py-2 text-sm text-gray-300 hover:bg-green-500/10 hover:text-green-400 transition-colors">
+                🎨 Customise
+              </a>
               <a href="/dashboard/stats" class="block px-4 py-2 text-sm text-gray-300 hover:bg-green-500/10 hover:text-green-400 transition-colors">
                 Your Stats
               </a>
@@ -116,7 +119,7 @@
                 Profile Settings
               </a>
               <hr class="my-2 border-zinc-700" />
-              <button 
+              <button
                 on:click={signOut}
                 class="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500/10 transition-colors"
               >
@@ -200,6 +203,9 @@
               <a href="/dashboard" class="block text-sm text-gray-300 hover:text-green-400 transition-colors">
                 Dashboard
               </a>
+              <a href="/customise" class="block text-sm text-gray-300 hover:text-green-400 transition-colors">
+                🎨 Customise
+              </a>
               <a href="/dashboard/stats" class="block text-sm text-gray-300 hover:text-green-400 transition-colors">
                 Your Stats
               </a>
@@ -209,7 +215,7 @@
               <a href="/dashboard/profile" class="block text-sm text-gray-300 hover:text-green-400 transition-colors">
                 Profile Settings
               </a>
-              <button 
+              <button
                 on:click={signOut}
                 class="block text-sm text-red-400 hover:text-red-300 transition-colors"
               >

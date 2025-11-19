@@ -9,6 +9,7 @@ import {
   totalProfitHistory,
 } from '$lib/stores/game';
 import { userProgress, showLevelUpNotification, levelUpData } from '$lib/stores/userProgress';
+import { userPreferences } from '$lib/stores/userPreferences';
 import type { RiskLevel, RowCount } from '$lib/types';
 import { getRandomBetween } from '$lib/utils/numbers';
 import { logGameSession } from '$lib/utils/leaderboard';
@@ -46,6 +47,10 @@ class PlinkoEngine {
    * A cache value of the {@link riskLevel} store for faster access.
    */
   private riskLevel: RiskLevel;
+  /**
+   * A cache value of the user's selected ball color for faster access.
+   */
+  private ballColor: string;
 
   private engine: Matter.Engine;
   private render: Matter.Render;
@@ -119,9 +124,11 @@ class PlinkoEngine {
     this.betAmount = get(betAmount);
     this.rowCount = get(rowCount);
     this.riskLevel = get(riskLevel);
+    this.ballColor = get(userPreferences).ballColor;
     betAmount.subscribe((value) => (this.betAmount = value));
     rowCount.subscribe((value) => this.updateRowCount(value));
     riskLevel.subscribe((value) => (this.riskLevel = value));
+    userPreferences.subscribe((prefs) => (this.ballColor = prefs.ballColor));
 
     this.engine = Matter.Engine.create({
       timing: {
@@ -207,7 +214,7 @@ class PlinkoEngine {
           mask: PlinkoEngine.PIN_CATEGORY, // Collide with pins only, but not other balls
         },
         render: {
-          fillStyle: '#ff0000',
+          fillStyle: this.ballColor,
         },
       },
     );
