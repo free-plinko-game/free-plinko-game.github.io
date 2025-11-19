@@ -154,11 +154,19 @@
     return `${rank}.`;
   }
   
-  $: currentLeaders = activeTab === 'weekly' 
-    ? weeklyLeaders 
-    : activeTab === 'monthly' 
-    ? monthlyLeaders 
+  $: currentLeaders = activeTab === 'weekly'
+    ? weeklyLeaders
+    : activeTab === 'monthly'
+    ? monthlyLeaders
     : alltimeLeaders;
+
+  $: {
+    console.log('🎯 Active tab:', activeTab);
+    console.log('🎯 Current leaders:', currentLeaders);
+    console.log('🎯 Weekly leaders:', weeklyLeaders);
+    console.log('🎯 Monthly leaders:', monthlyLeaders);
+    console.log('🎯 All-time leaders:', alltimeLeaders);
+  }
 </script>
 
 <svelte:head>
