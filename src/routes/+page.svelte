@@ -3,6 +3,7 @@
   import Balance from '$lib/components/Balance.svelte';
   import CasinoCard from '$lib/components/CasinoCard.svelte';
   import FAQ from '$lib/components/FAQ.svelte';
+  import LevelUpNotification from '$lib/components/LevelUpNotification.svelte';
   import { setBalanceFromLocalStorage, writeBalanceToLocalStorage } from '$lib/utils/game';
   import casinosData from '$lib/data/casinos.json';
   import { onMount } from 'svelte';
@@ -183,7 +184,10 @@
   {#if LiveStatsWindow}
     <svelte:component this={LiveStatsWindow} />
   {/if}
-  
+
+  <!-- Level Up Notification -->
+  <LevelUpNotification />
+
   <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-[40rem]">
       <div class="flex items-center justify-center p-2">

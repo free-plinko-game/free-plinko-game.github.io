@@ -8,9 +8,12 @@ import {
   betAmountOfExistingBalls,
   totalProfitHistory,
 } from '$lib/stores/game';
+import { userProgress, showLevelUpNotification, levelUpData } from '$lib/stores/userProgress';
 import type { RiskLevel, RowCount } from '$lib/types';
 import { getRandomBetween } from '$lib/utils/numbers';
 import { logGameSession } from '$lib/utils/leaderboard';
+import { awardXPForBallDrop } from '$lib/utils/progress';
+import { supabase } from '$lib/supabase';
 import Matter, { type IBodyDefinition } from 'matter-js';
 import { get } from 'svelte/store';
 import { v4 as uuidv4 } from 'uuid';
@@ -253,7 +256,7 @@ class PlinkoEngine {
   /**
    * Called when a ball hits the invisible sensor at the bottom.
    */
-  private handleBallEnterBin(ball: Matter.Body) {
+  private async handleBallEnterBin(ball: Matter.Body) {
     const binIndex = this.pinsLastRowXCoords.findLastIndex((pinX) => pinX < ball.position.x);
     if (binIndex !== -1 && binIndex < this.pinsLastRowXCoords.length - 1) {
       const betAmount = get(betAmountOfExistingBalls)[ball.id] ?? 0;
@@ -289,6 +292,26 @@ class PlinkoEngine {
         riskLevel: this.riskLevel,
         rowCount: this.rowCount,
       });
+
+      // Award XP for ball drop if user is logged in
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        const result = await awardXPForBallDrop(user.id);
+        if (result) {
+          userProgress.set(result.progress);
+
+          // Show level-up notification if leveled up
+          if (result.leveledUp) {
+            levelUpData.set({ oldLevel: result.oldLevel, newLevel: result.progress.level });
+            showLevelUpNotification.set(true);
+
+            // Auto-hide notification after 5 seconds
+            setTimeout(() => {
+              showLevelUpNotification.set(false);
+            }, 5000);
+          }
+        }
+      }
     }
 
     Matter.Composite.remove(this.engine.world, ball);
