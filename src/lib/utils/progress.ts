@@ -2,6 +2,14 @@ import { supabase, type UserProgress } from '$lib/supabase';
 import { BASE_XP_PER_DROP, getLevelFromXP } from '$lib/constants/levels';
 
 /**
+ * Check if today is a weekend (Saturday or Sunday)
+ */
+function isWeekend(): boolean {
+  const day = new Date().getDay();
+  return day === 0 || day === 6; // 0 = Sunday, 6 = Saturday
+}
+
+/**
  * Award XP to a user for dropping a ball
  * Returns the updated progress and whether they leveled up
  */
@@ -18,7 +26,14 @@ export async function awardXPForBallDrop(
 
     const oldXP = currentProgress?.xp || 0;
     const oldLevel = currentProgress?.level || 1;
-    const newXP = oldXP + BASE_XP_PER_DROP;
+
+    // Calculate XP with Double XP Weekend bonus (Level 3+)
+    let xpToAward = BASE_XP_PER_DROP;
+    if (oldLevel >= 3 && isWeekend()) {
+      xpToAward *= 2; // Double XP on weekends for level 3+
+    }
+
+    const newXP = oldXP + xpToAward;
     const newLevel = getLevelFromXP(newXP);
     const leveledUp = newLevel > oldLevel;
 
