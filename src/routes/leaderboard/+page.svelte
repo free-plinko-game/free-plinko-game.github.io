@@ -17,38 +17,45 @@
   async function loadLeaderboards() {
     loading = true;
 
+    console.log('🔍 Loading leaderboards...');
+
     // Fetch all sessions
     const { data: sessions, error: sessionsError } = await supabase
       .from('sessions')
       .select('*')
       .order('created_at', { ascending: false });
 
+    console.log('📊 Query result:', { sessions, error: sessionsError });
+
     if (sessionsError) {
-      console.error('Sessions error:', sessionsError);
-    } else if (sessions && sessions.length > 0) {
-      console.log('Total sessions fetched:', sessions.length);
+      console.error('❌ Sessions error:', sessionsError);
+    } else if (sessions) {
+      console.log(`✅ Total sessions fetched: ${sessions.length}`);
 
-      // Calculate week start (Monday of current week)
-      const now = new Date();
-      const weekStart = new Date(now);
-      const dayOfWeek = weekStart.getDay();
-      const diff = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Adjust for Monday start
-      weekStart.setDate(weekStart.getDate() - diff);
-      weekStart.setHours(0, 0, 0, 0);
+      if (sessions.length === 0) {
+        console.warn('⚠️ No sessions found in database');
+      } else {
+        // Calculate week start (Monday of current week)
+        const now = new Date();
+        const weekStart = new Date(now);
+        const dayOfWeek = weekStart.getDay();
+        const diff = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Adjust for Monday start
+        weekStart.setDate(weekStart.getDate() - diff);
+        weekStart.setHours(0, 0, 0, 0);
 
-      console.log('Week start date:', weekStart.toISOString());
-      console.log('Today:', now.toISOString());
+        console.log('📅 Week start date:', weekStart.toISOString());
+        console.log('📅 Today:', now.toISOString());
 
-      // Process weekly leaderboard
-      const weeklySessions = sessions.filter(s => {
-        const sessionDate = new Date(s.created_at);
-        return sessionDate >= weekStart;
-      });
+        // Process weekly leaderboard
+        const weeklySessions = sessions.filter(s => {
+          const sessionDate = new Date(s.created_at);
+          return sessionDate >= weekStart;
+        });
 
-      console.log('Weekly sessions count:', weeklySessions.length);
-      console.log('Weekly sessions:', weeklySessions);
+        console.log(`📈 Weekly sessions count: ${weeklySessions.length}`);
+        console.log('📈 Weekly sessions:', weeklySessions);
 
-      const weeklyStats = weeklySessions.reduce((acc: any, s: any) => {
+        const weeklyStats = weeklySessions.reduce((acc: any, s: any) => {
         const userId = s.user_id;
         if (!acc[userId]) {
           acc[userId] = {
@@ -128,6 +135,13 @@
       alltimeLeaders = Object.values(alltimeStats)
         .sort((a: any, b: any) => b.total_profit - a.total_profit)
         .slice(0, 100);
+
+        console.log('🏆 Weekly leaders:', weeklyLeaders);
+        console.log('📆 Monthly leaders:', monthlyLeaders);
+        console.log('⭐ All-time leaders:', alltimeLeaders);
+      }
+    } else {
+      console.warn('⚠️ Sessions is null or undefined');
     }
 
     loading = false;
