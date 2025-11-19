@@ -26,6 +26,14 @@
     { name: 'Matrix', value: 'matrix', requiredLevel: 4 },
   ];
 
+  // Premium themes unlocked at level 13
+  const premiumThemes = [
+    { name: 'Sunset', value: 'sunset', requiredLevel: 13 },
+    { name: 'Ocean', value: 'ocean', requiredLevel: 13 },
+    { name: 'Midnight', value: 'midnight', requiredLevel: 13 },
+    { name: 'Royal', value: 'royal', requiredLevel: 13 },
+  ];
+
   onMount(async () => {
     // Load user progress if logged in
     const { data: { user } } = await supabase.auth.getUser();
@@ -137,6 +145,44 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               {#each boardThemes as theme}
+                <button
+                  on:click={() => handleThemeChange(theme.value)}
+                  disabled={!isFeatureUnlocked(theme.requiredLevel)}
+                  class="bg-slate-900 border-2 rounded-lg p-4 transition-all hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 {$userPreferences.boardTheme === theme.value && isFeatureUnlocked(theme.requiredLevel) ? 'border-green-500 ring-2 ring-green-500/50' : 'border-slate-700 hover:border-slate-600'}"
+                >
+                  <div class="flex items-center justify-between">
+                    <p class="text-white text-lg font-semibold">{theme.name}</p>
+                    {#if !isFeatureUnlocked(theme.requiredLevel)}
+                      <span class="text-xs text-gray-500 bg-slate-800 px-2 py-1 rounded">Level {theme.requiredLevel}</span>
+                    {:else if $userPreferences.boardTheme === theme.value}
+                      <span class="text-green-400">✓ Active</span>
+                    {/if}
+                  </div>
+                </button>
+              {/each}
+            </div>
+          </section>
+
+          <!-- Premium Themes Section -->
+          <section class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                  🎭 Premium Themes
+                </h2>
+                <p class="text-sm text-gray-400 mt-1">
+                  {isFeatureUnlocked(13) ? 'Exclusive premium themes' : `Unlock at Level 13 (Current: Level ${$userProgress.level})`}
+                </p>
+              </div>
+              {#if !isFeatureUnlocked(13)}
+                <div class="bg-slate-900 border border-yellow-500/30 rounded-lg px-4 py-2">
+                  <span class="text-yellow-400 text-sm font-semibold">🔒 Locked</span>
+                </div>
+              {/if}
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {#each premiumThemes as theme}
                 <button
                   on:click={() => handleThemeChange(theme.value)}
                   disabled={!isFeatureUnlocked(theme.requiredLevel)}
