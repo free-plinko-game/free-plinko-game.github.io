@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Select } from '$lib/components/ui';
+  import XPProgressBar from '$lib/components/XPProgressBar.svelte';
   import { autoBetIntervalMs, rowCountOptions } from '$lib/constants/game';
   import {
     balance,
@@ -263,6 +264,9 @@
       Stop Autobet
     {/if}
   </button>
+
+  <!-- XP Progress Bar -->
+  <XPProgressBar />
 
   <div class="mt-auto pt-5">
     <div class="flex items-center gap-4 border-t border-slate-600 pt-3">

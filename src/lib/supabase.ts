@@ -24,3 +24,12 @@ export interface LeaderboardEntry {
   sessions_count: number
   biggest_win: number
 }
+
+export interface UserProgress {
+  user_id: string
+  xp: number
+  level: number
+  total_balls_dropped: number
+  created_at: string
+  updated_at: string
+}
