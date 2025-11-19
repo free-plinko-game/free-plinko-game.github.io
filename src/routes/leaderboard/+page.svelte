@@ -26,6 +26,8 @@
     if (sessionsError) {
       console.error('Sessions error:', sessionsError);
     } else if (sessions && sessions.length > 0) {
+      console.log('Total sessions fetched:', sessions.length);
+
       // Calculate week start (Monday of current week)
       const now = new Date();
       const weekStart = new Date(now);
@@ -34,10 +36,17 @@
       weekStart.setDate(weekStart.getDate() - diff);
       weekStart.setHours(0, 0, 0, 0);
 
+      console.log('Week start date:', weekStart.toISOString());
+      console.log('Today:', now.toISOString());
+
       // Process weekly leaderboard
-      const weeklySessions = sessions.filter(s =>
-        new Date(s.created_at) >= weekStart
-      );
+      const weeklySessions = sessions.filter(s => {
+        const sessionDate = new Date(s.created_at);
+        return sessionDate >= weekStart;
+      });
+
+      console.log('Weekly sessions count:', weeklySessions.length);
+      console.log('Weekly sessions:', weeklySessions);
 
       const weeklyStats = weeklySessions.reduce((acc: any, s: any) => {
         const userId = s.user_id;
@@ -61,6 +70,8 @@
       weeklyLeaders = Object.values(weeklyStats)
         .sort((a: any, b: any) => b.total_profit - a.total_profit)
         .slice(0, 50);
+
+      console.log('Weekly leaders:', weeklyLeaders);
 
       // Process monthly leaderboard
       const monthStart = new Date();
