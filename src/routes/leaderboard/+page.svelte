@@ -3,13 +3,15 @@
   import { supabase } from '$lib/supabase';
   import { onMount } from 'svelte';
   import type { LeaderboardEntry } from '$lib/supabase';
-  
+  import { getBadgeForLevel } from '$lib/utils/badges';
+
   let loading = true;
   let activeTab: 'weekly' | 'monthly' | 'alltime' = 'weekly';
   let weeklyLeaders: LeaderboardEntry[] = [];
   let monthlyLeaders: any[] = [];
   let alltimeLeaders: any[] = [];
-  
+  let userLevels: Record<string, number> = {}; // Map user_id to level
+
   onMount(async () => {
     await loadLeaderboards();
   });
@@ -24,6 +26,18 @@
       .from('sessions')
       .select('*')
       .order('created_at', { ascending: false });
+
+    // Fetch user progress data for badges
+    const { data: progressData } = await supabase
+      .from('user_progress')
+      .select('user_id, level');
+
+    if (progressData) {
+      userLevels = progressData.reduce((acc, entry) => {
+        acc[entry.user_id] = entry.level;
+        return acc;
+      }, {} as Record<string, number>);
+    }
 
     console.log('📊 Query result:', { sessions, error: sessionsError });
 
@@ -238,7 +252,15 @@
               <!-- 2nd Place -->
               <div class="bg-gradient-to-br from-slate-700 to-slate-800 border-2 border-slate-500 rounded-lg p-6 text-center order-2 md:order-1">
                 <div class="text-4xl mb-2">🥈</div>
-                <p class="text-white font-bold text-lg mb-1">{currentLeaders[1].display_name || 'Anonymous'}</p>
+                <div class="flex items-center justify-center gap-1 mb-1">
+                  <p class="text-white font-bold text-lg">{currentLeaders[1].display_name || 'Anonymous'}</p>
+                  {#if userLevels[currentLeaders[1].user_id]}
+                    {@const badge = getBadgeForLevel(userLevels[currentLeaders[1].user_id])}
+                    {#if badge}
+                      <span class="{badge.color} text-lg" title="{badge.name}">{badge.emoji}</span>
+                    {/if}
+                  {/if}
+                </div>
                 <p class="text-green-400 font-bold text-2xl mb-1">${currentLeaders[1].total_profit?.toFixed(2)}</p>
                 <p class="text-sm text-gray-400">{currentLeaders[1].sessions_count} sessions</p>
               </div>
@@ -246,16 +268,32 @@
               <!-- 1st Place -->
               <div class="bg-gradient-to-br from-yellow-600 to-yellow-700 border-2 border-yellow-400 rounded-lg p-6 text-center order-1 md:order-2 md:scale-110 md:z-10">
                 <div class="text-5xl mb-2">🥇</div>
-                <p class="text-white font-bold text-xl mb-1">{currentLeaders[0].display_name || 'Anonymous'}</p>
+                <div class="flex items-center justify-center gap-1 mb-1">
+                  <p class="text-white font-bold text-xl">{currentLeaders[0].display_name || 'Anonymous'}</p>
+                  {#if userLevels[currentLeaders[0].user_id]}
+                    {@const badge = getBadgeForLevel(userLevels[currentLeaders[0].user_id])}
+                    {#if badge}
+                      <span class="{badge.color} text-xl" title="{badge.name}">{badge.emoji}</span>
+                    {/if}
+                  {/if}
+                </div>
                 <p class="text-green-400 font-bold text-3xl mb-1">${currentLeaders[0].total_profit?.toFixed(2)}</p>
                 <p class="text-sm text-gray-300">{currentLeaders[0].sessions_count} sessions</p>
                 <p class="text-xs text-gray-300 mt-2">Best: ${currentLeaders[0].biggest_win?.toFixed(2)}</p>
               </div>
-              
+
               <!-- 3rd Place -->
               <div class="bg-gradient-to-br from-amber-700 to-amber-800 border-2 border-amber-600 rounded-lg p-6 text-center order-3">
                 <div class="text-4xl mb-2">🥉</div>
-                <p class="text-white font-bold text-lg mb-1">{currentLeaders[2].display_name || 'Anonymous'}</p>
+                <div class="flex items-center justify-center gap-1 mb-1">
+                  <p class="text-white font-bold text-lg">{currentLeaders[2].display_name || 'Anonymous'}</p>
+                  {#if userLevels[currentLeaders[2].user_id]}
+                    {@const badge = getBadgeForLevel(userLevels[currentLeaders[2].user_id])}
+                    {#if badge}
+                      <span class="{badge.color} text-lg" title="{badge.name}">{badge.emoji}</span>
+                    {/if}
+                  {/if}
+                </div>
                 <p class="text-green-400 font-bold text-2xl mb-1">${currentLeaders[2].total_profit?.toFixed(2)}</p>
                 <p class="text-sm text-gray-400">{currentLeaders[2].sessions_count} sessions</p>
               </div>
@@ -270,7 +308,15 @@
                   <div class="flex items-center gap-4 flex-1">
                     <span class="text-gray-400 font-bold text-lg w-8">{getMedalEmoji(i + 1)}</span>
                     <div class="flex-1">
-                      <p class="text-white font-semibold">{entry.display_name || 'Anonymous'}</p>
+                      <div class="flex items-center gap-1">
+                        <p class="text-white font-semibold">{entry.display_name || 'Anonymous'}</p>
+                        {#if userLevels[entry.user_id]}
+                          {@const badge = getBadgeForLevel(userLevels[entry.user_id])}
+                          {#if badge}
+                            <span class="{badge.color}" title="{badge.name}">{badge.emoji}</span>
+                          {/if}
+                        {/if}
+                      </div>
                       <p class="text-sm text-gray-400">{entry.sessions_count} sessions</p>
                     </div>
                   </div>

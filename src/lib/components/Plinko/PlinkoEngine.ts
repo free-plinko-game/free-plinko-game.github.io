@@ -10,10 +10,12 @@ import {
 } from '$lib/stores/game';
 import { userProgress, showLevelUpNotification, levelUpData } from '$lib/stores/userProgress';
 import { userPreferences } from '$lib/stores/userPreferences';
+import { BOARD_THEMES } from '$lib/constants/themes';
 import type { RiskLevel, RowCount } from '$lib/types';
 import { getRandomBetween } from '$lib/utils/numbers';
 import { logGameSession } from '$lib/utils/leaderboard';
 import { awardXPForBallDrop } from '$lib/utils/progress';
+import { rollForMultiplier } from '$lib/utils/multipliers';
 import { supabase } from '$lib/supabase';
 import Matter, { type IBodyDefinition } from 'matter-js';
 import { get } from 'svelte/store';
@@ -51,6 +53,10 @@ class PlinkoEngine {
    * A cache value of the user's selected ball color for faster access.
    */
   private ballColor: string;
+  /**
+   * A cache value of the user's selected board theme for faster access.
+   */
+  private boardTheme: string;
 
   private engine: Matter.Engine;
   private render: Matter.Render;
@@ -125,23 +131,31 @@ class PlinkoEngine {
     this.rowCount = get(rowCount);
     this.riskLevel = get(riskLevel);
     this.ballColor = get(userPreferences).ballColor;
+    this.boardTheme = get(userPreferences).boardTheme;
     betAmount.subscribe((value) => (this.betAmount = value));
     rowCount.subscribe((value) => this.updateRowCount(value));
     riskLevel.subscribe((value) => (this.riskLevel = value));
-    userPreferences.subscribe((prefs) => (this.ballColor = prefs.ballColor));
+    userPreferences.subscribe((prefs) => {
+      this.ballColor = prefs.ballColor;
+      if (prefs.boardTheme !== this.boardTheme) {
+        this.boardTheme = prefs.boardTheme;
+        this.applyTheme();
+      }
+    });
 
     this.engine = Matter.Engine.create({
       timing: {
         timeScale: 1,
       },
     });
+    const theme = BOARD_THEMES[this.boardTheme] || BOARD_THEMES.classic;
     this.render = Matter.Render.create({
       engine: this.engine,
       canvas: this.canvas,
       options: {
         width: PlinkoEngine.WIDTH,
         height: PlinkoEngine.HEIGHT,
-        background: '#0f1728',
+        background: theme.background,
         wireframes: false,
       },
     });
@@ -267,8 +281,17 @@ class PlinkoEngine {
     const binIndex = this.pinsLastRowXCoords.findLastIndex((pinX) => pinX < ball.position.x);
     if (binIndex !== -1 && binIndex < this.pinsLastRowXCoords.length - 1) {
       const betAmount = get(betAmountOfExistingBalls)[ball.id] ?? 0;
-      const multiplier = binPayouts[this.rowCount][this.riskLevel][binIndex];
-      const payoutValue = betAmount * multiplier;
+      const baseMultiplier = binPayouts[this.rowCount][this.riskLevel][binIndex];
+
+      // Check for level-based bonus multipliers
+      const currentUserProgress = get(userProgress);
+      const bonusMultiplier = currentUserProgress ? rollForMultiplier(currentUserProgress.level) : null;
+
+      // Apply bonus multiplier if rolled
+      const finalMultiplier = bonusMultiplier
+        ? baseMultiplier * bonusMultiplier.multiplier
+        : baseMultiplier;
+      const payoutValue = betAmount * finalMultiplier;
       const profit = payoutValue - betAmount;
 
       winRecords.update((records) => [
@@ -279,10 +302,15 @@ class PlinkoEngine {
           rowCount: this.rowCount,
           binIndex,
           payout: {
-            multiplier,
+            multiplier: finalMultiplier,
             value: payoutValue,
           },
           profit,
+          bonusMultiplier: bonusMultiplier ? {
+            name: bonusMultiplier.name,
+            value: bonusMultiplier.multiplier,
+            emoji: bonusMultiplier.emoji,
+          } : undefined,
         },
       ]);
       totalProfitHistory.update((history) => {
@@ -357,10 +385,11 @@ class PlinkoEngine {
 
       for (let col = 0; col < 3 + row; ++col) {
         const colX = rowPaddingX + ((this.canvas.width - rowPaddingX * 2) / (3 + row - 1)) * col;
+        const theme = BOARD_THEMES[this.boardTheme] || BOARD_THEMES.classic;
         const pin = Matter.Bodies.circle(colX, rowY, this.pinRadius, {
           isStatic: true,
           render: {
-            fillStyle: '#ffffff',
+            fillStyle: theme.pinColor,
           },
           collisionFilter: {
             category: PIN_CATEGORY,
@@ -417,6 +446,23 @@ class PlinkoEngine {
       }
     });
     betAmountOfExistingBalls.set({});
+  }
+
+  /**
+   * Applies the current theme to the board
+   */
+  private applyTheme() {
+    const theme = BOARD_THEMES[this.boardTheme] || BOARD_THEMES.classic;
+
+    // Update background
+    this.render.options.background = theme.background;
+
+    // Update pin colors
+    this.pins.forEach((pin) => {
+      if (pin.render.fillStyle) {
+        pin.render.fillStyle = theme.pinColor;
+      }
+    });
   }
 }
 

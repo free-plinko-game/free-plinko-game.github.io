@@ -18,12 +18,20 @@
   class="flex w-[clamp(1.5rem,0.893rem+2.857vw,2rem)] flex-col overflow-hidden rounded-sm text-[clamp(8px,5.568px+0.714vw,10px)] md:rounded-md lg:w-12 lg:text-sm"
   style:aspect-ratio={`1 / ${winCount}`}
 >
-  {#each lastWins as { binIndex, rowCount, payout: { multiplier } }}
+  {#each lastWins as { binIndex, rowCount, payout: { multiplier }, bonusMultiplier }}
     <div
-      class="flex aspect-square items-center justify-center font-bold text-gray-950"
+      class="relative flex aspect-square items-center justify-center font-bold text-gray-950"
       style:background-color={binColorsByRowCount[rowCount].background[binIndex]}
     >
       {multiplier}{multiplier < 100 ? '×' : ''}
+      {#if bonusMultiplier}
+        <div
+          class="absolute top-0 right-0 text-[8px] lg:text-xs"
+          title="{bonusMultiplier.name} Multiplier ({bonusMultiplier.value}x)"
+        >
+          {bonusMultiplier.emoji}
+        </div>
+      {/if}
     </div>
   {/each}
 </div>

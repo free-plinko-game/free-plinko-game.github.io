@@ -56,4 +56,12 @@ export type WinRecord = {
    * Payout value minus the bet amount.
    */
   profit: number;
+  /**
+   * Level-based bonus multiplier applied (if any)
+   */
+  bonusMultiplier?: {
+    name: string;
+    value: number;
+    emoji: string;
+  };
 };
