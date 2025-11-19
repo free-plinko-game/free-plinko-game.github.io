@@ -232,7 +232,7 @@
         </div>
       {:else}
         <div class="space-y-3">
-          <!-- Top 3 -->
+          <!-- Top 3 Podium -->
           {#if currentLeaders.length >= 3}
             <div class="grid md:grid-cols-3 gap-4 mb-6">
               <!-- 2nd Place -->
@@ -262,10 +262,10 @@
             </div>
           {/if}
           
-          <!-- Rest of the leaderboard -->
+          <!-- Rest of the leaderboard (or all if less than 3 players) -->
           <div class="bg-zinc-900 border border-green-500/20 rounded-lg overflow-hidden">
             {#each currentLeaders as entry, i}
-              {#if i >= 3}
+              {#if currentLeaders.length < 3 || i >= 3}
                 <div class="flex items-center justify-between p-4 border-b border-zinc-800 hover:bg-zinc-800/50 transition">
                   <div class="flex items-center gap-4 flex-1">
                     <span class="text-gray-400 font-bold text-lg w-8">{getMedalEmoji(i + 1)}</span>
