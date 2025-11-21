@@ -24,14 +24,15 @@
     // Get display name from user metadata
     const displayName = user.user_metadata?.display_name || user.email?.split('@')[0] || 'Anonymous';
 
+    // Note: profit is now auto-calculated by the database (result_amount - bet_amount)
+    // Do not send profit field - it will be rejected
     const { error } = await supabase.from('sessions').insert({
       user_id: user.id,
       display_name: displayName,
       casino,
       risk_level: riskLevel,
       bet_amount: betAmount,
-      result_amount: resultAmount,
-      profit: profit
+      result_amount: resultAmount
     });
 
     if (error) {
