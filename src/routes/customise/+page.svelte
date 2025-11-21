@@ -56,6 +56,10 @@
   function handleThemeChange(theme: string) {
     userPreferences.update(prefs => ({ ...prefs, boardTheme: theme }));
   }
+
+  function handleBallTrailsToggle() {
+    userPreferences.update(prefs => ({ ...prefs, ballTrailsEnabled: !prefs.ballTrailsEnabled }));
+  }
 </script>
 
 <svelte:head>
@@ -201,20 +205,45 @@
             </div>
           </section>
 
+          <!-- Ball Trails Section -->
+          <section class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                  ✨ Ball Trails
+                </h2>
+                <p class="text-sm text-gray-400 mt-1">
+                  {isFeatureUnlocked(7) ? 'Animated particle trails for your balls' : `Unlock at Level 7 (Current: Level ${$userProgress.level})`}
+                </p>
+              </div>
+              {#if !isFeatureUnlocked(7)}
+                <div class="bg-slate-900 border border-yellow-500/30 rounded-lg px-4 py-2">
+                  <span class="text-yellow-400 text-sm font-semibold">🔒 Locked</span>
+                </div>
+              {/if}
+            </div>
+
+            <div class="flex items-center justify-between bg-slate-900 border-2 rounded-lg p-4 {isFeatureUnlocked(7) ? 'border-slate-700' : 'border-slate-800 opacity-40'}">
+              <div class="flex-1">
+                <p class="text-white font-semibold">Enable Ball Trails</p>
+                <p class="text-sm text-gray-400">Add glowing particle effects behind falling balls</p>
+              </div>
+              <button
+                on:click={handleBallTrailsToggle}
+                disabled={!isFeatureUnlocked(7)}
+                class="relative inline-flex h-8 w-14 items-center rounded-full transition-colors disabled:cursor-not-allowed {$userPreferences.ballTrailsEnabled && isFeatureUnlocked(7) ? 'bg-green-500' : 'bg-gray-600'}"
+              >
+                <span
+                  class="inline-block h-6 w-6 transform rounded-full bg-white transition-transform {$userPreferences.ballTrailsEnabled && isFeatureUnlocked(7) ? 'translate-x-7' : 'translate-x-1'}"
+                ></span>
+              </button>
+            </div>
+          </section>
+
           <!-- Coming Soon Features -->
           <section class="bg-slate-800 border border-slate-700 rounded-lg p-6">
             <h2 class="text-2xl font-bold text-white mb-4">🚀 Coming Soon</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {#if LEVEL_REWARDS[7]}
-                <div class="bg-slate-900 rounded-lg p-4 opacity-60">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="text-2xl">{LEVEL_REWARDS[7].emoji}</span>
-                    <p class="text-white font-semibold">{LEVEL_REWARDS[7].name}</p>
-                  </div>
-                  <p class="text-sm text-gray-400">{LEVEL_REWARDS[7].description}</p>
-                  <p class="text-xs text-yellow-500 mt-2">Unlock at Level 7</p>
-                </div>
-              {/if}
               {#if LEVEL_REWARDS[9]}
                 <div class="bg-slate-900 rounded-lg p-4 opacity-60">
                   <div class="flex items-center gap-2 mb-2">
