@@ -71,15 +71,25 @@
 
         const weeklyStats = weeklySessions.reduce((acc: any, s: any) => {
         const userId = s.user_id;
+        const sessionDate = new Date(s.created_at);
+
         if (!acc[userId]) {
           acc[userId] = {
             user_id: userId,
             display_name: s.display_name || 'Anonymous',
             total_profit: 0,
             sessions_count: 0,
-            biggest_win: 0
+            biggest_win: 0,
+            latest_session_date: sessionDate
           };
         }
+
+        // Use most recent display name
+        if (sessionDate > acc[userId].latest_session_date) {
+          acc[userId].display_name = s.display_name || 'Anonymous';
+          acc[userId].latest_session_date = sessionDate;
+        }
+
         acc[userId].total_profit += Number(s.profit);
         acc[userId].sessions_count++;
         if (Number(s.profit) > acc[userId].biggest_win) {
@@ -105,15 +115,25 @@
 
       const monthlyStats = monthlySessions.reduce((acc: any, s: any) => {
         const userId = s.user_id;
+        const sessionDate = new Date(s.created_at);
+
         if (!acc[userId]) {
           acc[userId] = {
             user_id: userId,
             display_name: s.display_name || 'Anonymous',
             total_profit: 0,
             sessions_count: 0,
-            biggest_win: 0
+            biggest_win: 0,
+            latest_session_date: sessionDate
           };
         }
+
+        // Use most recent display name
+        if (sessionDate > acc[userId].latest_session_date) {
+          acc[userId].display_name = s.display_name || 'Anonymous';
+          acc[userId].latest_session_date = sessionDate;
+        }
+
         acc[userId].total_profit += Number(s.profit);
         acc[userId].sessions_count++;
         if (Number(s.profit) > acc[userId].biggest_win) {
@@ -129,15 +149,25 @@
       // Process all-time leaderboard
       const alltimeStats = sessions.reduce((acc: any, s: any) => {
         const userId = s.user_id;
+        const sessionDate = new Date(s.created_at);
+
         if (!acc[userId]) {
           acc[userId] = {
             user_id: userId,
             display_name: s.display_name || 'Anonymous',
             total_profit: 0,
             sessions_count: 0,
-            biggest_win: 0
+            biggest_win: 0,
+            latest_session_date: sessionDate
           };
         }
+
+        // Use most recent display name
+        if (sessionDate > acc[userId].latest_session_date) {
+          acc[userId].display_name = s.display_name || 'Anonymous';
+          acc[userId].latest_session_date = sessionDate;
+        }
+
         acc[userId].total_profit += Number(s.profit);
         acc[userId].sessions_count++;
         if (Number(s.profit) > acc[userId].biggest_win) {
@@ -261,7 +291,9 @@
                     {/if}
                   {/if}
                 </div>
-                <p class="text-green-400 font-bold text-2xl mb-1">${currentLeaders[1].total_profit?.toFixed(2)}</p>
+                <p class:text-green-400={currentLeaders[1].total_profit >= 0} class:text-red-400={currentLeaders[1].total_profit < 0} class="font-bold text-2xl mb-1">
+                  {currentLeaders[1].total_profit >= 0 ? '+' : ''}${currentLeaders[1].total_profit?.toFixed(2)}
+                </p>
                 <p class="text-sm text-gray-400">{currentLeaders[1].sessions_count} sessions</p>
               </div>
               
@@ -277,7 +309,9 @@
                     {/if}
                   {/if}
                 </div>
-                <p class="text-green-400 font-bold text-3xl mb-1">${currentLeaders[0].total_profit?.toFixed(2)}</p>
+                <p class:text-green-400={currentLeaders[0].total_profit >= 0} class:text-red-400={currentLeaders[0].total_profit < 0} class="font-bold text-3xl mb-1">
+                  {currentLeaders[0].total_profit >= 0 ? '+' : ''}${currentLeaders[0].total_profit?.toFixed(2)}
+                </p>
                 <p class="text-sm text-gray-300">{currentLeaders[0].sessions_count} sessions</p>
                 <p class="text-xs text-gray-300 mt-2">Best: ${currentLeaders[0].biggest_win?.toFixed(2)}</p>
               </div>
@@ -294,7 +328,9 @@
                     {/if}
                   {/if}
                 </div>
-                <p class="text-green-400 font-bold text-2xl mb-1">${currentLeaders[2].total_profit?.toFixed(2)}</p>
+                <p class:text-green-400={currentLeaders[2].total_profit >= 0} class:text-red-400={currentLeaders[2].total_profit < 0} class="font-bold text-2xl mb-1">
+                  {currentLeaders[2].total_profit >= 0 ? '+' : ''}${currentLeaders[2].total_profit?.toFixed(2)}
+                </p>
                 <p class="text-sm text-gray-400">{currentLeaders[2].sessions_count} sessions</p>
               </div>
             </div>
@@ -321,8 +357,8 @@
                     </div>
                   </div>
                   <div class="text-right">
-                    <p class="text-green-400 font-bold text-xl">
-                      ${entry.total_profit?.toFixed(2) || '0.00'}
+                    <p class:text-green-400={entry.total_profit >= 0} class:text-red-400={entry.total_profit < 0} class="font-bold text-xl">
+                      {entry.total_profit >= 0 ? '+' : ''}${entry.total_profit?.toFixed(2) || '0.00'}
                     </p>
                     <p class="text-sm text-gray-400">Best: ${entry.biggest_win?.toFixed(2) || '0.00'}</p>
                   </div>
