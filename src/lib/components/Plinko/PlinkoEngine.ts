@@ -57,6 +57,14 @@ class PlinkoEngine {
    * A cache value of the user's selected board theme for faster access.
    */
   private boardTheme: string;
+  /**
+   * A cache value of whether ball trails are enabled.
+   */
+  private ballTrailsEnabled: boolean;
+  /**
+   * Trail positions for each ball (ball.id -> array of positions)
+   */
+  private ballTrails: Map<number, Array<{ x: number; y: number; alpha: number }>> = new Map();
 
   private engine: Matter.Engine;
   private render: Matter.Render;
@@ -132,11 +140,13 @@ class PlinkoEngine {
     this.riskLevel = get(riskLevel);
     this.ballColor = get(userPreferences).ballColor;
     this.boardTheme = get(userPreferences).boardTheme;
+    this.ballTrailsEnabled = get(userPreferences).ballTrailsEnabled;
     betAmount.subscribe((value) => (this.betAmount = value));
     rowCount.subscribe((value) => this.updateRowCount(value));
     riskLevel.subscribe((value) => (this.riskLevel = value));
     userPreferences.subscribe((prefs) => {
       this.ballColor = prefs.ballColor;
+      this.ballTrailsEnabled = prefs.ballTrailsEnabled;
       if (prefs.boardTheme !== this.boardTheme) {
         this.boardTheme = prefs.boardTheme;
         this.applyTheme();
@@ -194,6 +204,74 @@ class PlinkoEngine {
   start() {
     Matter.Render.run(this.render); // Renders the scene to canvas
     Matter.Runner.run(this.runner, this.engine); // Starts the simulation in physics engine
+
+    // Add trail rendering
+    Matter.Events.on(this.render, 'afterRender', () => {
+      if (!this.ballTrailsEnabled) return;
+
+      const context = this.render.context;
+      const balls = Matter.Composite.allBodies(this.engine.world).filter(
+        (body) => body.collisionFilter.category === PlinkoEngine.BALL_CATEGORY
+      );
+
+      // Update trail positions for each ball
+      balls.forEach((ball) => {
+        if (!this.ballTrails.has(ball.id)) {
+          this.ballTrails.set(ball.id, []);
+        }
+
+        const trail = this.ballTrails.get(ball.id)!;
+
+        // Add current position to trail
+        trail.push({
+          x: ball.position.x,
+          y: ball.position.y,
+          alpha: 1.0,
+        });
+
+        // Limit trail length to 15 points
+        if (trail.length > 15) {
+          trail.shift();
+        }
+
+        // Fade out older trail points
+        trail.forEach((point, index) => {
+          point.alpha = (index + 1) / trail.length;
+        });
+      });
+
+      // Render trails
+      this.ballTrails.forEach((trail, ballId) => {
+        const ball = balls.find((b) => b.id === ballId);
+        if (!ball) {
+          // Ball no longer exists, remove trail
+          this.ballTrails.delete(ballId);
+          return;
+        }
+
+        // Draw trail
+        for (let i = 1; i < trail.length; i++) {
+          const prev = trail[i - 1];
+          const curr = trail[i];
+
+          context.beginPath();
+          context.moveTo(prev.x, prev.y);
+          context.lineTo(curr.x, curr.y);
+
+          // Use ball color with alpha for trail
+          const alpha = curr.alpha * 0.6; // Max 60% opacity
+          const color = this.ballColor;
+          // Convert hex to rgba
+          const r = parseInt(color.slice(1, 3), 16);
+          const g = parseInt(color.slice(3, 5), 16);
+          const b = parseInt(color.slice(5, 7), 16);
+          context.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+          context.lineWidth = 3 * curr.alpha;
+          context.lineCap = 'round';
+          context.stroke();
+        }
+      });
+    });
   }
 
   /**
@@ -350,6 +428,10 @@ class PlinkoEngine {
     }
 
     Matter.Composite.remove(this.engine.world, ball);
+
+    // Clean up trail data
+    this.ballTrails.delete(ball.id);
+
     betAmountOfExistingBalls.update((value) => {
       const newValue = { ...value };
       delete newValue[ball.id];
@@ -446,6 +528,9 @@ class PlinkoEngine {
       }
     });
     betAmountOfExistingBalls.set({});
+
+    // Clear all ball trails
+    this.ballTrails.clear();
   }
 
   /**
