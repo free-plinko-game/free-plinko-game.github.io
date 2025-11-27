@@ -36,6 +36,6 @@
     rel="noopener noreferrer sponsored"
     class="mt-auto bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105 shadow-lg shadow-green-500/50"
   >
-    {casino.name === 'Stake Casino' ? 'Play Now' : casino.name === 'BC.Game' ? 'Claim Bonus' : 'Join Now'} →
+    {casino.name === 'Mafia Casino' ? 'Play Now' : casino.name === 'CasinoChan' ? 'Claim Bonus' : 'Join Now'} →
   </a>
 </div>

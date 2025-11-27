@@ -15,7 +15,7 @@
     },
     {
       question: "Which casino has the fastest withdrawals?",
-      answer: "Crypto casinos like Stake and Rollbit offer instant withdrawals, typically processed within minutes. BC.Game processes withdrawals in 1-2 hours. Traditional payment methods at other casinos may take 1-5 business days."
+      answer: "Mafia Casino offers withdrawals from instant to 3 working days. CasinoChan processes withdrawals within 24 hours to 5 days depending on payment method. Traditional payment methods at other casinos may take 1-5 business days."
     },
     {
       question: "Can I play at these casinos from my country?",
@@ -23,7 +23,7 @@
     },
     {
       question: "Do I need cryptocurrency to play?",
-      answer: "Not necessarily. While casinos like Stake, BC.Game, and Rollbit specialize in cryptocurrency, others like Joe Fortune and FairGo accept traditional payment methods including credit cards and bank transfers."
+      answer: "Not necessarily. While some casinos specialize in cryptocurrency, others like Mafia Casino, CasinoChan, and Joe Fortune accept traditional payment methods including credit cards and bank transfers."
     }
   ];
 </script>

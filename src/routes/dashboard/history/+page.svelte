@@ -83,11 +83,8 @@
               <label for="filterCasino" class="block text-sm text-gray-400 mb-1">Casino</label>
               <select id="filterCasino" bind:value={filterCasino} class="bg-zinc-800 border border-zinc-700 rounded px-3 py-2 text-white text-sm">
                 <option value="all">All Casinos</option>
-                <option value="Stake">Stake</option>
-                <option value="BC.Game">BC.Game</option>
-                <option value="Rollbit">Rollbit</option>
-                <option value="Roobet">Roobet</option>
-                <option value="Duelbits">Duelbits</option>
+                <option value="Mafia Casino">Mafia Casino</option>
+                <option value="CasinoChan">CasinoChan</option>
                 <option value="Joe Fortune">Joe Fortune</option>
               </select>
             </div>

@@ -177,7 +177,7 @@
           <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
           <div class="flex flex-wrap gap-3">
             <a href="/mafia-casino" class="text-green-400 hover:text-green-300 text-sm font-semibold">Mafia Casino Review →</a>
-            <a href="/bc-game" class="text-green-400 hover:text-green-300 text-sm font-semibold">BC.Game Review →</a>
+            <a href="/casinochan" class="text-green-400 hover:text-green-300 text-sm font-semibold">CasinoChan Review →</a>
           </div>
           <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
         </div>
