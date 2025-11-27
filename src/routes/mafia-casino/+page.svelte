@@ -13,7 +13,7 @@
     license: "Anjouan Gaming",
     minDeposit: "$15",
     welcomeBonus: "250% up to $4,000 + 150 Free Spins",
-    affiliateLink: "https://mafiacasino.com"
+    affiliateLink: "/go/mafia-casino"
   };
 
   const pros = [

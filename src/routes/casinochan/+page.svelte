@@ -13,7 +13,7 @@
     license: "Curaçao",
     minDeposit: "$10",
     welcomeBonus: "$1,500 + 120 Free Spins",
-    affiliateLink: "https://www.casinochan.com"
+    affiliateLink: "/go/casinochan"
   };
 
   const pros = [

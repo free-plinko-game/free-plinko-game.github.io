@@ -13,7 +13,7 @@
     license: "Curaçao",
     minDeposit: "$10",
     welcomeBonus: "$5,000 + 450 Free Spins",
-    affiliateLink: "https://www.joefortune.com"
+    affiliateLink: "/go/joe-fortune"
   };
   
   const pros = [
