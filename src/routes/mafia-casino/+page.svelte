@@ -8,7 +8,7 @@
   const casino = {
     name: "Mafia Casino",
     logo: "/logos/mafiacasino.svg",
-    rating: 4.9,
+    rating: 5,
     established: "2022",
     license: "Anjouan Gaming",
     minDeposit: "$15",
@@ -43,7 +43,7 @@
 
   const reviewSchema = {
     name: "Mafia Casino",
-    rating: 4.9,
+    rating: 5,
     reviewBody: "Mafia Casino delivers a premium gaming experience with its exclusive VIP program, extensive Plinko collection, and fast payouts. With provably fair technology and 24/7 support, it's become a top choice for serious players.",
     datePublished: "2025-11-27",
     dateModified: "2025-11-27",

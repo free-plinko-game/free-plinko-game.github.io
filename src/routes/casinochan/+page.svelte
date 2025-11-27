@@ -8,7 +8,7 @@
   const casino = {
     name: "CasinoChan",
     logo: "/logos/casinochan.svg",
-    rating: 4.95,
+    rating: 4.9,
     established: "2019",
     license: "Curaçao",
     minDeposit: "$10",
@@ -43,7 +43,7 @@
 
   const reviewSchema = {
     name: "CasinoChan",
-    rating: 4.95,
+    rating: 4.9,
     reviewBody: "CasinoChan offers an impressive gaming experience with over 2000 games, generous welcome bonus of $1,500 plus 120 free spins, and weekly promotions. A solid choice for players seeking variety and value.",
     datePublished: "2025-11-27",
     dateModified: "2025-11-27",

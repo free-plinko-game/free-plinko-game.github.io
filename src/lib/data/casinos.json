@@ -3,7 +3,7 @@
     "name": "Mafia Casino",
     "logo": "/logos/mafiacasino.svg",
     "bonus": "250% up to $4,000 + 150 Free Spins",
-    "rating": 4.9,
+    "rating": 5,
     "features": ["Plinko Available", "VIP Rewards", "Fast Payouts"],
     "link": "https://mafiacasino.com"
   },
@@ -11,7 +11,7 @@
     "name": "CasinoChan",
     "logo": "/logos/casinochan.svg",
     "bonus": "$1,500 + 120 Free Spins",
-    "rating": 4.95,
+    "rating": 4.9,
     "features": ["2000+ Games", "Weekly Promotions", "VIP Program"],
     "link": "https://www.casinochan.com"
   },
@@ -19,7 +19,7 @@
     "name": "Joe Fortune Casino",
     "logo": "/logos/joefortune.svg",
     "bonus": "$5,000 + 450 Free Spins",
-    "rating": 4.95,
+    "rating": 4.8,
     "features": ["Exceptional Daily Bonuses", "Wheel of Fortune"],
     "link": "https://www.joefortune.com"
   }

@@ -8,7 +8,7 @@
   const casino = {
     name: "Joe Fortune Casino",
     logo: "/logos/joefortune.svg",
-    rating: 4.95,
+    rating: 4.8,
     established: "2012",
     license: "Curaçao",
     minDeposit: "$10",
@@ -43,7 +43,7 @@
   
   const reviewSchema = {
     name: "Joe Fortune Casino",
-    rating: 4.95,
+    rating: 4.8,
     reviewBody: "Joe Fortune Casino offers a massive $5,000 welcome package with 450 free spins. Known for exceptional daily bonuses through the Wheel of Fortune feature and excellent pokies selection, it's a top choice for Australian players.",
     datePublished: "2025-11-13",
     dateModified: "2025-11-13",
