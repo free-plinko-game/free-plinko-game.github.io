@@ -11,7 +11,7 @@
     "badges": ["Top Rated Casino Site"],
     "minDeposit": "$15",
     "payoutTime": "Instant - 3 days",
-    "affiliateLink": "https://mafiacasino.com"
+    "affiliateLink": "/go/mafia-casino"
   },
   {
     "rank": 2,
@@ -25,7 +25,7 @@
     "badges": [],
     "minDeposit": "$10",
     "payoutTime": "Instant - 5 days",
-    "affiliateLink": "https://www.casinochan.com"
+    "affiliateLink": "/go/casinochan"
   },
   {
     "rank": 3,
@@ -39,6 +39,6 @@
     "badges": [],
     "minDeposit": "$10",
     "payoutTime": "From 1 hour",
-    "affiliateLink": "https://www.joefortune.com"
+    "affiliateLink": "/go/joe-fortune"
   }
 ]
