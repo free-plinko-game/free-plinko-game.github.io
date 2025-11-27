@@ -361,11 +361,15 @@
   
   <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-7xl">
-      <div class="flex flex-col items-center justify-center gap-2 p-4">
+      <div class="flex flex-col items-center justify-center gap-3 p-4">
         <a href="https://github.com/topics/plinko" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko on GitHub</a>
         <p class="text-sm text-gray-400">
           Plinko Game Online © 2025
         </p>
+        <div class="text-xs text-gray-500 text-center space-y-1 mt-2">
+          <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>
+          <p>This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+        </div>
       </div>
     </div>
   </footer>
