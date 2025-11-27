@@ -1,13 +1,13 @@
 <script lang="ts">
   import { supabase } from '$lib/supabase';
   
-  let casino = 'Stake';
+  let casino = 'Mafia Casino';
   let riskLevel = 'medium';
   let betAmount = 10;
   let resultAmount = 0;
   let loading = false;
   
-  const casinos = ['Stake', 'BC.Game', 'Rollbit', 'Roobet', 'Duelbits', 'Joe Fortune'];
+  const casinos = ['Mafia Casino', 'CasinoChan', 'Joe Fortune'];
   
   $: profit = resultAmount - betAmount;
   

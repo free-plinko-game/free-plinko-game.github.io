@@ -329,9 +329,9 @@
                   <p class="text-white font-semibold mb-1">Mafia Casino</p>
                   <p class="text-sm text-gray-400">Exclusive VIP rewards • Fast payouts • 97%+ RTP</p>
                 </a>
-                <a href="/bc-game" class="block bg-zinc-800 hover:bg-zinc-700 border border-green-500/20 rounded-lg p-4 transition-colors">
-                  <p class="text-white font-semibold mb-1">BC.Game</p>
-                  <p class="text-sm text-gray-400">$1M bonus pool • Rain system • Low house edge</p>
+                <a href="/casinochan" class="block bg-zinc-800 hover:bg-zinc-700 border border-green-500/20 rounded-lg p-4 transition-colors">
+                  <p class="text-white font-semibold mb-1">CasinoChan</p>
+                  <p class="text-sm text-gray-400">2000+ games • Weekly promotions • VIP rewards</p>
                 </a>
               </div>
               <a href="/best-casinos" class="inline-block mt-4 text-green-400 hover:text-green-300 text-sm font-semibold">View All Plinko Casinos →</a>
@@ -344,8 +344,8 @@
                   <p class="text-white font-semibold mb-1">Joe Fortune</p>
                   <p class="text-sm text-gray-400">Excellent pokies selection • $5,000 bonus</p>
                 </a>
-                <a href="/bc-game" class="block bg-zinc-800 hover:bg-zinc-700 border border-yellow-500/20 rounded-lg p-4 transition-colors">
-                  <p class="text-white font-semibold mb-1">BC.Game</p>
+                <a href="/casinochan" class="block bg-zinc-800 hover:bg-zinc-700 border border-yellow-500/20 rounded-lg p-4 transition-colors">
+                  <p class="text-white font-semibold mb-1">CasinoChan</p>
                   <p class="text-sm text-gray-400">2000+ games • Multiple providers • Huge jackpots</p>
                 </a>
               </div>

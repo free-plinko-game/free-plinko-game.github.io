@@ -51,7 +51,7 @@
     },
     {
       question: "Can I play Plinko for real money?",
-      answer: "Yes! Many online casinos offer Plinko for real money. You can practice with our free version first, then play at licensed casinos like Stake, BC.Game, or Joe Fortune when you're ready."
+      answer: "Yes! Many online casinos offer Plinko for real money. You can practice with our free version first, then play at licensed casinos like Mafia Casino, CasinoChan, or Joe Fortune when you're ready."
     },
     {
       question: "What are the best Plinko strategies?",
@@ -63,7 +63,7 @@
     },
     {
       question: "What's the best casino for playing Plinko?",
-      answer: "Mafia Casino is highly rated for Plinko with fast payouts and provably fair games. BC.Game and Joe Fortune are also excellent choices. Check our <a href='/best-casinos' class='text-green-400 underline hover:no-underline'>casino comparison page</a> for detailed reviews."
+      answer: "Mafia Casino is highly rated for Plinko with fast payouts and provably fair games. CasinoChan and Joe Fortune are also excellent choices. Check our <a href='/best-casinos' class='text-green-400 underline hover:no-underline'>casino comparison page</a> for detailed reviews."
     },
     {
       question: "How do I withdraw my Plinko winnings?",

@@ -4,58 +4,58 @@
   import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
   import ReviewSchema from '$lib/components/ReviewSchema.svelte';
   import Author from '$lib/components/Author.svelte';
-  
+
   const casino = {
-    name: "BC.Game",
-    logo: "/logos/bcgame.svg",
-    rating: 4.7,
-    established: "2017",
-    license: "Curacao",
-    minDeposit: "$5",
-    welcomeBonus: "200% up to $1,000",
-    affiliateLink: "https://bc.game"
+    name: "CasinoChan",
+    logo: "/logos/casinochan.svg",
+    rating: 4.95,
+    established: "2019",
+    license: "Curaçao",
+    minDeposit: "$10",
+    welcomeBonus: "$1,500 + 120 Free Spins",
+    affiliateLink: "https://www.casinochan.com"
   };
-  
+
   const pros = [
-    "150+ cryptocurrencies accepted",
-    "Provably fair Plinko games",
-    "1-2 hour withdrawal processing",
-    "Extensive game library",
-    "Active community features",
-    "Regular tournaments and promotions"
+    "Huge game selection with 2000+ titles",
+    "Weekly promotions and bonuses",
+    "Multiple payment options",
+    "Fast customer support",
+    "Mobile-friendly platform",
+    "VIP rewards program"
   ];
-  
+
   const cons = [
-    "Crypto-only platform",
-    "Can be overwhelming for beginners",
-    "Limited customer support hours"
+    "Withdrawals can take up to 5 days",
+    "Limited cryptocurrency options",
+    "Some country restrictions apply"
   ];
-  
+
   const breadcrumbs = [
     { label: 'Home', href: '/' },
-    { label: 'BC.Game' }
+    { label: 'CasinoChan' }
   ];
 
   const breadcrumbSchema = [
     { name: 'Home', url: '/' },
-    { name: 'BC.Game', url: '/bc-game' }
+    { name: 'CasinoChan', url: '/casinochan' }
   ];
-  
+
   const reviewSchema = {
-    name: "BC.Game",
-    rating: 4.7,
-    reviewBody: "BC.Game is a leading crypto casino with support for 150+ cryptocurrencies and provably fair Plinko games. Fast withdrawals, extensive game selection, and generous bonuses make it a top choice for crypto players.",
-    datePublished: "2025-11-13",
-    dateModified: "2025-11-13",
+    name: "CasinoChan",
+    rating: 4.95,
+    reviewBody: "CasinoChan offers an impressive gaming experience with over 2000 games, generous welcome bonus of $1,500 plus 120 free spins, and weekly promotions. A solid choice for players seeking variety and value.",
+    datePublished: "2025-11-27",
+    dateModified: "2025-11-27",
     author: "Xavier Rudd",
     authorUrl: "https://xavierruddauthor.com/"
   };
 </script>
 
 <svelte:head>
-  <title>BC.Game Review 2025 - 200% Bonus + 150 Cryptocurrencies</title>
-  <meta name="description" content="BC.Game review: Leading crypto casino with 150+ cryptocurrencies, provably fair Plinko, fast withdrawals, and massive 200% welcome bonus." />
-  <link rel="canonical" href="https://free-plinko-game.github.io/bc-game" />
+  <title>CasinoChan Review 2025 - $1,500 Bonus + 120 Free Spins</title>
+  <meta name="description" content="CasinoChan review: Huge game selection with 2000+ titles, $1,500 welcome bonus, weekly promotions, and excellent customer support." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/casinochan" />
 </svelte:head>
 
 <BreadcrumbSchema items={breadcrumbSchema} />
@@ -63,12 +63,12 @@
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
   <Nav />
-  
+
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-5xl">
-      
+
       <Breadcrumbs items={breadcrumbs} />
-      
+
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
           <img src={casino.logo} alt={casino.name} class="h-20 object-contain" />
@@ -85,7 +85,7 @@
             <p class="text-gray-300 text-lg">Established {casino.established} • Licensed in {casino.license}</p>
           </div>
           <div class="flex flex-col gap-3">
-            <a 
+            <a
               href={casino.affiliateLink}
               target="_blank"
               rel="noopener noreferrer sponsored"
@@ -105,7 +105,7 @@
         </div>
         <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-4 text-center">
           <p class="text-gray-400 text-sm mb-1">Payout Speed</p>
-          <p class="text-white font-bold text-xl">1-2 hours</p>
+          <p class="text-white font-bold text-xl">Instant - 5 days</p>
         </div>
         <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-4 text-center">
           <p class="text-gray-400 text-sm mb-1">License</p>
@@ -143,35 +143,39 @@
       </div>
 
       <div class="space-y-8">
+
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
           <h2 class="text-3xl font-bold text-white mb-4">Welcome Bonus & Promotions</h2>
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
             <p class="text-green-400 font-bold text-2xl mb-2">{casino.welcomeBonus}</p>
-            <p class="text-gray-300">One of the most generous welcome bonuses in the crypto casino industry.</p>
+            <p class="text-gray-300">CasinoChan offers a generous welcome package spread across your first deposits.</p>
           </div>
           <div class="text-gray-300 space-y-3">
-            <p>BC.Game offers an impressive 200% match bonus up to $1,000 on your first deposit. This substantial bonus gives new players significant extra funds to explore the platform's extensive game library, including multiple Plinko variants.</p>
-            <p>Beyond the welcome offer, BC.Game provides ongoing promotions including daily bonuses, lucky spins, and exclusive tournaments. The platform's loyalty program rewards regular players with increasing benefits and cashback opportunities.</p>
+            <p>CasinoChan's welcome bonus provides excellent value for new players. The $1,500 bonus combined with 120 free spins gives you plenty of opportunities to explore their massive game library.</p>
+            <p>Beyond the welcome offer, CasinoChan runs weekly promotions including reload bonuses, free spin offers, and cashback deals. The VIP program rewards loyal players with exclusive perks and personalized bonuses.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Cryptocurrency Support</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Game Selection</h2>
           <div class="text-gray-300 space-y-3">
-            <p>BC.Game stands out for accepting over 150 different cryptocurrencies - more than virtually any other online casino. From major coins like Bitcoin and Ethereum to obscure altcoins, the platform offers unparalleled flexibility for crypto enthusiasts.</p>
-            <p>This extensive crypto support means you can deposit and withdraw using whichever cryptocurrency you prefer, with deposits processed instantly and withdrawals typically completed within 1-2 hours.</p>
+            <p>CasinoChan boasts an impressive library of over 2000 games from leading providers. Whether you're into slots, table games, or live casino action, you'll find plenty of options to keep you entertained.</p>
+            <p>The platform features multiple Plinko variants alongside classic casino games. All games are from reputable providers ensuring fair play and quality gaming experience.</p>
+            <p>For more information on playing Plinko, check out our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">complete guide on how to play Plinko</a>.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Provably Fair Plinko</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Payment Methods</h2>
           <div class="text-gray-300 space-y-3">
-            <p>BC.Game's Plinko implementation uses provably fair technology, allowing players to verify the randomness and fairness of every single drop. This transparency is crucial for building trust with players who want assurance that games aren't rigged.</p>
-            <p>The platform offers multiple Plinko game modes with different risk levels and configurations. Whether you prefer conservative low-risk play or high-volatility action, BC.Game's Plinko games cater to all playing styles.</p>
-            <p>New to Plinko? Check out our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">comprehensive guide on how to play Plinko</a>.</p>
+            <p>CasinoChan supports a wide range of payment methods including credit cards, e-wallets, and select cryptocurrencies. Deposits are processed instantly, allowing you to start playing right away.</p>
+            <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <p class="text-green-400 font-semibold mb-2">💳 Multiple Payment Options</p>
+              <p class="text-sm">Withdrawals are processed within 24 hours for e-wallets, while bank transfers may take up to 5 business days.</p>
+            </div>
           </div>
         </section>
-        
+
         <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6">
           <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
           <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
@@ -181,31 +185,33 @@
           </div>
           <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
         </div>
+
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
-        <h3 class="text-3xl font-bold text-white mb-4">Ready to Play at BC.Game?</h3>
-        <p class="text-gray-300 mb-6">Join thousands of crypto players enjoying provably fair games and fast withdrawals.</p>
-        <a 
+        <h3 class="text-3xl font-bold text-white mb-4">Ready to Play at CasinoChan?</h3>
+        <p class="text-gray-300 mb-6">Join CasinoChan and explore over 2000 games with a generous welcome bonus.</p>
+        <a
           href={casino.affiliateLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
           class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 text-lg"
         >
-          CLAIM YOUR 200% BONUS →
+          CLAIM YOUR BONUS NOW →
         </a>
+        <p class="text-green-400 text-sm mt-4 font-semibold">{casino.welcomeBonus}</p>
       </div>
-      
-      <Author 
-        name="Xavier Rudd" 
+
+      <Author
+        name="Xavier Rudd"
         bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
         website="https://xavierruddauthor.com/"
-        lastUpdated="November 13, 2025"
+        lastUpdated="November 27, 2025"
       />
 
     </div>
   </div>
-  
+
   <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-7xl">
       <div class="flex items-center justify-center p-4">

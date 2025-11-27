@@ -2,18 +2,18 @@
   {
     "name": "Mafia Casino",
     "logo": "/logos/mafiacasino.svg",
-    "bonus": "150% up to $1,000 + 100 Free Spins",
+    "bonus": "250% up to $4,000 + 150 Free Spins",
     "rating": 4.9,
     "features": ["Plinko Available", "VIP Rewards", "Fast Payouts"],
     "link": "https://mafiacasino.com"
   },
   {
-    "name": "BC.Game",
-    "logo": "/logos/bcgame.svg",
-    "bonus": "200% up to $1000",
-    "rating": 4.7,
-    "features": ["Live Plinko", "Fast Payouts", "24/7 Support"],
-    "link": "https://bc.game"
+    "name": "CasinoChan",
+    "logo": "/logos/casinochan.svg",
+    "bonus": "$1,500 + 120 Free Spins",
+    "rating": 4.95,
+    "features": ["2000+ Games", "Weekly Promotions", "VIP Program"],
+    "link": "https://www.casinochan.com"
   },
   {
     "name": "Joe Fortune Casino",

@@ -34,7 +34,7 @@
     },
     {
       question: "How do I know if a Plinko game is fair?",
-      answer: "Look for provably fair systems where you can verify each result's randomness. Reputable casinos like Stake and BC.Game use blockchain-based provably fair technology that lets you audit every single drop."
+      answer: "Look for provably fair systems where you can verify each result's randomness. Reputable casinos like Mafia Casino and CasinoChan use provably fair technology that lets you audit every single drop."
     }
   ];
 </script>
@@ -237,7 +237,7 @@
                 <span class="text-green-400 text-xl">✓</span>
                 <div>
                   <strong class="text-white">Provably Fair Systems</strong>
-                  <p class="text-sm">Verify randomness on every drop. <a href="/mafia-casino" class="text-green-400 underline hover:no-underline">Mafia Casino</a> and <a href="/bc-game" class="text-green-400 underline hover:no-underline">BC.Game</a> offer this.</p>
+                  <p class="text-sm">Verify randomness on every drop. <a href="/mafia-casino" class="text-green-400 underline hover:no-underline">Mafia Casino</a> and <a href="/casinochan" class="text-green-400 underline hover:no-underline">CasinoChan</a> offer this.</p>
                 </div>
               </div>
 
@@ -273,9 +273,9 @@
                   <p class="text-white font-semibold mb-1">Mafia Casino</p>
                   <p class="text-sm text-gray-400">Fast payouts • Provably fair • VIP rewards</p>
                 </a>
-                <a href="/bc-game" class="block bg-zinc-900 hover:bg-zinc-800 rounded-lg p-4 transition-colors">
-                  <p class="text-white font-semibold mb-1">BC.Game</p>
-                  <p class="text-sm text-gray-400">Rain system • Multiple cryptos • Low house edge</p>
+                <a href="/casinochan" class="block bg-zinc-900 hover:bg-zinc-800 rounded-lg p-4 transition-colors">
+                  <p class="text-white font-semibold mb-1">CasinoChan</p>
+                  <p class="text-sm text-gray-400">2000+ games • Weekly promotions • VIP rewards</p>
                 </a>
               </div>
               <a href="/best-casinos" class="inline-block mt-4 text-green-400 hover:text-green-300 text-sm font-semibold">Compare All Casinos →</a>
