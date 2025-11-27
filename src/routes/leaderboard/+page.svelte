@@ -385,7 +385,7 @@
   <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col items-center justify-center gap-3 p-4">
-        <a href="https://github.com/topics/plinko" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko on GitHub</a>
+        <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
           Plinko Game Online © 2025
         </p>
