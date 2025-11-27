@@ -23,7 +23,7 @@
           <img src={casino.logo} alt="{casino.name} logo" width="200" height="80" class="h-16 object-contain" />
           <div>
             {#if casino.slug}
-              <a href="/reviews/{casino.slug}" class="text-2xl font-bold text-white hover:text-green-400 transition-colors block mb-1">{casino.name}</a>
+              <a href="/{casino.slug}" class="text-2xl font-bold text-white hover:text-green-400 transition-colors block mb-1">{casino.name}</a>
             {:else}
               <h3 class="text-2xl font-bold text-white mb-1">{casino.name}</h3>
             {/if}
@@ -86,7 +86,7 @@
     <div class="flex gap-3">
       <a href={casino.affiliateLink} rel="nofollow noopener noreferrer" class="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105 shadow-lg shadow-green-500/50">PLAY NOW</a>
       {#if casino.slug}
-        <a href="/reviews/{casino.slug}" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-6 rounded-lg text-center transition-all border border-green-500/20 hover:border-green-500/50">Read Review</a>
+        <a href="/{casino.slug}" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-6 rounded-lg text-center transition-all border border-green-500/20 hover:border-green-500/50">Read Review</a>
       {/if}
     </div>
   </div>

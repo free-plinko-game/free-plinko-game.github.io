@@ -237,7 +237,7 @@
                 <span class="text-green-400 text-xl">✓</span>
                 <div>
                   <strong class="text-white">Provably Fair Systems</strong>
-                  <p class="text-sm">Verify randomness on every drop. <a href="/reviews/stake" class="text-green-400 underline hover:no-underline">Stake</a> and <a href="/reviews/bc-game" class="text-green-400 underline hover:no-underline">BC.Game</a> offer this.</p>
+                  <p class="text-sm">Verify randomness on every drop. <a href="/mafia-casino" class="text-green-400 underline hover:no-underline">Mafia Casino</a> and <a href="/bc-game" class="text-green-400 underline hover:no-underline">BC.Game</a> offer this.</p>
                 </div>
               </div>
 
@@ -269,11 +269,11 @@
             <div class="bg-zinc-800 border border-green-500/20 rounded-lg p-6 mt-6">
               <h3 class="text-white font-bold mb-3">Recommended Plinko Casinos</h3>
               <div class="grid md:grid-cols-2 gap-3">
-                <a href="/reviews/stake" class="block bg-zinc-900 hover:bg-zinc-800 rounded-lg p-4 transition-colors">
-                  <p class="text-white font-semibold mb-1">Stake Casino</p>
-                  <p class="text-sm text-gray-400">Instant payouts • Provably fair • $0.10 min bet</p>
+                <a href="/mafia-casino" class="block bg-zinc-900 hover:bg-zinc-800 rounded-lg p-4 transition-colors">
+                  <p class="text-white font-semibold mb-1">Mafia Casino</p>
+                  <p class="text-sm text-gray-400">Fast payouts • Provably fair • VIP rewards</p>
                 </a>
-                <a href="/reviews/bc-game" class="block bg-zinc-900 hover:bg-zinc-800 rounded-lg p-4 transition-colors">
+                <a href="/bc-game" class="block bg-zinc-900 hover:bg-zinc-800 rounded-lg p-4 transition-colors">
                   <p class="text-white font-semibold mb-1">BC.Game</p>
                   <p class="text-sm text-gray-400">Rain system • Multiple cryptos • Low house edge</p>
                 </a>

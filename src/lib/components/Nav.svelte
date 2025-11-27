@@ -81,7 +81,6 @@
       </div>
       
       <a href="/best-casinos" class="text-sm font-medium text-gray-300 transition-colors hover:text-green-400">Best Casinos</a>
-      <a href="/reviews" class="text-sm font-medium text-gray-300 transition-colors hover:text-green-400">Reviews</a>
       <a href="/leaderboard" class="text-sm font-medium text-gray-300 transition-colors hover:text-green-400">Leaderboard</a>
       
       <!-- User Menu / Login -->
@@ -187,9 +186,6 @@
         
         <a href="/best-casinos" class="block text-sm font-medium text-gray-300 hover:text-green-400 transition-colors">
           Best Casinos
-        </a>
-        <a href="/reviews" class="block text-sm font-medium text-gray-300 hover:text-green-400 transition-colors">
-          Reviews
         </a>
         <a href="/leaderboard" class="block text-sm font-medium text-gray-300 hover:text-green-400 transition-colors">
           Leaderboard

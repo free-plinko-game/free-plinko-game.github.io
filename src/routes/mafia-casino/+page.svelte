@@ -33,14 +33,12 @@
 
   const breadcrumbs = [
     { label: 'Home', href: '/' },
-    { label: 'Reviews', href: '/reviews' },
     { label: 'Mafia Casino' }
   ];
 
   const breadcrumbSchema = [
     { name: 'Home', url: '/' },
-    { name: 'Reviews', url: '/reviews' },
-    { name: 'Mafia Casino', url: '/reviews/mafia-casino' }
+    { name: 'Mafia Casino', url: '/mafia-casino' }
   ];
 
   const reviewSchema = {
@@ -57,7 +55,7 @@
 <svelte:head>
   <title>Mafia Casino Review 2025 - Exclusive Plinko Gaming Experience</title>
   <meta name="description" content="Comprehensive Mafia Casino review. Premium casino with exclusive VIP rewards, extensive Plinko games, and fast payouts for crypto and fiat players." />
-  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/mafia-casino" />
+  <link rel="canonical" href="https://free-plinko-game.github.io/mafia-casino" />
 </svelte:head>
 
 <BreadcrumbSchema items={breadcrumbSchema} />
@@ -182,9 +180,8 @@
           <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
           <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
           <div class="flex flex-wrap gap-3">
-            <a href="/reviews/stake" class="text-amber-400 hover:text-amber-300 text-sm font-semibold">Stake Review →</a>
-            <a href="/reviews/bc-game" class="text-amber-400 hover:text-amber-300 text-sm font-semibold">BC.Game Review →</a>
-            <a href="/reviews/joe-fortune" class="text-amber-400 hover:text-amber-300 text-sm font-semibold">Joe Fortune Review →</a>
+            <a href="/bc-game" class="text-amber-400 hover:text-amber-300 text-sm font-semibold">BC.Game Review →</a>
+            <a href="/joe-fortune" class="text-amber-400 hover:text-amber-300 text-sm font-semibold">Joe Fortune Review →</a>
           </div>
           <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-amber-400 text-sm font-semibold">View All Casino Comparisons →</a>
         </div>

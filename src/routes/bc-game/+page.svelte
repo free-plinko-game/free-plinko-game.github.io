@@ -6,47 +6,45 @@
   import Author from '$lib/components/Author.svelte';
   
   const casino = {
-    name: "Rollbit",
-    logo: "/logos/rollbit.svg",
-    rating: 4.6,
-    established: "2020",
+    name: "BC.Game",
+    logo: "/logos/bcgame.svg",
+    rating: 4.7,
+    established: "2017",
     license: "Curacao",
-    minDeposit: "$10",
-    welcomeBonus: "150% up to $750",
-    affiliateLink: "https://rollbit.com"
+    minDeposit: "$5",
+    welcomeBonus: "200% up to $1,000",
+    affiliateLink: "https://bc.game"
   };
   
   const pros = [
-    "Innovative NFT integration",
-    "Provably fair games",
-    "Instant crypto payouts",
-    "Web3 casino features",
-    "Sports betting available",
-    "Active trading community"
+    "150+ cryptocurrencies accepted",
+    "Provably fair Plinko games",
+    "1-2 hour withdrawal processing",
+    "Extensive game library",
+    "Active community features",
+    "Regular tournaments and promotions"
   ];
   
   const cons = [
     "Crypto-only platform",
-    "Complex interface for beginners",
-    "NFT features may be confusing"
+    "Can be overwhelming for beginners",
+    "Limited customer support hours"
   ];
   
   const breadcrumbs = [
     { label: 'Home', href: '/' },
-    { label: 'Reviews', href: '/reviews' },
-    { label: 'Rollbit' }
+    { label: 'BC.Game' }
   ];
-  
+
   const breadcrumbSchema = [
     { name: 'Home', url: '/' },
-    { name: 'Reviews', url: '/reviews' },
-    { name: 'Rollbit', url: '/reviews/rollbit' }
+    { name: 'BC.Game', url: '/bc-game' }
   ];
   
   const reviewSchema = {
-    name: "Rollbit",
-    rating: 4.6,
-    reviewBody: "Rollbit pioneers Web3 gaming with innovative NFT integration and provably fair Plinko games. Instant crypto payouts and sports betting make it a cutting-edge choice for crypto-savvy players.",
+    name: "BC.Game",
+    rating: 4.7,
+    reviewBody: "BC.Game is a leading crypto casino with support for 150+ cryptocurrencies and provably fair Plinko games. Fast withdrawals, extensive game selection, and generous bonuses make it a top choice for crypto players.",
     datePublished: "2025-11-13",
     dateModified: "2025-11-13",
     author: "Xavier Rudd",
@@ -55,9 +53,9 @@
 </script>
 
 <svelte:head>
-  <title>Rollbit Review 2025 - Web3 Casino with NFT Integration</title>
-  <meta name="description" content="Rollbit review: Innovative Web3 casino with NFT integration, provably fair Plinko, and instant crypto payouts. Perfect for crypto enthusiasts." />
-  <link rel="canonical" href="https://free-plinko-game.github.io/reviews/rollbit" />
+  <title>BC.Game Review 2025 - 200% Bonus + 150 Cryptocurrencies</title>
+  <meta name="description" content="BC.Game review: Leading crypto casino with 150+ cryptocurrencies, provably fair Plinko, fast withdrawals, and massive 200% welcome bonus." />
+  <link rel="canonical" href="https://free-plinko-game.github.io/bc-game" />
 </svelte:head>
 
 <BreadcrumbSchema items={breadcrumbSchema} />
@@ -73,13 +71,13 @@
       
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mb-8 shadow-lg shadow-green-500/10">
         <div class="flex flex-col md:flex-row items-center gap-8">
-          <img src={casino.logo} alt={casino.name} width="200" height="80" class="h-20 object-contain" />
+          <img src={casino.logo} alt={casino.name} class="h-20 object-contain" />
           <div class="flex-1 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">{casino.name} Review</h1>
             <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
               <div class="flex">
-                {#each Array(5) as _, i}
-                  <span class="text-green-400 text-2xl">{i < 4 ? '★' : '☆'}</span>
+                {#each Array(5) as _}
+                  <span class="text-green-400 text-2xl">★</span>
                 {/each}
               </div>
               <span class="text-white font-bold text-xl">{casino.rating}/5</span>
@@ -107,7 +105,7 @@
         </div>
         <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-4 text-center">
           <p class="text-gray-400 text-sm mb-1">Payout Speed</p>
-          <p class="text-white font-bold text-xl">Instant</p>
+          <p class="text-white font-bold text-xl">1-2 hours</p>
         </div>
         <div class="bg-zinc-900 border border-green-500/20 rounded-lg p-4 text-center">
           <p class="text-gray-400 text-sm mb-1">License</p>
@@ -146,31 +144,31 @@
 
       <div class="space-y-8">
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Web3 Gaming Innovation</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Welcome Bonus & Promotions</h2>
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
             <p class="text-green-400 font-bold text-2xl mb-2">{casino.welcomeBonus}</p>
-            <p class="text-gray-300">Plus unique NFT rewards and Web3 features.</p>
+            <p class="text-gray-300">One of the most generous welcome bonuses in the crypto casino industry.</p>
           </div>
           <div class="text-gray-300 space-y-3">
-            <p>Rollbit represents the cutting edge of online casino gaming, integrating blockchain technology and NFTs into the traditional casino experience. The 150% welcome bonus up to $750 provides a strong start, but it's the innovative Web3 features that truly set Rollbit apart.</p>
-            <p>Players can earn, trade, and use NFTs within the platform, adding an extra dimension to the gaming experience. This integration appeals particularly to crypto-native users looking for something beyond traditional online casinos.</p>
+            <p>BC.Game offers an impressive 200% match bonus up to $1,000 on your first deposit. This substantial bonus gives new players significant extra funds to explore the platform's extensive game library, including multiple Plinko variants.</p>
+            <p>Beyond the welcome offer, BC.Game provides ongoing promotions including daily bonuses, lucky spins, and exclusive tournaments. The platform's loyalty program rewards regular players with increasing benefits and cashback opportunities.</p>
+          </div>
+        </section>
+
+        <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
+          <h2 class="text-3xl font-bold text-white mb-4">Cryptocurrency Support</h2>
+          <div class="text-gray-300 space-y-3">
+            <p>BC.Game stands out for accepting over 150 different cryptocurrencies - more than virtually any other online casino. From major coins like Bitcoin and Ethereum to obscure altcoins, the platform offers unparalleled flexibility for crypto enthusiasts.</p>
+            <p>This extensive crypto support means you can deposit and withdraw using whichever cryptocurrency you prefer, with deposits processed instantly and withdrawals typically completed within 1-2 hours.</p>
           </div>
         </section>
 
         <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
           <h2 class="text-3xl font-bold text-white mb-4">Provably Fair Plinko</h2>
           <div class="text-gray-300 space-y-3">
-            <p>Rollbit's Plinko implementation uses provably fair technology, allowing you to verify the randomness of every single drop. This transparency is crucial for building trust, especially in the crypto gaming space where fairness concerns are paramount.</p>
-            <p>The platform offers multiple Plinko variants with different risk levels and betting options, catering to both conservative players and high rollers. The instant payout system means winnings hit your wallet immediately.</p>
-            <p>Learn how to play with our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">Plinko strategy guide</a>.</p>
-          </div>
-        </section>
-
-        <section class="bg-zinc-900 border border-green-500/20 rounded-lg p-8">
-          <h2 class="text-3xl font-bold text-white mb-4">Crypto Payments & Sports Betting</h2>
-          <div class="text-gray-300 space-y-3">
-            <p>As a crypto-only platform, Rollbit accepts Bitcoin, Ethereum, and various other cryptocurrencies. Deposits are instant, and withdrawals process immediately with funds appearing in your wallet within minutes - no waiting days for traditional banking.</p>
-            <p>Beyond casino games, Rollbit offers sports betting on major events worldwide. This combination of casino and sportsbook makes it a one-stop destination for crypto gaming enthusiasts.</p>
+            <p>BC.Game's Plinko implementation uses provably fair technology, allowing players to verify the randomness and fairness of every single drop. This transparency is crucial for building trust with players who want assurance that games aren't rigged.</p>
+            <p>The platform offers multiple Plinko game modes with different risk levels and configurations. Whether you prefer conservative low-risk play or high-volatility action, BC.Game's Plinko games cater to all playing styles.</p>
+            <p>New to Plinko? Check out our <a href="/how-to-play" class="text-green-400 underline hover:no-underline">comprehensive guide on how to play Plinko</a>.</p>
           </div>
         </section>
         
@@ -178,24 +176,23 @@
           <h3 class="text-xl font-bold text-white mb-4">Compare More Casinos</h3>
           <p class="text-gray-300 mb-4">Looking for alternatives? Check out our other top-rated Plinko casinos:</p>
           <div class="flex flex-wrap gap-3">
-            <a href="/reviews/stake" class="text-green-400 hover:text-green-300 text-sm font-semibold">Stake Review →</a>
-            <a href="/reviews/bc-game" class="text-green-400 hover:text-green-300 text-sm font-semibold">BC.Game Review →</a>
-            <a href="/reviews/duelbits" class="text-green-400 hover:text-green-300 text-sm font-semibold">Duelbits Review →</a>
+            <a href="/mafia-casino" class="text-green-400 hover:text-green-300 text-sm font-semibold">Mafia Casino Review →</a>
+            <a href="/joe-fortune" class="text-green-400 hover:text-green-300 text-sm font-semibold">Joe Fortune Review →</a>
           </div>
           <a href="/best-casinos" class="inline-block mt-4 text-white hover:text-green-400 text-sm font-semibold">View All Casino Comparisons →</a>
         </div>
       </div>
 
       <div class="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-8 mt-8 text-center">
-        <h3 class="text-3xl font-bold text-white mb-4">Ready for Web3 Gaming?</h3>
-        <p class="text-gray-300 mb-6">Join Rollbit for the future of crypto casino gaming with NFT integration.</p>
+        <h3 class="text-3xl font-bold text-white mb-4">Ready to Play at BC.Game?</h3>
+        <p class="text-gray-300 mb-6">Join thousands of crypto players enjoying provably fair games and fast withdrawals.</p>
         <a 
           href={casino.affiliateLink}
           target="_blank"
           rel="noopener noreferrer sponsored"
           class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 text-lg"
         >
-          START PLAYING →
+          CLAIM YOUR 200% BONUS →
         </a>
       </div>
       
