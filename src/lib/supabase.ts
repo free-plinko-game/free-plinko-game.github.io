@@ -33,3 +33,10 @@ export interface UserProgress {
   created_at: string
   updated_at: string
 }
+
+export interface AffiliateLink {
+  slug: string
+  url: string
+  fallback_url: string
+  updated_at: string
+}
