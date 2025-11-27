@@ -325,11 +325,11 @@
             <div>
               <h3 class="text-xl font-bold text-green-400 mb-3">Top Plinko Casinos</h3>
               <div class="grid md:grid-cols-2 gap-4">
-                <a href="/reviews/stake" class="block bg-zinc-800 hover:bg-zinc-700 border border-green-500/20 rounded-lg p-4 transition-colors">
-                  <p class="text-white font-semibold mb-1">Stake Casino</p>
-                  <p class="text-sm text-gray-400">Provably fair • Instant payouts • 98%+ RTP</p>
+                <a href="/mafia-casino" class="block bg-zinc-800 hover:bg-zinc-700 border border-green-500/20 rounded-lg p-4 transition-colors">
+                  <p class="text-white font-semibold mb-1">Mafia Casino</p>
+                  <p class="text-sm text-gray-400">Exclusive VIP rewards • Fast payouts • 97%+ RTP</p>
                 </a>
-                <a href="/reviews/bc-game" class="block bg-zinc-800 hover:bg-zinc-700 border border-green-500/20 rounded-lg p-4 transition-colors">
+                <a href="/bc-game" class="block bg-zinc-800 hover:bg-zinc-700 border border-green-500/20 rounded-lg p-4 transition-colors">
                   <p class="text-white font-semibold mb-1">BC.Game</p>
                   <p class="text-sm text-gray-400">$1M bonus pool • Rain system • Low house edge</p>
                 </a>
@@ -340,13 +340,13 @@
             <div>
               <h3 class="text-xl font-bold text-yellow-400 mb-3">Top Slots Casinos</h3>
               <div class="grid md:grid-cols-2 gap-4">
-                <a href="/reviews/casinochan" class="block bg-zinc-800 hover:bg-zinc-700 border border-yellow-500/20 rounded-lg p-4 transition-colors">
-                  <p class="text-white font-semibold mb-1">CasinoChan</p>
-                  <p class="text-sm text-gray-400">2000+ slots • Multiple providers • Huge jackpots</p>
-                </a>
-                <a href="/reviews/joe-fortune" class="block bg-zinc-800 hover:bg-zinc-700 border border-yellow-500/20 rounded-lg p-4 transition-colors">
+                <a href="/joe-fortune" class="block bg-zinc-800 hover:bg-zinc-700 border border-yellow-500/20 rounded-lg p-4 transition-colors">
                   <p class="text-white font-semibold mb-1">Joe Fortune</p>
                   <p class="text-sm text-gray-400">Excellent pokies selection • $5,000 bonus</p>
+                </a>
+                <a href="/bc-game" class="block bg-zinc-800 hover:bg-zinc-700 border border-yellow-500/20 rounded-lg p-4 transition-colors">
+                  <p class="text-white font-semibold mb-1">BC.Game</p>
+                  <p class="text-sm text-gray-400">2000+ games • Multiple providers • Huge jackpots</p>
                 </a>
               </div>
             </div>
