@@ -10,7 +10,7 @@
     logo: "/logos/joefortune.svg",
     rating: 4.95,
     established: "2012",
-    license: "Curacao",
+    license: "Curaçao",
     minDeposit: "$10",
     welcomeBonus: "$5,000 + 450 Free Spins",
     affiliateLink: "https://www.joefortune.com"
