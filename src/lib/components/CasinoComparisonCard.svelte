@@ -20,8 +20,8 @@
     <div class="flex items-start justify-between mb-4">
       <div class="flex items-center gap-4">
         <div class="flex items-center gap-3">
-          <img src={casino.logo} alt="{casino.name} logo" width="200" height="80" class="h-16 object-contain" />
-          <div>
+          <img src={casino.logo} alt="{casino.name} logo" width="200" height="80" class="h-12 md:h-16 object-contain" />
+          <div class="hidden md:block">
             {#if casino.slug}
               <a href="/{casino.slug}" class="text-2xl font-bold text-white hover:text-green-400 transition-colors block mb-1">{casino.name}</a>
             {:else}
