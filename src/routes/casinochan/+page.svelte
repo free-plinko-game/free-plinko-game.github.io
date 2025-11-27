@@ -219,7 +219,7 @@
         <p class="text-sm text-gray-400">
           Plinko Game Online © 2025
         </p>
-        <div class="text-xs text-gray-500 text-center space-y-1 mt-2">
+        <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>
           <p>This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
         </div>
