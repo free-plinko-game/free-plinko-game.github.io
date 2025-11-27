@@ -1,17 +1,17 @@
 [
   {
     "rank": 1,
-    "name": "Stake Casino",
-    "slug": "stake",
-    "logo": "/logos/stake.svg",
-    "bonus": "100% up to $500 + 200 Free Spins",
-    "rating": 5.0,
-    "payout": "N/A",
-    "features": ["Large, regular bonuses", "Crypto support"],
+    "name": "Mafia Casino",
+    "slug": "mafia-casino",
+    "logo": "/logos/mafiacasino.svg",
+    "bonus": "150% up to $1,000 + 100 Free Spins",
+    "rating": 4.9,
+    "payout": "> 97%",
+    "features": ["Exclusive VIP rewards", "Fast payouts"],
     "badges": ["Top Rated Casino Site"],
-    "minDeposit": "$10",
-    "payoutTime": "Instant",
-    "affiliateLink": "https://stake.com"
+    "minDeposit": "$20",
+    "payoutTime": "1-4 hours",
+    "affiliateLink": "https://mafiacasino.com"
   },
   {
     "rank": 2,
@@ -29,6 +29,20 @@
   },
   {
     "rank": 3,
+    "name": "Stake Casino",
+    "slug": "stake",
+    "logo": "/logos/stake.svg",
+    "bonus": "100% up to $500 + 200 Free Spins",
+    "rating": 5.0,
+    "payout": "N/A",
+    "features": ["Large, regular bonuses", "Crypto support"],
+    "badges": [],
+    "minDeposit": "$10",
+    "payoutTime": "Instant",
+    "affiliateLink": "https://stake.com"
+  },
+  {
+    "rank": 4,
     "name": "BC.Game",
     "slug": "bc-game",
     "logo": "/logos/bcgame.svg",
@@ -42,7 +56,7 @@
     "affiliateLink": "https://bc.game"
   },
   {
-    "rank": 4,
+    "rank": 5,
     "name": "FairGo Casino",
     "slug": "fairgo",
     "logo": "/logos/fairgo.svg",
@@ -56,7 +70,7 @@
     "affiliateLink": "https://www.fairgo.com"
   },
   {
-    "rank": 5,
+    "rank": 6,
     "name": "CasinoChan",
     "slug": "casinochan",
     "logo": "/logos/casinochan.svg",
@@ -70,7 +84,7 @@
     "affiliateLink": "https://www.casinochan.com"
   },
   {
-    "rank": 6,
+    "rank": 7,
     "name": "Rollbit",
     "slug": "rollbit",
     "logo": "/logos/rollbit.svg",
@@ -84,7 +98,7 @@
     "affiliateLink": "https://rollbit.com"
   },
   {
-    "rank": 7,
+    "rank": 8,
     "name": "Duelbits",
     "slug": "duelbits",
     "logo": "/logos/duelbits.svg",
@@ -98,7 +112,7 @@
     "affiliateLink": "https://duelbits.com"
   },
   {
-    "rank": 8,
+    "rank": 9,
     "name": "Roobet",
     "slug": "roobet",
     "logo": "/logos/roobet.svg",
@@ -112,7 +126,7 @@
     "affiliateLink": "https://roobet.com"
   },
   {
-    "rank": 9,
+    "rank": 10,
     "name": "Betplay",
     "slug": "betplay",
     "logo": "/logos/betplay.svg",
