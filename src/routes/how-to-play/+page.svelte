@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-  <title>How to Play Plinko - Complete Beginner's Guide 2025</title>
+  <title>How to Play Plinko - Complete Beginner's Guide 2026</title>
   <meta name="description" content="Learn how to play Plinko with our comprehensive guide. Understand the rules, strategies, risk levels, and tips for playing Plinko online for real money." />
   <link rel="canonical" href="https://free-plinko-game.github.io/how-to-play" />
 </svelte:head>
@@ -169,7 +169,7 @@
         name="Xavier Rudd" 
         bio="Casino industry expert with over 10 years of experience reviewing online gambling sites and games. Specializes in Plinko strategies and crypto casino analysis."
         website="https://xavierruddauthor.com/"
-        lastUpdated="November 13, 2025"
+        lastUpdated="January 13, 2026"
       />
     </div>
   </div>
@@ -179,7 +179,7 @@
       <div class="flex flex-col items-center justify-center gap-3 p-4">
         <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
-          Plinko Game Online © 2025
+          Plinko Game Online © 2026
         </p>
         <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>
