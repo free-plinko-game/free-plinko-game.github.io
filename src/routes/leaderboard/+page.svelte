@@ -387,7 +387,7 @@
       <div class="flex flex-col items-center justify-center gap-3 p-4">
         <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
-          Plinko Game Online © 2025
+          Plinko Game Online © 2026
         </p>
         <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>

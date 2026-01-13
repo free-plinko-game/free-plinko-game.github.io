@@ -29,13 +29,13 @@
 </script>
 
 <svelte:head>
-  <title>Best Plinko Casinos 2025 - Top Rated Sites Compared</title>
-  <meta name="description" content="Compare the best Plinko casinos of 2025. Detailed reviews of top-rated sites with exclusive bonuses, fast payouts, and provably fair games." />
-  <meta property="og:title" content="Best Plinko Casinos 2025 - Top Rated Sites Compared" />
-  <meta property="og:description" content="Compare the best Plinko casinos of 2025. Detailed reviews of top-rated sites with exclusive bonuses, fast payouts, and provably fair games." />
+  <title>Best Plinko Casinos 2026 - Top Rated Sites Compared</title>
+  <meta name="description" content="Compare the best Plinko casinos of 2026. Detailed reviews of top-rated sites with exclusive bonuses, fast payouts, and provably fair games." />
+  <meta property="og:title" content="Best Plinko Casinos 2026 - Top Rated Sites Compared" />
+  <meta property="og:description" content="Compare the best Plinko casinos of 2026. Detailed reviews of top-rated sites with exclusive bonuses, fast payouts, and provably fair games." />
   <meta property="og:url" content="https://free-plinko-game.github.io/best-casinos" />
-  <meta name="twitter:title" content="Best Plinko Casinos 2025" />
-  <meta name="twitter:description" content="Compare the best Plinko casinos of 2025 with exclusive bonuses and fast payouts." />
+  <meta name="twitter:title" content="Best Plinko Casinos 2026" />
+  <meta name="twitter:description" content="Compare the best Plinko casinos of 2026 with exclusive bonuses and fast payouts." />
 </svelte:head>
 
 <div class="relative flex min-h-dvh w-full flex-col bg-black">
@@ -44,7 +44,7 @@
   <div class="flex-1 px-5 py-10">
     <div class="mx-auto max-w-7xl">
       <div class="text-center mb-12">
-        <h1 class="text-5xl font-bold text-white mb-4">Best Plinko Casinos 2025</h1>
+        <h1 class="text-5xl font-bold text-white mb-4">Best Plinko Casinos 2026</h1>
         <p class="text-xl text-gray-400 max-w-3xl mx-auto">
           We've reviewed and ranked the top online casinos where you can play Plinko for real money. 
           All casinos are licensed, secure, and offer great bonuses.
@@ -90,7 +90,7 @@
       <div class="flex flex-col items-center justify-center gap-3 p-4">
         <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
-          Plinko Game Online © 2025
+          Plinko Game Online © 2026
         </p>
         <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>

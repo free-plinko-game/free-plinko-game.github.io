@@ -73,9 +73,9 @@
 </script>
 
 <svelte:head>
-  <title>Free Plinko Game - Play Online | Best Plinko Casinos 2025</title>
+  <title>Free Plinko Game - Play Online | Best Plinko Casinos 2026</title>
   <meta name="description" content="Play Plinko for free online! Practice with our demo game, then discover the best real money Plinko casinos with exclusive bonuses and fast payouts." />
-  <meta property="og:title" content="Free Plinko Game - Play Online | Best Plinko Casinos 2025" />
+  <meta property="og:title" content="Free Plinko Game - Play Online | Best Plinko Casinos 2026" />
   <meta property="og:description" content="Play Plinko for free online! Practice with our demo game, then discover the best real money Plinko casinos with exclusive bonuses and fast payouts." />
   <meta property="og:url" content="https://free-plinko-game.github.io/" />
   <meta property="og:image" content="https://free-plinko-game.github.io/logos/stake.svg" />
@@ -193,7 +193,7 @@
       <div class="flex flex-col items-center justify-center gap-3 p-2">
         <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
-          Plinko Game Online © 2025
+          Plinko Game Online © 2026
         </p>
         <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>

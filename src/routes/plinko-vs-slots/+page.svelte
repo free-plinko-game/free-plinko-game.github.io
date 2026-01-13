@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-  <title>Plinko vs Slots 2025 - Which Casino Game Is Better?</title>
+  <title>Plinko vs Slots 2026 - Which Casino Game Is Better?</title>
   <meta name="description" content="Compare Plinko and slots: RTP, odds, gameplay, and fairness. Discover which casino game suits your style with our comprehensive comparison guide." />
   <link rel="canonical" href="https://free-plinko-game.github.io/plinko-vs-slots" />
   <meta property="og:title" content="Plinko vs Slots - Which Casino Game Is Better?" />
@@ -380,7 +380,7 @@
         name="Xavier Rudd" 
         bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
         website="https://xavierruddauthor.com/"
-        lastUpdated="November 13, 2025"
+        lastUpdated="January 13, 2026"
         />
 
     </div>
@@ -391,7 +391,7 @@
       <div class="flex flex-col items-center justify-center gap-3 p-4">
         <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
-          Plinko Game Online © 2025
+          Plinko Game Online © 2026
         </p>
         <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>

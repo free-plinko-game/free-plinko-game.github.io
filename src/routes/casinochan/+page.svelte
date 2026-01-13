@@ -45,15 +45,15 @@
     name: "CasinoChan",
     rating: 4.9,
     reviewBody: "CasinoChan offers an impressive gaming experience with over 2000 games, generous welcome bonus of $1,500 plus 120 free spins, and weekly promotions. A solid choice for players seeking variety and value.",
-    datePublished: "2025-11-27",
-    dateModified: "2025-11-27",
+    datePublished: "2026-01-13",
+    dateModified: "2026-01-13",
     author: "Xavier Rudd",
     authorUrl: "https://xavierruddauthor.com/"
   };
 </script>
 
 <svelte:head>
-  <title>CasinoChan Review 2025 - $1,500 Bonus + 120 Free Spins</title>
+  <title>CasinoChan Review 2026 - $1,500 Bonus + 120 Free Spins</title>
   <meta name="description" content="CasinoChan review: Huge game selection with 2000+ titles, $1,500 welcome bonus, weekly promotions, and excellent customer support." />
   <link rel="canonical" href="https://free-plinko-game.github.io/casinochan" />
 </svelte:head>
@@ -206,7 +206,7 @@
         name="Xavier Rudd"
         bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
         website="https://xavierruddauthor.com/"
-        lastUpdated="November 27, 2025"
+        lastUpdated="January 13, 2026"
       />
 
     </div>
@@ -217,7 +217,7 @@
       <div class="flex flex-col items-center justify-center gap-3 p-4">
         <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
-          Plinko Game Online © 2025
+          Plinko Game Online © 2026
         </p>
         <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>

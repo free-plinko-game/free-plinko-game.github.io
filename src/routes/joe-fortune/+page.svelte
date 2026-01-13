@@ -45,15 +45,15 @@
     name: "Joe Fortune Casino",
     rating: 4.8,
     reviewBody: "Joe Fortune Casino offers a massive $5,000 welcome package with 450 free spins. Known for exceptional daily bonuses through the Wheel of Fortune feature and excellent pokies selection, it's a top choice for Australian players.",
-    datePublished: "2025-11-13",
-    dateModified: "2025-11-13",
+    datePublished: "2026-01-13",
+    dateModified: "2026-01-13",
     author: "Xavier Rudd",
     authorUrl: "https://xavierruddauthor.com/"
   };
 </script>
 
 <svelte:head>
-  <title>Joe Fortune Casino Review 2025 - $5,000 + 450 Free Spins</title>
+  <title>Joe Fortune Casino Review 2026 - $5,000 + 450 Free Spins</title>
   <meta name="description" content="Joe Fortune Casino review: Massive $5,000 welcome bonus, Wheel of Fortune daily bonuses, and excellent game selection. Perfect for Australian players." />
   <link rel="canonical" href="https://free-plinko-game.github.io/joe-fortune" />
 </svelte:head>
@@ -200,7 +200,7 @@
         name="Xavier Rudd" 
         bio="Casino industry expert with over 10 years of experience reviewing online gambling sites. Specializes in Plinko games and crypto casinos."
         website="https://xavierruddauthor.com/"
-        lastUpdated="November 13, 2025"
+        lastUpdated="January 13, 2026"
       />
 
     </div>
@@ -211,7 +211,7 @@
       <div class="flex flex-col items-center justify-center gap-3 p-4">
         <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
         <p class="text-sm text-gray-400">
-          Plinko Game Online © 2025
+          Plinko Game Online © 2026
         </p>
         <div class="text-xs text-gray-400 text-center space-y-1 mt-2">
           <p>🔞 18+ Only. Gambling can be addictive. Please play responsibly.</p>
