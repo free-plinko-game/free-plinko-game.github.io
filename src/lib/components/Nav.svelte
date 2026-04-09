@@ -76,10 +76,13 @@
             <a href="/plinko-vs-slots" class="block px-4 py-2 text-sm text-gray-300 hover:bg-green-500/10 hover:text-green-400 transition-colors">
               Plinko vs Slots
             </a>
+            <a href="/sweepstakes-casino" class="block px-4 py-2 text-sm text-gray-300 hover:bg-green-500/10 hover:text-green-400 transition-colors">
+              Sweepstakes Casinos
+            </a>
           </div>
         {/if}
       </div>
-      
+
       <a href="/best-casinos" class="text-sm font-medium text-gray-300 transition-colors hover:text-green-400">Best Casinos</a>
       <a href="/leaderboard" class="text-sm font-medium text-gray-300 transition-colors hover:text-green-400">Leaderboard</a>
       
@@ -180,10 +183,13 @@
               <a href="/plinko-vs-slots" class="block text-sm text-gray-400 hover:text-green-400 transition-colors">
                 Plinko vs Slots
               </a>
+              <a href="/sweepstakes-casino" class="block text-sm text-gray-400 hover:text-green-400 transition-colors">
+                Sweepstakes Casinos
+              </a>
             </div>
           {/if}
         </div>
-        
+
         <a href="/best-casinos" class="block text-sm font-medium text-gray-300 hover:text-green-400 transition-colors">
           Best Casinos
         </a>

@@ -389,7 +389,11 @@
   <footer class="px-5 pb-4 pt-16 border-t border-green-500/20">
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col items-center justify-center gap-3 p-4">
-        <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
+        <div class="flex gap-4">
+          <a href="https://github.com/free-plinko-game/free-plinko-game.github.io" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Plinko Game Repo</a>
+          <span class="text-gray-600">•</span>
+          <a href="http://slotomo.com/" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Sweepstakes Casino</a>
+        </div>
         <p class="text-sm text-gray-400">
           Plinko Game Online © 2026
         </p>
