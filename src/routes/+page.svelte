@@ -122,7 +122,7 @@
         <div class="text-gray-300 space-y-4">
           <p>
             Plinko is one of the most popular casino games, originally made famous by the TV show "The Price is Right."
-            The game's simple yet thrilling mechanics have made it a favorite among online casino players worldwide, including at <a href="http://sunvegascasino.com/" target="_blank" rel="noopener" class="text-green-400 underline hover:no-underline">online casinos Australian</a> players love.
+            The game's simple yet thrilling mechanics have made it a favorite among online casino players worldwide, especially at <a href="http://sunvegascasino.com/" target="_blank" rel="noopener" class="text-green-400 underline hover:no-underline">online casinos Australia</a> has to offer.
           </p>
           <p>
             In Plinko, players drop a ball from the top of a pegged board, watching it bounce unpredictably through the 
